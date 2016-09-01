@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iOS 7 教程：定制iOS 7中的导航栏和状态栏 | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="iOS 7 教程：定制iOS 7中的导航栏和状态栏">
+<meta property="og:url" content="http://beyondvincent.com/2013/11/03/2013-11-03-120-customize-navigation-status-bar-ios-7/index.html">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/7.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/9.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/10.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/11.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/12.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/13.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/14.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/15.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/16.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/17.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/18.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/19.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/20.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/21.jpg">
+<meta property="og:updated_time" content="2014-12-31T19:05:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS 7 教程：定制iOS 7中的导航栏和状态栏">
+<meta name="twitter:image" content="http://beyondvincent.com/images/2013/11/7.png">
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2013-11-03-120-customize-navigation-status-bar-ios-7" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/11/03/2013-11-03-120-customize-navigation-status-bar-ios-7/" class="article-date">
+  	<time datetime="2013-11-03T14:55:00.000Z" itemprop="datePublished">11月 3 2013</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS-7-iOS翻译/">iOS 7, iOS翻译</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS 7 教程：定制iOS 7中的导航栏和状态栏
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/2013/11/7.png" alt=""></p>
+<a id="more"></a>
+<p>注：本文译自<a href="http://www.appcoda.com/customize-navigation-status-bar-ios-7/" target="_blank" rel="external"><code>Customizing Navigation Bar and Status Bar in iOS 7</code></a></p>
+<p>近期，跟大多数开发者一样，我也正忙于对程序进行升级以适配iOS 7。最新的iOS 7外观上有大量的改动。从开发者的角度来看，导航栏和状态栏就发生了明显的变化。状态栏现在是半透明的了，这也就意味着导航栏会显示在状态栏后面。有些情况下，导航栏的背景图片可以延伸显示到状态栏后面。</p>
+<p>之前我曾经写过一篇关于<a href="http://www.appcoda.com/customize-navigation-bar-back-butto/" target="_blank" rel="external">如何定制导航栏</a>的文章。不过现在是时候对其进行更新了。下面就是本文将要介绍的内容：</p>
+<ul>
+<li><a href="#0">iOS 7中默认的导航栏</a></li>
+<li><a href="#1">设置导航栏的背景颜色</a></li>
+<li><a href="#2">在导航栏中使用背景图片</a></li>
+<li><a href="#3">定制返回按钮的颜色</a></li>
+<li><a href="#4">修改导航栏标题的字体</a></li>
+<li><a href="#44">修改导航栏标题为图片</a></li>
+<li><a href="#5">添加多个按钮</a></li>
+<li><a href="#6">修改状态栏的风格</a></li>
+<li><a href="#7">隐藏状态栏</a></li>
+<li><a href="#8">总结</a></li>
+</ul>
+<p><img src="/images/2013/11/9.jpg" alt=""></p>
+<p>本文提供的代码需要用Xcode 5来执行。如果你还在使用老版本的Xcode，那么在运行示例之前请将Xcode升级到Xcode 5。</p>
+<p>###<a id="0"></a>iOS 7中默认的导航栏</p>
+<p>在开始定制之前，我们先来看看iOS 7中默认导航栏的外观。通过Xcode用<code>Single View Controller</code>模板创建一个工程。然后将view controller嵌入到一个navigation controller中。如果你不想从头开始，那么也可以在这里下载到这个<a href="https://dl.dropboxusercontent.com/u/2857188/NavigationBarDemo.zip" target="_blank" rel="external">示例工程</a>。</p>
+<p>Xcode 5包含有iOS 6和iOS 7模拟器，我们可以在这两个不同的模拟器版本中运行示例程序，进行对比，如下图所示：</p>
+<p><img src="/images/2013/11/10.jpg" alt=""></p>
+<p>如上图所示，在iOS 7中的导航栏默认情况下跟状态栏是交织在一起的，并且它的颜色也被修改为亮灰色。</p>
+<p>###<a id="1"></a>设置导航栏的背景颜色</p>
+<p>在iOS 7中，不再使用tintColor属性来设置导航栏的颜色，而是使用barTintColor属性来修改背景色。我们可以在<code>AppDelegate.m</code>文件中的方法<code>didFinishLaunchingWithOptions:</code>里面添加如下代码来修改颜色：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[<span class="built_in">UINavigationBar</span> appearance] setBarTintColor:[<span class="built_in">UIColor</span> yellowColor]];</div></pre></td></tr></table></figure>
+<p>效果如下图所示：</p>
+<p><img src="/images/2013/11/11.jpg" alt=""></p>
+<p>一般情况，我们都会使用自己的颜色，下面这个宏用来设置RGB颜色非常方便：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue &amp; 0xFF0000) &gt;&gt; 16))/255.0 green:((float)((rgbValue &amp; 0xFF00) &gt;&gt; 8))/255.0 blue:((float)(rgbValue &amp; 0xFF))/255.0 alpha:1.0]</span></div></pre></td></tr></table></figure>
+<p>将上面这个宏放到<code>AppDelegate.m</code>文件中，然后通过这个宏来创建一个UIColor对象(根据指定的RGB)。如下示例：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[<span class="built_in">UINavigationBar</span> appearance] setBarTintColor:<span class="built_in">UIColorFromRGB</span>(<span class="number">0x067AB5</span>)];</div></pre></td></tr></table></figure>
+<p>默认情况下，导航栏的translucent属性为YES。另外，系统还会对所有的导航栏做模糊处理，这样可以让iOS 7中导航栏的颜色更加饱和。如下图，是translucent值为NO和YES的对比效果：</p>
+<p><img src="/images/2013/11/12.jpg" alt=""></p>
+<p>要想禁用translucent属性，可以在Storyboard中选中导航栏，然后在Attribute Inspectors中，取消translucent的勾选。</p>
+<p>###<a id="2"></a>在导航栏中使用背景图片</p>
+<p>如果希望在导航栏中使用一个图片当做背景，那么你需要提供一个稍微高一点的图片(这样可以延伸到导航栏背后)。导航栏的高度从44 points(88 pixels)变为了64 points(128 pixels)。</p>
+<p>我们依然可以使用<code>setBackgroundImage:</code>方法为导航栏设置自定义图片。如下代码所示：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[<span class="built_in">UINavigationBar</span> appearance] setBackgroundImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"nav_bg.png"</span>] forBarMetrics:<span class="built_in">UIBarMetricsDefault</span>];</div></pre></td></tr></table></figure>
+<p>示例工程中提供了两个背景图片：nav_bg.png 和 nav_bg_ios7.png。运行一下试试看吧，如下效果：</p>
+<p><img src="/images/2013/11/13.jpg" alt=""></p>
+<p>###<a id="3"></a>定制返回按钮的颜</p>
+<p>在iOS 7中，所有的按钮都是无边框的。其中返回按钮会有一个V型箭头，以及上一个屏幕中的标题(如果上一屏幕的标题是空，那么就显示”返回”)。要想给返回按钮着色，可以使用tintColor属性。如下代码所示：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[<span class="built_in">UINavigationBar</span> appearance] setTintColor:[<span class="built_in">UIColor</span> whiteColor]];</div></pre></td></tr></table></figure>
+<p>除了返回按钮，tintColor属性会影响到所有按钮标题和图片。</p>
+<p><img src="/images/2013/11/14.jpg" alt=""></p>
+<p>如果想要用自己的图片替换V型，可以设置图片的<code>backIndicatorImage</code>和<code>backIndicatorTransitionMaskImage</code>。如下代码所示：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[[<span class="built_in">UINavigationBar</span> appearance] setBackIndicatorImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"back_btn.png"</span>]];</div><div class="line">[[<span class="built_in">UINavigationBar</span> appearance] setBackIndicatorTransitionMaskImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"back_btn.png"</span>]];</div></pre></td></tr></table></figure>
+<p>图片的颜色是由tintColor属性控制的。</p>
+<p><img src="/images/2013/11/15.jpg" alt=""></p>
+<p>###<a id="4"></a>修改导航栏标题的字体</p>
+<p>跟iOS 6一样，我们可以使用导航栏的<code>titleTextAttributes</code>属性来定制导航栏的文字风格。在text attributes字典中使用如下一些key，可以指定字体、文字颜色、文字阴影色以及文字阴影偏移量：</p>
+<ul>
+<li>UITextAttributeFont – 字体key</li>
+<li>UITextAttributeTextColor – 文字颜色key</li>
+<li>UITextAttributeTextShadowColor – 文字阴影色key</li>
+<li>UITextAttributeTextShadowOffset – 文字阴影偏移量key</li>
+</ul>
+<p>如下代码所示，对导航栏的标题风格做了修改：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSShadow</span> *shadow = [[<span class="built_in">NSShadow</span> alloc] init];</div><div class="line">    shadow.shadowColor = [<span class="built_in">UIColor</span> colorWithRed:<span class="number">0.0</span> green:<span class="number">0.0</span> blue:<span class="number">0.0</span> alpha:<span class="number">0.8</span>];</div><div class="line">    shadow.shadowOffset = <span class="built_in">CGSizeMake</span>(<span class="number">0</span>, <span class="number">1</span>);</div><div class="line">    [[<span class="built_in">UINavigationBar</span> appearance] setTitleTextAttributes: [<span class="built_in">NSDictionary</span> dictionaryWithObjectsAndKeys:</div><div class="line">                                                           [<span class="built_in">UIColor</span> colorWithRed:<span class="number">245.0</span>/<span class="number">255.0</span> green:<span class="number">245.0</span>/<span class="number">255.0</span> blue:<span class="number">245.0</span>/<span class="number">255.0</span> alpha:<span class="number">1.0</span>], <span class="built_in">NSForegroundColorAttributeName</span>,</div><div class="line">                                                           shadow, <span class="built_in">NSShadowAttributeName</span>,</div><div class="line">                                                           [<span class="built_in">UIFont</span> fontWithName:<span class="string">@"HelveticaNeue-CondensedBlack"</span> size:<span class="number">21.0</span>], <span class="built_in">NSFontAttributeName</span>, <span class="literal">nil</span>]];</div></pre></td></tr></table></figure>
+<p>运行效果如下图所示：</p>
+<p><img src="/images/2013/11/16.jpg" alt=""></p>
+<p>###<a id="44"></a>修改导航栏标题为图片</p>
+<p>如果要想将导航栏标题修改为一个图片或者logo，那么只需要使用下面这行代码即可：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.navigationItem.titleView = [[<span class="built_in">UIImageView</span> alloc] initWithImage:[<span class="built_in">UIImage</span> imageNamed:<span class="string">@"appcoda-logo.png"</span>]];</div></pre></td></tr></table></figure>
+<p>上面的代码简单的修改了titleView属性，将一个图片赋值给它。<br>注意：这不是iOS 7中的新功能，之前的iOS版本就可以已经有了。</p>
+<p>具体效果如下图所示：</p>
+<p><img src="/images/2013/11/17.jpg" alt=""></p>
+<p>###<a id="5"></a>添加多个按钮</p>
+<p>同样，这个技巧也不是iOS 7的，开发者经常会在导航栏中添加多个按钮，所以我决定在这里进行介绍。我们可以在导航栏左边或者右边添加多个按钮。例如，我们希望在导航栏右边添加一个照相机和分享按钮，那只需要使用下面的代码即可：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UIBarButtonItem</span> *shareItem = [[<span class="built_in">UIBarButtonItem</span> alloc] initWithBarButtonSystemItem:<span class="built_in">UIBarButtonSystemItemAction</span> target:<span class="keyword">self</span> action:<span class="literal">nil</span>];</div><div class="line"><span class="built_in">UIBarButtonItem</span> *cameraItem = [[<span class="built_in">UIBarButtonItem</span> alloc] initWithBarButtonSystemItem:<span class="built_in">UIBarButtonSystemItemCamera</span> target:<span class="keyword">self</span> action:<span class="literal">nil</span>];</div><div class="line"></div><div class="line"><span class="built_in">NSArray</span> *actionButtonItems = @[shareItem, cameraItem];</div><div class="line"><span class="keyword">self</span>.navigationItem.rightBarButtonItems = actionButtonItems;</div></pre></td></tr></table></figure>
+<p>如下效果：</p>
+<p><img src="/images/2013/11/18.jpg" alt=""></p>
+<p>###<a id="6"></a>修改状态栏的风格</p>
+<p>在老版本的iOS中，状态栏永远都是白色风格。而在iOS 7中，我们可以修改每个view controller中状态栏的外观。通过UIStatusBarStyle常量可以指定状态栏的内容是暗色或亮色。默认情况下，状态栏的显示是暗色。也就是说，状态栏上的时间、电池指示器和Wi-Fi信号显示为暗色。如果导航栏中使用暗色为背景，那么看起来的效果如下图所示：</p>
+<p><img src="/images/2013/11/19.jpg" alt=""></p>
+<p>如上图这种情况下，我们可能希望将导航栏的风格修改为亮色。这里有两个方法可以实现。在iOS 7中，我们可以在每个view controller中overriding<code>preferredStatusBarStyle:</code>方法，如下所示：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-(<span class="built_in">UIStatusBarStyle</span>)preferredStatusBarStyle </div><div class="line">&#123; </div><div class="line">    <span class="keyword">return</span> <span class="built_in">UIStatusBarStyleLightContent</span>; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面代码的效果如下图所示：</p>
+<p><img src="/images/2013/11/20.jpg" alt=""></p>
+<p>在iOS 7中，通过上面的方法来修改状态栏风格非常的棒。另外，我们也可以使用UIApplication的statusBarStyle方法来设置状态栏，不过，首先需要停止使用<code>View controller-based status bar appearance</code>。在project target的Info tab中，插入一个新的key，名字为<code>View controller-based status bar appearance</code>，并将其值设置为NO。</p>
+<p><img src="/images/2013/11/21.jpg" alt=""></p>
+<p>然后就可以使用下面的代码来设置状态栏风格了：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[<span class="built_in">UIApplication</span> sharedApplication] setStatusBarStyle:<span class="built_in">UIStatusBarStyleLightContent</span>];</div></pre></td></tr></table></figure>
+<p>###<a id="7"></a>隐藏状态栏</p>
+<p>有时候我们需要隐藏状态栏，那么此时我们在view controller中override方法prefersStatusBarHidden:即可，如下代码所示：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)prefersStatusBarHidden</div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>###<a id="8"></a>总结</p>
+<p>iOS 7给开发者提供了一些新的自由度来定制导航栏和状态栏的外观。希望上面的这些技巧能对你有用。</p>
+<p>这里可以下载到<a href="https://dl.dropboxusercontent.com/u/2857188/NavigationBarDemo.zip" target="_blank" rel="external">示例工程源码</a>。只需要取消相关代码注释即可进行测试。</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/11/12/2013-11-12-121-brief-analysis-text-kit/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          iOS 7 教程：浅析Text Kit
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/11/02/2013-10-19-119-sprite-kit-tutorial-making-a-universal-app-part-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Sprite Kit教程：制作一个通用程序 2</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2013-11-03-120-customize-navigation-status-bar-ios-7" data-title="iOS 7 教程：定制iOS 7中的导航栏和状态栏" data-url="http://beyondvincent.com/2013/11/03/2013-11-03-120-customize-navigation-status-bar-ios-7/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>

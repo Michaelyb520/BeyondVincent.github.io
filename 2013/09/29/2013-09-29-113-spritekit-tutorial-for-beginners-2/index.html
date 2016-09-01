@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Sprite Kit教程：初学者 2 | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Sprite Kit教程：初学者 2">
+<meta property="og:url" content="http://beyondvincent.com/2013/09/29/2013-09-29-113-spritekit-tutorial-for-beginners-2/index.html">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/09/10.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/09/11.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/09/12.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/09/13.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/09/14.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/09/15.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/09/16.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/09/17.png">
+<meta property="og:updated_time" content="2014-12-31T19:05:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sprite Kit教程：初学者 2">
+<meta name="twitter:image" content="http://beyondvincent.com/images/2013/09/10.png">
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2013-09-29-113-spritekit-tutorial-for-beginners-2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/09/29/2013-09-29-113-spritekit-tutorial-for-beginners-2/" class="article-date">
+  	<time datetime="2013-09-28T16:06:00.000Z" itemprop="datePublished">9月 29 2013</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS翻译/">iOS翻译</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Sprite Kit教程：初学者 2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <img src="/images/2013/09/10.png">
+<a id="more"></a>
+<p>注：本文译自<a href="http://www.raywenderlich.com/42699/spritekit-tutorial-for-beginners" target="_blank" rel="external"><code>Sprite Kit Tutorial for Beginners</code></a></p>
+<p>感谢<a href="http://answerhuang.duapp.com/" target="_blank" rel="external">answer哥</a>对本文翻译问题的提出。(2013-10-14)</p>
+<p>###<strong>目录</strong></p>
+<ul>
+<li>Sprite Kit的优点和缺点</li>
+<li>Sprite Kit vs Cocos2D-iPhone vs Cocos2D-X vs Unity</li>
+<li>Hello, Sprite Kit!</li>
+<li><a href="#hpxs">横屏显示</a></li>
+<li><a href="#ydgs">移动怪兽</a></li>
+<li><a href="#fspd">发射炮弹</a></li>
+<li>碰撞检测: 概述</li>
+<li>碰撞检测: 实现</li>
+<li>收尾</li>
+<li>何去何从?</li>
+</ul>
+<p>###<a id="hpxs"></a>横屏显示</p>
+<p>首先，在Project Navigator中单击SpriteKitSimpleGame工程以打开target设置，选中SpriteKitSimpleGame target。然后在<code>Deployment Info</code>中，不要勾选<code>Portrait</code>，只选中<code>Landscape</code>和<code>Landscape Right</code>，如下所示：</p>
+<img src="/images/2013/09/11.png">
+<p>编译并运行工程，会看到如下运行画面：</p>
+<img src="/images/2013/09/12.png">
+<p>下面我们试着添加一个忍者(ninja)。</p>
+<p>首先，下载此<a href="http://cdn3.raywenderlich.com/wp-content/uploads/2015/01/SpriteKitSimpleGameResources.zip" target="_blank" rel="external">工程的资源文件</a>，并将其拖拽到Xcode工程中。确保勾选上<code>“Copy items into destination group’s folder (if needed)”</code>和<code>SpriteKitSimpleGame target</code>。</p>
+<p>接着，打开<code>MyScene.m</code>，并用下面的内容替换之：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"MyScene.h"</span></span></div><div class="line"> </div><div class="line"><span class="comment">// 1</span></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">MyScene</span> ()</span></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">SKSpriteNode</span> * player;</div><div class="line"><span class="keyword">@end</span></div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">MyScene</span></span></div><div class="line"> </div><div class="line">-(<span class="keyword">id</span>)initWithSize:(<span class="built_in">CGSize</span>)size &#123;    </div><div class="line">    <span class="keyword">if</span> (<span class="keyword">self</span> = [<span class="keyword">super</span> initWithSize:size]) &#123;</div><div class="line"> </div><div class="line">        <span class="comment">// 2</span></div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Size: %@"</span>, <span class="built_in">NSStringFromCGSize</span>(size));</div><div class="line"> </div><div class="line">        <span class="comment">// 3</span></div><div class="line">        <span class="keyword">self</span>.backgroundColor = [<span class="built_in">SKColor</span> colorWithRed:<span class="number">1.0</span> green:<span class="number">1.0</span> blue:<span class="number">1.0</span> alpha:<span class="number">1.0</span>];</div><div class="line"> </div><div class="line">        <span class="comment">// 4</span></div><div class="line">        <span class="keyword">self</span>.player = [<span class="built_in">SKSpriteNode</span> spriteNodeWithImageNamed:<span class="string">@"player"</span>];</div><div class="line">        <span class="keyword">self</span>.player.position = <span class="built_in">CGPointMake</span>(<span class="number">100</span>, <span class="number">100</span>);</div><div class="line">        [<span class="keyword">self</span> addChild:<span class="keyword">self</span>.player];</div><div class="line"> </div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">self</span>;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<p>我们来看看上面的代码。</p>
+<ol>
+<li>为了给player(例如忍者)声明一个私有变量，在这里创建了一个私有的interface，之后可以把这个私有变量添加到场景中。</li>
+<li>在这里打印出了场景的size，至于什么原因很快你就会看到了。</li>
+<li>在Sprite Kit中设置一个场景的背景色非常简单——只需要设置<code>backgroundColor</code>属性，在这里将其设置位白色。</li>
+<li>在Sprite Kit场景中添加一个精灵同样非常简单，只需要使用<code>spriteNodeWithImageNamed</code>方法，并把一副图片的名称传递进去就可以创建一个精灵。接着设置一下精灵的位置，然后调用<code>addChild</code>方法将该精灵添加到场景中。在代码中将忍者的位置设置为<code>(100, 100)</code>，该位置是从屏幕的左下角到右上角计算的。</li>
+</ol>
+<p>编译并运行，看看效果如何…</p>
+<img src="/images/2013/09/13.png">
+<p>呀！屏幕是白色的，并没有看到忍者。这是为什么呢？你可能在想设计之初就是这样的，实际上这里有一个问题。</p>
+<p>如果你观察一下控制台输出的内容，会看到如下内容</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SpriteKitSimpleGame[<span class="number">3139</span>:<span class="number">907</span>] Size: &#123;<span class="number">320</span>, <span class="number">568</span>&#125;</div></pre></td></tr></table></figure>
+<p>scene认为自己的宽度是320，高度则是568——实际上刚好相反!</p>
+<p>我们来看看具体发生了什么：定位到<code>ViewController.m</code>的<code>viewDidLoad</code>方法：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)viewDidLoad</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line"> </div><div class="line">    <span class="comment">// Configure the view.</span></div><div class="line">    <span class="built_in">SKView</span> * skView = (<span class="built_in">SKView</span> *)<span class="keyword">self</span>.view;</div><div class="line">    skView.showsFPS = <span class="literal">YES</span>;</div><div class="line">    skView.showsNodeCount = <span class="literal">YES</span>;</div><div class="line"> </div><div class="line">    <span class="comment">// Create and configure the scene.</span></div><div class="line">    <span class="built_in">SKScene</span> * scene = [MyScene sceneWithSize:skView.bounds.size];</div><div class="line">    scene.scaleMode = <span class="built_in">SKSceneScaleModeAspectFill</span>;</div><div class="line"> </div><div class="line">    <span class="comment">// Present the scene.</span></div><div class="line">    [skView presentScene:scene];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的代码中利用view的边界size创建了场景。不过请注意，当<code>viewDidLoad</code>被调用的时候，view还没被添加到view层级结构中，因此它还没有响应出布局的改变。所以view的边界可能还不正确，进而在viewDidLoad中并不是开启场景的最佳时机。</p>
+<p><code>提醒</code>：要想了解更多相关内容，请看由Rob Mayoff带来的<a href="http://stackoverflow.com/questions/9539676/uiviewcontroller-returns-invalid-frame" target="_blank" rel="external">最佳解释</a>。</p>
+<p>解决方法就是将开启场景代码的过程再靠后一点。用下面的代码替换<code>viewDidLoad</code>:<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)viewWillLayoutSubviews</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">super</span> viewWillLayoutSubviews];</div><div class="line"> </div><div class="line">    <span class="comment">// Configure the view.</span></div><div class="line">    <span class="built_in">SKView</span> * skView = (<span class="built_in">SKView</span> *)<span class="keyword">self</span>.view;</div><div class="line">    <span class="keyword">if</span> (!skView.scene) &#123;</div><div class="line">      skView.showsFPS = <span class="literal">YES</span>;</div><div class="line">      skView.showsNodeCount = <span class="literal">YES</span>;</div><div class="line"> </div><div class="line">      <span class="comment">// Create and configure the scene.</span></div><div class="line">      <span class="built_in">SKScene</span> * scene = [MyScene sceneWithSize:skView.bounds.size];</div><div class="line">      scene.scaleMode = <span class="built_in">SKSceneScaleModeAspectFill</span>;</div><div class="line"> </div><div class="line">      <span class="comment">// Present the scene.</span></div><div class="line">      [skView presentScene:scene];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译并运行程序，可以看到，忍者已经显示在屏幕中了！</p>
+<img src="/images/2013/09/14.png">
+<p>如上图所示，可以看到坐标系已经正确了，如果想要把忍者的位置设置为其中间靠左，那么在<code>MyScene.m</code>中用下面的代码来替换设置忍者位置相关的代码：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">self</span>.player.position = <span class="built_in">CGPointMake</span>(<span class="keyword">self</span>.player.size.width/<span class="number">2</span>, <span class="keyword">self</span>.frame.size.height/<span class="number">2</span>);</div></pre></td></tr></table></figure>
+<p>###<a id="ydgs"></a>移动怪兽</p>
+<p>接下来，我们希望在场景中添加一些怪兽，让忍者进行攻击。为了让游戏更有趣一点，希望怪兽能够移动——否则没有太大的挑战！OK，我们就在屏幕的右边，离屏的方式创建怪兽，并给怪兽设置一个动作：告诉它们往左边移动。</p>
+<p>将下面这个方法添加到<code>MyScene.m</code>中：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addMonster &#123;</div><div class="line"> </div><div class="line">    <span class="comment">// Create sprite</span></div><div class="line">    <span class="built_in">SKSpriteNode</span> * monster = [<span class="built_in">SKSpriteNode</span> spriteNodeWithImageNamed:<span class="string">@"monster"</span>];</div><div class="line"> </div><div class="line">    <span class="comment">// Determine where to spawn the monster along the Y axis</span></div><div class="line">    <span class="keyword">int</span> minY = monster.size.height / <span class="number">2</span>;</div><div class="line">    <span class="keyword">int</span> maxY = <span class="keyword">self</span>.frame.size.height - monster.size.height / <span class="number">2</span>;</div><div class="line">    <span class="keyword">int</span> rangeY = maxY - minY;</div><div class="line">    <span class="keyword">int</span> actualY = (arc4random() % rangeY) + minY;</div><div class="line"> </div><div class="line">    <span class="comment">// Create the monster slightly off-screen along the right edge,</span></div><div class="line">    <span class="comment">// and along a random position along the Y axis as calculated above</span></div><div class="line">    monster.position = <span class="built_in">CGPointMake</span>(<span class="keyword">self</span>.frame.size.width + monster.size.width/<span class="number">2</span>, actualY);</div><div class="line">    [<span class="keyword">self</span> addChild:monster];</div><div class="line"> </div><div class="line">    <span class="comment">// Determine speed of the monster</span></div><div class="line">    <span class="keyword">int</span> minDuration = <span class="number">2.0</span>;</div><div class="line">    <span class="keyword">int</span> maxDuration = <span class="number">4.0</span>;</div><div class="line">    <span class="keyword">int</span> rangeDuration = maxDuration - minDuration;</div><div class="line">    <span class="keyword">int</span> actualDuration = (arc4random() % rangeDuration) + minDuration;</div><div class="line"> </div><div class="line">    <span class="comment">// Create the actions</span></div><div class="line">    <span class="built_in">SKAction</span> * actionMove = [<span class="built_in">SKAction</span> moveTo:<span class="built_in">CGPointMake</span>(-monster.size.width/<span class="number">2</span>, actualY) duration:actualDuration];</div><div class="line">    <span class="built_in">SKAction</span> * actionMoveDone = [<span class="built_in">SKAction</span> removeFromParent];</div><div class="line">    [monster runAction:[<span class="built_in">SKAction</span> sequence:@[actionMove, actionMoveDone]]];</div><div class="line"> </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在上面，我尽量让代码看起来容易理解。首先是通过一个简单的计算，确定怪兽出现的位置，并将该位置设置给怪兽，然后将其添加到场景中。</p>
+<p>接着是添加动作(actions)。跟Cocos2D一样，Sprite Kit同样提供了很多方便的内置动作，例如移动动作、旋转动作、淡入淡出动作、动画动作等。在这里我们只需要在怪兽上使用3中动作即可：</p>
+<ul>
+<li><code>moveTo:duration:</code>使用这个动作可以把怪兽从屏幕外边移动到左边。移动过程中，我们可以指定移动持续的时间，上面的代码中，指定为2-4秒之间的一个随机数。</li>
+<li><code>removeFromParent:</code>在Sprite Kit中，可以使用该方法，方便的将某个node从parent中移除，能有效的从场景中删除某个对象。此处，将不再需要显示的怪兽从场景中移除。这个功能非常的重要，否则当有源源不断的怪兽出现在场景中时，会耗尽设备的所有资源。</li>
+<li><code>sequence:</code>sequence动作可以一次性就把一系列动作串联起来按照一定顺序执行。通过该方法我们就能让<code>moveTo:</code>方法先执行，当完成之后，在执行<code>removeFromParent:</code>动作。</li>
+</ul>
+<p>最后，我们需要做的事情就是调用上面这个方法<code>addMonster</code>，以实际的创建出怪兽！为了更加好玩，下面我们来让怪兽随着时间持续的出现在屏幕中。</p>
+<p>在Sprite Kit中，并不能像Cocos2D一样，可以配置每隔X秒就回调一下update方法。同样也不支持将从上次更新到目前为止的时间差传入方法中。(非常令人吃惊！)。</p>
+<p>不过，我们可以通过一小段代码来仿造这种行为。首先在<code>MyScene.m</code>的private interface中添加如下属性：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">NSTimeInterval</span> lastSpawnTimeInterval;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">NSTimeInterval</span> lastUpdateTimeInterval;</div></pre></td></tr></table></figure>
+<p>通过<code>lastSpawnTimeInterval</code>可以记录着最近出现怪兽时的时间，而<code>lastUpdateTimeInterval</code>可以记录着上次更新时的时间。</p>
+<p>接着，我们写一个方法，该方法在画面每一帧更新的时候都会被调用。记住，该方法不会被自动调用——需要另外写一个方法来调用它：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)updateWithTimeSinceLastUpdate:(<span class="built_in">CFTimeInterval</span>)timeSinceLast &#123;</div><div class="line"> </div><div class="line">    <span class="keyword">self</span>.lastSpawnTimeInterval += timeSinceLast;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">self</span>.lastSpawnTimeInterval &gt; <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">self</span>.lastSpawnTimeInterval = <span class="number">0</span>;</div><div class="line">        [<span class="keyword">self</span> addMonster];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的代码中简单的将上次更新(update调用)的时间追加到<code>self.lastSpawnTimeInterval</code>中。一旦该时间大于1秒，就在场景中新增一个怪兽，并将<code>lastSpawnTimeInterval</code>重置。</p>
+<p>最后，添加如下方法来调用上面的方法：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)update:(<span class="built_in">NSTimeInterval</span>)currentTime &#123;</div><div class="line">    <span class="comment">// Handle time delta.</span></div><div class="line">    <span class="comment">// If we drop below 60fps, we still want everything to move the same distance.</span></div><div class="line">    <span class="built_in">CFTimeInterval</span> timeSinceLast = currentTime - <span class="keyword">self</span>.lastUpdateTimeInterval;</div><div class="line">    <span class="keyword">self</span>.lastUpdateTimeInterval = currentTime;</div><div class="line">    <span class="keyword">if</span> (timeSinceLast &gt; <span class="number">1</span>) &#123; <span class="comment">// more than a second since last update</span></div><div class="line">        timeSinceLast = <span class="number">1.0</span> / <span class="number">60.0</span>;</div><div class="line">        <span class="keyword">self</span>.lastUpdateTimeInterval = currentTime;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    [<span class="keyword">self</span> updateWithTimeSinceLastUpdate:timeSinceLast];</div><div class="line"> </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Sprite Kit在显示每帧时都会调用上面的<code>update:</code>方法。</p>
+<p>上面的代码其实是来自苹果提供的Adventure示例中。该方法会传入当前的时间，在其中，会做一些计算，以确定出上一帧更新的时间。注意，在代码中做了一些合理性的检查，以避免从上一帧更新到现在已经过去了大量时间，并且将间隔重置为1/60秒，避免出现奇怪的行为。</p>
+<p>现在编译并运行程序，可以看到许多怪兽从左边移动到屏幕右边并消失。</p>
+<img src="/images/2013/09/15.png">
+<p>###<a id="fspd"></a>发射炮弹</p>
+<p>现在我们开始给忍者添加一些动作，首先从发射炮弹开始！实际上有多种方法来实现炮弹的发射，不过，在这里要实现的方法时当用户tap屏幕时，从忍者的方位到tap的方位发射一颗炮弹。</p>
+<p>由于本文是针对初级开发者，所以在这里我使用<code>moveTo:</code>动作来实现，不过这需要做一点点的数学运算——因为<code>moveTo:</code>方法需要指定炮弹的目的地，但是又不能直接使用touch point(因为touch point仅仅代表需要发射的方向)。实际上我们需要让炮弹穿过touch point，直到炮弹在屏幕中消失。</p>
+<p>如下图，演示了上面的相关内容：</p>
+<img src="/images/2013/09/16.jpg">
+<p>如图所示，我们可以通过origin point到touch point得到一个小的三角形。我们要做的就是根据这个小三角形的比例创建出一个大的三角形——而你知道你想要的一个端点是离开屏幕的地方。</p>
+<p>为了做这个计算，如果有一些基本的矢量方法可供调用(例如矢量的加减法)，那么会非常有帮助，但很不幸的时Sprite Kit并没有提供相关方法，所以，我们必须自己实现。</p>
+<p>不过很幸运的时这非常容易实现。将下面的方法添加到文件的顶部(implementation之前)：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="built_in">CGPoint</span> rwAdd(<span class="built_in">CGPoint</span> a, <span class="built_in">CGPoint</span> b) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">CGPointMake</span>(a.x + b.x, a.y + b.y);</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="built_in">CGPoint</span> rwSub(<span class="built_in">CGPoint</span> a, <span class="built_in">CGPoint</span> b) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">CGPointMake</span>(a.x - b.x, a.y - b.y);</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="built_in">CGPoint</span> rwMult(<span class="built_in">CGPoint</span> a, <span class="keyword">float</span> b) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">CGPointMake</span>(a.x * b, a.y * b);</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">float</span> rwLength(<span class="built_in">CGPoint</span> a) &#123;</div><div class="line">    <span class="keyword">return</span> sqrtf(a.x * a.x + a.y * a.y);</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="comment">// Makes a vector have a length of 1</span></div><div class="line"><span class="keyword">static</span> <span class="keyword">inline</span> <span class="built_in">CGPoint</span> rwNormalize(<span class="built_in">CGPoint</span> a) &#123;</div><div class="line">    <span class="keyword">float</span> length = rwLength(a);</div><div class="line">    <span class="keyword">return</span> <span class="built_in">CGPointMake</span>(a.x / length, a.y / length);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面实现了一些标准的矢量函数。如果你看得不是太明白，请看这里关于<a href="http://www.mathsisfun.com/algebra/vectors.html" target="_blank" rel="external">矢量方法的解释</a>。</p>
+<p>接着，在文件中添加一个新的方法：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)touchesEnded:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event &#123;</div><div class="line"> </div><div class="line">    <span class="comment">// 1 - Choose one of the touches to work with</span></div><div class="line">    <span class="built_in">UITouch</span> * touch = [touches anyObject];</div><div class="line">    <span class="built_in">CGPoint</span> location = [touch locationInNode:<span class="keyword">self</span>];</div><div class="line"> </div><div class="line">    <span class="comment">// 2 - Set up initial location of projectile</span></div><div class="line">    <span class="built_in">SKSpriteNode</span> * projectile = [<span class="built_in">SKSpriteNode</span> spriteNodeWithImageNamed:<span class="string">@"projectile"</span>];</div><div class="line">    projectile.position = <span class="keyword">self</span>.player.position;</div><div class="line"> </div><div class="line">    <span class="comment">// 3- Determine offset of location to projectile</span></div><div class="line">    <span class="built_in">CGPoint</span> offset = rwSub(location, projectile.position);</div><div class="line"> </div><div class="line">    <span class="comment">// 4 - Bail out if you are shooting down or backwards</span></div><div class="line">    <span class="keyword">if</span> (offset.x &lt;= <span class="number">0</span>) <span class="keyword">return</span>;</div><div class="line"> </div><div class="line">    <span class="comment">// 5 - OK to add now - we've double checked position</span></div><div class="line">    [<span class="keyword">self</span> addChild:projectile];</div><div class="line"> </div><div class="line">    <span class="comment">// 6 - Get the direction of where to shoot</span></div><div class="line">    <span class="built_in">CGPoint</span> direction = rwNormalize(offset);</div><div class="line"> </div><div class="line">    <span class="comment">// 7 - Make it shoot far enough to be guaranteed off screen</span></div><div class="line">    <span class="built_in">CGPoint</span> shootAmount = rwMult(direction, <span class="number">1000</span>);</div><div class="line"> </div><div class="line">    <span class="comment">// 8 - Add the shoot amount to the current position       </span></div><div class="line">    <span class="built_in">CGPoint</span> realDest = rwAdd(shootAmount, projectile.position);</div><div class="line"> </div><div class="line">    <span class="comment">// 9 - Create the actions</span></div><div class="line">    <span class="keyword">float</span> velocity = <span class="number">480.0</span>/<span class="number">1.0</span>;</div><div class="line">    <span class="keyword">float</span> realMoveDuration = <span class="keyword">self</span>.size.width / velocity;</div><div class="line">    <span class="built_in">SKAction</span> * actionMove = [<span class="built_in">SKAction</span> moveTo:realDest duration:realMoveDuration];</div><div class="line">    <span class="built_in">SKAction</span> * actionMoveDone = [<span class="built_in">SKAction</span> removeFromParent];</div><div class="line">    [projectile runAction:[<span class="built_in">SKAction</span> sequence:@[actionMove, actionMoveDone]]];</div><div class="line"> </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的代码中做了很多事情，我们来详细看看。</p>
+<ol>
+<li>SpriteKit为我们做了很棒的一件事情就是它提供了一个UITouch的category，该category中有<code>locationInNode:</code>和<code>previousLocationInNode:</code>方法。这两个方法可以帮助我们定位到在SKNode内部坐标系中touch的坐标位置。这样一来，我们就可以寻得到在场景坐标系中touch的位置。</li>
+<li>然后创建一个炮弹，并将其放置到忍者的地方，以当做其开始位置。注意，现在还没有将其添加到场景中，因为还需要先做一个合理性的检查——该游戏不允许忍者向后发射。</li>
+<li>接着利用touch位置减去炮弹的当前位置，这样就能获得一个从当前位置到touch位置的矢量。</li>
+<li>如果X值小于0，就意味着忍者将要向后发射，由于在这里的游戏中是不允许的(真实中的忍者是不回头的！)，所以就return。</li>
+<li>否则，将可以将炮弹添加到场景中。</li>
+<li>调用方法<code>rwNormalize</code>，将offset转换为一个单位矢量(长度为1)。这样做可以让在相同方向上，根据确定的长度来构建一个矢量更加容易（因为1 * length = length）。</li>
+<li>在单位矢量的方向上乘以1000。为什么是1000呢？因为着肯定足够超过屏幕边缘了 :]</li>
+<li>将上一步中计算得到的位置与炮弹的位置相加，以获得炮弹最终结束的位置。</li>
+<li>最后，参照之前构建怪物时的方法，创建<code>moveTo:</code>和<code>removeFromParent:</code>两个actions。</li>
+</ol>
+<p>编译并运行程序，现在忍者可以发射炮弹了！</p>
+<img src="/images/2013/09/17.png">
+<p>……Sprite Kit教程：初学者 2 结束……</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/10/12/2013-10-12-114-spritekit-tutorial-for-beginners-3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Sprite Kit教程：初学者 3
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/09/26/2013-09-26-113-spritekit-tutorial-for-beginners-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Sprite Kit教程：初学者 1 </div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2013-09-29-113-spritekit-tutorial-for-beginners-2" data-title="Sprite Kit教程：初学者 2" data-url="http://beyondvincent.com/2013/09/29/2013-09-29-113-spritekit-tutorial-for-beginners-2/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>UIKit Dynamics 教程：抛掷 Views | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="UIKit Dynamics 教程：抛掷 Views">
+<meta property="og:url" content="http://beyondvincent.com/2014/09/02/2014-09-02-uikit-dynamics-tutorial-tossing-views/index.html">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/09/01.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/09/02.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/09/03.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/09/04.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/09/05.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/09/06.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/09/08.gif">
+<meta property="og:updated_time" content="2014-12-31T19:05:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UIKit Dynamics 教程：抛掷 Views">
+<meta name="twitter:image" content="http://beyondvincent.com/images/2014/09/01.png">
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2014-09-02-uikit-dynamics-tutorial-tossing-views" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/09/02/2014-09-02-uikit-dynamics-tutorial-tossing-views/" class="article-date">
+  	<time datetime="2014-09-01T17:15:00.000Z" itemprop="datePublished">9月 2 2014</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS探索/">iOS探索</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      UIKit Dynamics 教程：抛掷 Views
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/2014/09/01.png" alt=""></p>
+<a id="more"></a>
+<p>本文译自：<a href="http://www.raywenderlich.com/71828/uikit-dynamics-tutorial-tossing-views" target="_blank" rel="external">UIKit Dynamics Tutorial: Tossing Views</a></p>
+<p>本文中，我们将学习如何用手势很自然的将 view 抛掷出屏幕。</p>
+<p>可能你已经看到该技术在 <a href="https://itunes.apple.com/us/app/tweetbot-3-for-twitter-iphone/id722294701?uo=8&amp;at=11ld4k" target="_blank" rel="external">Tweetbot</a> 中的流行了。</p>
+<p>本文非常适合中级开发者，因为对 view 抛掷操作中，使用的技术嵌套了多个效果，例如使用内置的 UIKit 框架对 view 进行旋转 (rotation)、飞离 (fly-away) 动画。</p>
+<p>如果你之前还不了解 UIKit dynamics，也不用担心 - 本文会一步一步的引导你进行学习。</p>
+<p>事不宜迟，我们开始抛掷 view 吧！</p>
+<p>目录：</p>
+<ul>
+<li><a href="#Getting_Started">开始</a></li>
+<li><a href="#UIDynamicAnimator_and_UIAttachmentBehavior">UIDynamicAnimator 和 UIAttachmentBehavior</a></li>
+<li><a href="#UIPushBehavior">UIPushBehavior</a></li>
+<li><a href="#Where_To_Go_From_Here">何去何从？</a></li>
+</ul>
+<hr>
+<p><a name="Getting_Started"></a></p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>提醒：学习中，本节是可选的，主要是针对想要从零开始的读者。有经验的 iOS 开发者可以忽略本节，直接到下一节 (已经为你准备好一个工程了)。</p>
+<p>打开 Xcode，选择 <code>File\New\Project…</code>，选择 <code>iOS\Application\Single View Application</code>模板，然后点击 <code>Next</code>。将工程命名为 <code>DynamicToss</code>，并将 device family 设置为 iPhone。</p>
+<p>现在选中左边的工程名称，并确保选中 Xcode 窗口顶部的 General。在 <code>Deployment Info/Device Orientation</code> 中，不要勾选 ‘Landscape Left’ and ‘Landscape Right’，因为这个程序只以 portrait 模式运行。</p>
+<p><img src="/images/2014/09/02.png" alt=""></p>
+<p>接着下载一个<a href="http://cdn2.raywenderlich.com/wp-content/uploads/2014/05/flying_goldfish.zip" target="_blank" rel="external">图片</a>，这个图片来自<a href="http://www.vickiwenderlich.com/" target="_blank" rel="external">gameartguppy.com</a>：</p>
+<p><img src="/images/2014/09/03.jpg" alt=""></p>
+<p>将工程解压出来，然后将图片文件添加到工程中。</p>
+<p>接着，打开 <code>Main.storyboard</code>，并添加一个 image view 控件，相关值设置为：(X=33, Y=137, Width=254, Height=172, Image=goldfish_feature.jpg)。现在屏幕上的看起来应该是这样的：</p>
+<p><img src="/images/2014/09/04.png" alt=""></p>
+<p>接着，拖两个 UIView 到 view controller 中，这两个 UIView 用来对手势进行跟踪。按照下面的值进行设置：</p>
+<ul>
+<li>View 1: (X=156, Y=219, Width=8, Height=8, Background=red)</li>
+<li>View 2: (X=80, Y=420, Width=8, Height=8. Background=blue)</li>
+</ul>
+<p>至此，view 看起来应该是这样的：</p>
+<p><img src="/images/2014/09/05.png" alt=""></p>
+<p>将下面的私有属性添加到 <code>RWTViewController.m</code> 中：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UIView</span> *image;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UIView</span> *redSquare;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UIView</span> *blueSquare;</div><div class="line"> </div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGRect</span> originalBounds;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CGPoint</span> originalCenter;</div><div class="line"> </div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">UIDynamicAnimator</span> *animator;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">UIAttachmentBehavior</span> *attachmentBehavior;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">UIPushBehavior</span> *pushBehavior;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">UIDynamicItemBehavior</span> *itemBehavior;</div></pre></td></tr></table></figure>
+<p>选中 <code>Main.storyboard</code> 文件，并右键单击 <code>View Controller</code>。拖拽住出现的 <code>blueSquare</code> outlet，将其与蓝色正方形 view 连接上：这个动作会将属性连接至 view 对象。</p>
+<p>同样也把红色正方形连接好，最后是名字位 <code>image</code> 的属性。现在 3 个 view 属性应该已经连接好了，看起来如下图所示：</p>
+<p><img src="/images/2014/09/06.png" alt=""></p>
+<p>红色和蓝色的正方形代表 UIDynamics 物理引擎对图像进行动画效果的点。</p>
+<p>蓝色正方形简单的代表触摸的开始，例如，你的手指与屏幕第一次交互时的位置。红色的正方形用来跟踪手指的移动。</p>
+<p>你需要对 UIDynamics 框架进行配置，以使得当移动点时，图片也跟着串联的方式做物理动画。</p>
+<p>现在还有一件事件需要做 - 为 view 配置一个手势识别。打开 <code>RWTViewController.m</code>，将下面的方法添加到文件中：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">IBAction</span>) handleAttachmentGesture:(<span class="built_in">UIPanGestureRecognizer</span>*)gesture</div><div class="line">&#123;</div><div class="line">    <span class="built_in">CGPoint</span> location = [gesture locationInView:<span class="keyword">self</span>.view];</div><div class="line">    <span class="built_in">CGPoint</span> boxLocation = [gesture locationInView:<span class="keyword">self</span>.image];</div><div class="line"> </div><div class="line">    <span class="keyword">switch</span> (gesture.state) &#123;</div><div class="line">    <span class="keyword">case</span> <span class="built_in">UIGestureRecognizerStateBegan</span>:&#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"you touch started position %@"</span>,<span class="built_in">NSStringFromCGPoint</span>(location));</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"location in image started is %@"</span>,<span class="built_in">NSStringFromCGPoint</span>(boxLocation));</div><div class="line"> </div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">case</span> <span class="built_in">UIGestureRecognizerStateEnded</span>: &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"you touch ended position %@"</span>,<span class="built_in">NSStringFromCGPoint</span>(location));</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"location in image ended is %@"</span>,<span class="built_in">NSStringFromCGPoint</span>(boxLocation));</div><div class="line"> </div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">default</span>:</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们将要添加一个手势识别，来检测拖拽，也称为平移 (panning)，当事件发生时，会调用上面这个方法。目前，这个方法简单的显示出手指在两个不同坐标系空间 (view 和 image view) 的位置。</p>
+<p>为了添加手势识别，打开 <code>Main.storyboard</code>，并拖一个 <code>Pan Gesture Recognizer</code> 到 view 中。然后从 <code>Pan Gesture Recognizer</code> control-drag 到我们的 <code>View Controller</code>，并将其连接到 <code>handleAttachmentGesture:</code> 方法上。</p>
+<p>现在编译并运行程序。在屏幕上轻扫或者拖动，可以在控制台看到类似如下信息：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">2014</span><span class="number">-07</span><span class="number">-13</span> <span class="number">14</span>:<span class="number">01</span>:<span class="number">49.666</span> DynamicToss[<span class="number">3999</span>:<span class="number">60</span>b] you touch started position &#123;<span class="number">127</span>, <span class="number">365</span>&#125;</div><div class="line"><span class="number">2014</span><span class="number">-07</span><span class="number">-13</span> <span class="number">14</span>:<span class="number">01</span>:<span class="number">49.667</span> DynamicToss[<span class="number">3999</span>:<span class="number">60</span>b] location <span class="keyword">in</span> image started is &#123;<span class="number">94</span>, <span class="number">228</span>&#125;</div><div class="line"><span class="number">2014</span><span class="number">-07</span><span class="number">-13</span> <span class="number">14</span>:<span class="number">01</span>:<span class="number">50.097</span> DynamicToss[<span class="number">3999</span>:<span class="number">60</span>b] you touch ended position &#123;<span class="number">113</span>, <span class="number">464</span>&#125;</div><div class="line"><span class="number">2014</span><span class="number">-07</span><span class="number">-13</span> <span class="number">14</span>:<span class="number">01</span>:<span class="number">50.097</span> DynamicToss[<span class="number">3999</span>:<span class="number">60</span>b] location <span class="keyword">in</span> image ended is &#123;<span class="number">80</span>, <span class="number">327</span>&#125;</div></pre></td></tr></table></figure>
+<p>非常棒！现在已经完成了基本的 UI 配置 - 接下来是时候开始 dynamic了！</p>
+<p><a name="UIDynamicAnimator_and_UIAttachmentBehavior"></a></p>
+<h2 id="UIDynamicAnimator-和-UIAttachmentBehavior"><a href="#UIDynamicAnimator-和-UIAttachmentBehavior" class="headerlink" title="UIDynamicAnimator 和 UIAttachmentBehavior"></a>UIDynamicAnimator 和 UIAttachmentBehavior</h2><p>提醒：如果你忽略了上一章节的内容，请先从这里下载为你准备好的<a href="http://cdn2.raywenderlich.com/wp-content/uploads/2014/07/DynamicTossStarter2.zip" target="_blank" rel="external">工程</a>。</p>
+<p>首先我们要做的事情就是让 image view 跟随我们的拖拽一起移动。这将通过 UIKit Dynamics中的 <code>UIAttachmentBehavior</code> 来实现。</p>
+<p>打开 <code>RWTViewController.m</code>，并将下面的代码添加到 <code>viewDidLoad</code> 中，位于 <code>[super viewDidLoad]</code> 下方：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.animator = [[<span class="built_in">UIDynamicAnimator</span> alloc] initWithReferenceView:<span class="keyword">self</span>.view];</div><div class="line"><span class="keyword">self</span>.originalBounds = <span class="keyword">self</span>.image.bounds;</div><div class="line"><span class="keyword">self</span>.originalCenter = <span class="keyword">self</span>.image.center;</div></pre></td></tr></table></figure>
+<p>上面的代码将配置一个 <code>UIDynamicAnimator</code>，这是 UIKit 中的一个引擎，用于支持最基本的物理动画效果。参照 <code>self.view</code> 定义了 animator 的坐标系。</p>
+<p>通过给 animator 添加行为 (behaviors)，可以让你做一些事情，例如具有重力效果的进行 attaching view、pushing view等。</p>
+<p>下面我们开始给 animator 添加第一个行为：<code>UIAttachmentBehavior</code> - 使得 image view 跟着手指的手势进行移动。</p>
+<p>为了完成这样的效果，将下面的代码添加到 <code>handleAttachmentGesture:</code> 中，位于 <code>case UIGestureRecognizerStateBegan</code> 的两个 NSLog 语句下方：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1</span></div><div class="line">[<span class="keyword">self</span>.animator removeAllBehaviors];</div><div class="line"> </div><div class="line"><span class="comment">// 2        </span></div><div class="line"><span class="built_in">UIOffset</span> centerOffset = <span class="built_in">UIOffsetMake</span>(boxLocation.x - <span class="built_in">CGRectGetMidX</span>(<span class="keyword">self</span>.image.bounds),</div><div class="line">                                     boxLocation.y - <span class="built_in">CGRectGetMidY</span>(<span class="keyword">self</span>.image.bounds));</div><div class="line"><span class="keyword">self</span>.attachmentBehavior = [[<span class="built_in">UIAttachmentBehavior</span> alloc] initWithItem:<span class="keyword">self</span>.image</div><div class="line">                                                    offsetFromCenter:centerOffset</div><div class="line">                                                    attachedToAnchor:location];</div><div class="line"><span class="comment">// 3</span></div><div class="line"><span class="keyword">self</span>.redSquare.center = <span class="keyword">self</span>.attachmentBehavior.anchorPoint;</div><div class="line"><span class="keyword">self</span>.blueSquare.center = location;</div><div class="line"> </div><div class="line"><span class="comment">// 4</span></div><div class="line">[<span class="keyword">self</span>.animator addBehavior:<span class="keyword">self</span>.attachmentBehavior];</div></pre></td></tr></table></figure>
+<p>我们来细看一下上述代码的作用：</p>
+<ol>
+<li>首先移除 animator 中所有已有的行为。</li>
+<li>创建一个 <code>UIAttachmentBehavior</code>，将用户 tap image view 上的点连接到一个锚点 (anchor point) 上 (实际上这恰好是完全相同的点)。随后，对锚点的改变，会引发 image view 的移动。</li>
+</ol>
+<p>将锚点连接到一个 view 上，就像安装了一个无形的拉杆：将锚点连接到 view 中固定的位置上。</p>
+<ol>
+<li>更新红色正方形，表示出锚点，而蓝色正方形则表示连接到 image view 内部的点 (现在他们都是一样的)。</li>
+<li>将这个行为添加到 animator 中，使其具有效果。</li>
+</ol>
+<p>接下来需要告诉锚点跟住你的手指。为此，将下面的代码添加到 <code>handleAttachmentGesture:</code>，位于 <code>fefault</code> (与手势变化一起改变)：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[<span class="keyword">self</span>.attachmentBehavior setAnchorPoint:[gesture locationInView:<span class="keyword">self</span>.view]];</div><div class="line"><span class="keyword">self</span>.redSquare.center = <span class="keyword">self</span>.attachmentBehavior.anchorPoint;</div></pre></td></tr></table></figure>
+<p>上面的代码将锚点和红色正方形设置位手指当前的位置。当手指移动时，手势识别会调用这个方法，以更新相应的锚点信息。另外，animator 也会自动的按照这个锚点对 view 进行更新。</p>
+<p>编译并运行程序，现在可以拖拽 view 了：</p>
+<p>当完成拖拽，要是能降 view 还原到之前的位置就更好了。为此，将下面的方法添加到文件中：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)resetDemo</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">self</span>.animator removeAllBehaviors];</div><div class="line"> </div><div class="line">    [<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.45</span> animations:^&#123;</div><div class="line">        <span class="keyword">self</span>.image.bounds = <span class="keyword">self</span>.originalBounds;</div><div class="line">        <span class="keyword">self</span>.image.center = <span class="keyword">self</span>.originalCenter;</div><div class="line">        <span class="keyword">self</span>.image.transform = <span class="built_in">CGAffineTransformIdentity</span>;</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后在方法 <code>handleAttachmentGesture:</code> 中调用这个方法，具体位于 <code>UIGestureRecognizerStateEnded</code>：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="keyword">self</span> resetDemo];</div></pre></td></tr></table></figure>
+<p>编译并运行程序，现在完成对图片的拖拽之后，该图片应该能够回到最开始的位置。</p>
+<p><a name="UIPushBehavior"></a></p>
+<h2 id="UIPushBehavior"><a href="#UIPushBehavior" class="headerlink" title="UIPushBehavior"></a>UIPushBehavior</h2><p>接下来，我们要完成这样的效果：当停止拖拽时，将 view 从屏幕中移除。那么当手势释放时，需要给这个 view 赋予动量，让它能继续沿着轨迹前行。为此，需要使用 <code>UIPushBehavior</code>。</p>
+<p>首先，定义两个常量，将其添加到文件头部：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="built_in">CGFloat</span> ThrowingThreshold = <span class="number">1000</span>;</div><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <span class="built_in">CGFloat</span> ThrowingVelocityPadding = <span class="number">35</span>;</div></pre></td></tr></table></figure>
+<p>为了让 view 持续移动，其中 <code>ThrowingThreshold</code> 表示 view 必须移动 (相对于立即返回到原点) 多快才行。<code>ThrowingVelocityPadding</code> 是一个神奇的常量，它将对抛掷 view 的快慢产生影响 (这需要反复试验得出结果)。</p>
+<p>最后，在 <code>handleAttachmentGesture:</code>中，用下面的代码替换 <code>UIGestureRecognizerStateEnded</code> case：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">case</span> <span class="built_in">UIGestureRecognizerStateEnded</span>: &#123;</div><div class="line">    [<span class="keyword">self</span>.animator removeBehavior:<span class="keyword">self</span>.attachmentBehavior];</div><div class="line"> </div><div class="line">    <span class="comment">//1</span></div><div class="line">    <span class="built_in">CGPoint</span> velocity = [gesture velocityInView:<span class="keyword">self</span>.view];</div><div class="line">    <span class="built_in">CGFloat</span> magnitude = sqrtf((velocity.x * velocity.x) + (velocity.y * velocity.y));</div><div class="line"> </div><div class="line">    <span class="keyword">if</span> (magnitude &gt; ThrowingThreshold) &#123;</div><div class="line">        <span class="comment">//2</span></div><div class="line">        <span class="built_in">UIPushBehavior</span> *pushBehavior = [[<span class="built_in">UIPushBehavior</span> alloc]</div><div class="line">                                        initWithItems:@[<span class="keyword">self</span>.image]</div><div class="line">                                        mode:<span class="built_in">UIPushBehaviorModeInstantaneous</span>];</div><div class="line">        pushBehavior.pushDirection = <span class="built_in">CGVectorMake</span>((velocity.x / <span class="number">10</span>) , (velocity.y / <span class="number">10</span>));</div><div class="line">        pushBehavior.magnitude = magnitude / ThrowingVelocityPadding;</div><div class="line"> </div><div class="line">        <span class="keyword">self</span>.pushBehavior = pushBehavior;</div><div class="line">        [<span class="keyword">self</span>.animator addBehavior:<span class="keyword">self</span>.pushBehavior];</div><div class="line"> </div><div class="line">        <span class="comment">//3</span></div><div class="line">        <span class="built_in">NSInteger</span> angle = arc4random_uniform(<span class="number">20</span>) - <span class="number">10</span>;</div><div class="line"> </div><div class="line">        <span class="keyword">self</span>.itemBehavior = [[<span class="built_in">UIDynamicItemBehavior</span> alloc] initWithItems:@[<span class="keyword">self</span>.image]];</div><div class="line">        <span class="keyword">self</span>.itemBehavior.friction = <span class="number">0.2</span>;</div><div class="line">        <span class="keyword">self</span>.itemBehavior.allowsRotation = <span class="literal">YES</span>;</div><div class="line">        [<span class="keyword">self</span>.itemBehavior addAngularVelocity:angle forItem:<span class="keyword">self</span>.image];</div><div class="line">        [<span class="keyword">self</span>.animator addBehavior:<span class="keyword">self</span>.itemBehavior];</div><div class="line"> </div><div class="line">        <span class="comment">//4</span></div><div class="line">        [<span class="keyword">self</span> performSelector:<span class="keyword">@selector</span>(resetDemo) withObject:<span class="literal">nil</span> afterDelay:<span class="number">0.4</span>];</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        [<span class="keyword">self</span> resetDemo];</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">break</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们来看看代码都做了些什么：</p>
+<ol>
+<li>获得手势的拖拽速度。</li>
+</ol>
+<p>利用速度和勾股定理 (Pythagorean theorem)，计算出速度的幅度 - 也就是由 x 方向上的速度和 y 方向上的速度构成的三角形斜边。</p>
+<p>要想理解背后的理论，请看 <a href="http://www.raywenderlich.com/57368/trigonometry-game-programming-sprite-kit-version-part-1" target="_blank" rel="external">Trigonometry for Game Programming tutorial。</a></p>
+<ol>
+<li>假设手势的幅度超过了最低阀值，那么就配置一个 push behavior。</li>
+</ol>
+<p>push behavior 可以是持续性的，或者瞬间的应用到某个对象中。这里，我们需要给 image 一个瞬间的 push 行为。</p>
+<p>我们希望 image 的移动方向是由 x 和 y 轴上的速度转换为一个矢量决定的。最后，将 push 行为添加到 animator 上。</p>
+<ol>
+<li>在这里给 image 添加一些旋转效果，让图片飞离屏幕。这里有复杂的数学知识<a href="https://github.com/u10int/URBMediaFocusViewController/blob/master/URBMediaFocusViewController.m#L636-L686" target="_blank" rel="external">介绍</a>。</li>
+</ol>
+<p>其中的一些效果取决于发起手势操作的手指与边缘的距离。</p>
+<p>在此处，设置不同的值，观察它们移动的效果，然后使用最好的那个值即可。</p>
+<ol>
+<li>指定时间间隔之后，以动画的形式将 imamge 还原到最初状态。</li>
+</ol>
+<p>编译并运行程序，现在你应该可以用令人愉快的方式将 view 抛出屏幕！</p>
+<p><img src="/images/2014/09/08.gif" alt=""></p>
+<p><a name="Where_To_Go_From_Here"></a></p>
+<h2 id="何去何从？"><a href="#何去何从？" class="headerlink" title="何去何从？"></a>何去何从？</h2><p>这里可以下载到本文的最<a href="http://cdn4.raywenderlich.com/wp-content/uploads/2014/07/DynamicTossFinal.zip" target="_blank" rel="external">终示例工程</a>。</p>
+<p>恭喜你，你现在已经学会如何做一些有趣的 UIKit dynamic 动画了 - 让程序的界面效果非常甜蜜。</p>
+<p>如果你想要学习更多关于 UIKit Dynamics 的知识，可以阅读 <a href="http://www.raywenderlich.com/store/ios-7-by-tutorials" target="_blank" rel="external">iOS 7 for Tutorials</a> 中两章 UIKit Dynamics 内容。</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/01/20/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Hello World - HEXO
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/08/28/2014-08-27-How-To-Make-a-Custom-Control-in-Swift/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何用 Swift 语言构建一个自定控件</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2014-09-02-uikit-dynamics-tutorial-tossing-views" data-title="UIKit Dynamics 教程：抛掷 Views" data-url="http://beyondvincent.com/2014/09/02/2014-09-02-uikit-dynamics-tutorial-tossing-views/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>

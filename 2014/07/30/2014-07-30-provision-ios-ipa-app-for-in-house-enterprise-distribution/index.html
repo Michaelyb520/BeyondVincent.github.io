@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>在企业内部分发 iOS 应用程序 | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="在企业内部分发 iOS 应用程序">
+<meta property="og:url" content="http://beyondvincent.com/2014/07/30/2014-07-30-provision-ios-ipa-app-for-in-house-enterprise-distribution/index.html">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/01.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/02.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/03.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/04.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/05.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/06.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/07.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/08.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/09.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/10.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/11.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/12.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/13.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/14.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/15.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/16.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/17.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/18.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/19.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/07/20.jpg">
+<meta property="og:updated_time" content="2014-12-31T19:05:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在企业内部分发 iOS 应用程序">
+<meta name="twitter:image" content="http://beyondvincent.com/images/2014/07/01.png">
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2014-07-30-provision-ios-ipa-app-for-in-house-enterprise-distribution" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/07/30/2014-07-30-provision-ios-ipa-app-for-in-house-enterprise-distribution/" class="article-date">
+  	<time datetime="2014-07-30T04:15:00.000Z" itemprop="datePublished">7月 30 2014</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS探索/">iOS探索</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在企业内部分发 iOS 应用程序
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/2014/07/01.png" alt=""></p>
+<a id="more"></a>
+<p>本文译自：<a href="http://johannesluderschmidt.de/provision-ios-ipa-app-for-in-house-enterprise-distribution/2993/" target="_blank" rel="external">Provision iOS IPA App for In-House Enterprise Distribution</a></p>
+<p>在企业内部分发 iOS 应用程序非常复杂。经过努力，我成功实现了在企业内部的应用程序分发。我决定用此文来记录我的最佳实践方法，以供将来参考。</p>
+<p>如果你希望通过 Safari 能在任意的 iOS 设备上安装应用程序 (不需要发布到 App Store，也不需要通过 iTunes，以及 <a href="http://www.apple.com/iphone/business/it/management.html" target="_blank" rel="external">MDM</a> - 通过 MDM 方法会用到本文<a href="#Create_the_IPA_file_and_the_manifest">创建的 IPA 和 manifest</a>，那么这篇文章可以帮助你。</p>
+<p>在开始发布企业应用之前，需要具备以下条件：</p>
+<ol>
+<li>必须是 <a href="https://developer.apple.com/programs/ios/enterprise/" target="_blank" rel="external">iOS Developer Enterprise Program</a> 中的团队成员 (至少是一个 admin)。每年需要向苹果支付费用 299$。普通的 iOS Developer Program 无法进行企业应用发布。腻味苹果希望额外确保客户能够对你和你的公司信任，所以你需要申请企业计划。公司的 CEO 需要跟苹果签一个合同。</li>
+<li>域名需要一个有效的 SSL 证书，该域名用来放置应用程序。没有有效的 SSL 证书，iOS 设备将无法从站点安装应用程序。这样的 SSL 证书也非常昂贵。</li>
+</ol>
+<hr>
+<p>下面介绍一下我开发中的相关环境配置。我使用 Xcode 5.1，和 iOS 7.1。我还是一个 iOS Developer Program team 的 admin 成员。互联网上我发现许多过时的相关设置。如果在以后，你发现了错误，或者有更好的解决方案，请回复告诉我！</p>
+<p>要想按照本文完成应用的企业分发，必须按照以下内容作为出发点：</p>
+<ol>
+<li>在 Xcode 中有一个用于企业级分发的工程。</li>
+<li>在 iOS Developer Enterprise Program team 中为此工程创建一个 App ID。稍后将在 配置文件中使用到这个 ID。如果还没有准备好这些，<a href="https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action" target="_blank" rel="external">先来这里创建一个恰当的 App ID</a>。此处不再详细介绍如何创建 App ID。</li>
+</ol>
+<p>在本文中，我们将创建下面这些内容：</p>
+<ul>
+<li><a href="#Create_the_distribution_certificate">创建发布证书 (distribution certificate)</a></li>
+<li><a href="#Create_the_provisioning_profile">创建配置文件 (provisioning profile)</a></li>
+<li><a href="#Create_the_IPA_file_and_the_manifest">创建 IPA 和 manifest</a></li>
+</ul>
+<hr>
+<p><a name="Create_the_distribution_certificate"></a></p>
+<h2 id="创建发布证书-distribution-certificate"><a href="#创建发布证书-distribution-certificate" class="headerlink" title="创建发布证书 (distribution certificate)"></a>创建发布证书 (distribution certificate)</h2><p>针对企业级发布，需要一个发布证书 (发布证书与开发证书不同)对代码进行签名。这个证书仅对创建发布的应用程序有用。不能在 Xcode 的开发中使用。</p>
+<p>如何获得发布证书：在 <a href="https://developer.apple.com/devcenter/ios/index.action" target="_blank" rel="external">iOS Dev Center</a> 中，导航至 <a href="https://developer.apple.com/account/ios/certificate/certificateList.action" target="_blank" rel="external">Certificates 小节</a>。这里需要登录到企业开发中心！另外还需要一个至少是 admin 的角色成员 (点击查阅<a href="https://developer.apple.com/programs/roles/index_enterprise.php" target="_blank" rel="external">iOS 开发中心更多关于角色介绍</a>)。然后点击 <a href="https://developer.apple.com/account/ios/certificate/certificateList.action?type=distribution" target="_blank" rel="external">Production</a>，会看到如下内容 (敏感部位已经涂黑)</p>
+<p><img src="/images/2014/07/02.png" alt=""></p>
+<p>在上图中，列出了创建好的所有证书。如果已经创建了一个发布证书，可以重用。不过，重要的是创建证书时所用的证书签名请求文件。如果这个文件没有，那么在 Keychain 中的证书将不会有对应的私钥，也就不能用这个证书对代码做签名。如果你已经记不得是否创建过证书，可以先下载相关的证书，然后双击打开它，在 Keychain Access 应用程序中可以看到相关信息。如果在证书的左侧有一个小的箭头，那么说明在你们的 Mac 电脑中已经存储了此证书对应的私钥，也就可以用该证书对代码进行签名。通过单击箭头展开证书，看起来如下图所示：</p>
+<p><img src="/images/2014/07/03.png" alt=""></p>
+<p>如果没有箭头，说明还没有私钥。要么就是私钥存储在另外一台 Mac 电脑，那么可以将其传到当前 Mac 电脑中。要么就是你没有私钥，这种情况下，你是不能用这个证书来签名分发应用程序的。解决办法就是：在苹果开发网站中试试别的证书，或者创建一个新的证书：通过在 Mac 电脑中创建一个新的证书签名请求文件。</p>
+<hr>
+<p>如果还没有构建的话，通过点击右上角的 ➕ 按钮来创建发布证书，会看到如下界面 (希望截图与你看到的稍微有点不同)：</p>
+<p><img src="/images/2014/07/04.png" alt=""></p>
+<p>选中圆形按钮 <code>In-House and Ad Hoc</code>。不知道为何，当我为本文截图时，我无法点击这个按钮。可能是我已经创建了一个发布证书，所以这个按钮不可选。不管怎样，你应该可以选这个按钮的。</p>
+<hr>
+<p>在接下来的界面中，会看到这样：</p>
+<p><img src="/images/2014/07/05.png" alt=""></p>
+<p>这个界面告诉你如何创建一个 CSR 文件，该文件用于证书的创建。如果你不知道是否已经创建好了这样的一个文件，那么建议在 Spotlight 中输入 <code>certSigningRequest</code>，对电脑中的内容进行搜索。如果有这样一个文件，可以将其用来创建证书，要是没有的话，就手动创建一个。</p>
+<hr>
+<p>创建好 CSR 文件之后，点击 <code>Continue</code> 来到下一个界面：</p>
+<p><img src="/images/2014/07/06.png" alt=""></p>
+<p>选择 CSR 文件，然后点击 <code>Generate</code>。</p>
+<hr>
+<p>现在，证书已经创建好了：</p>
+<p><img src="/images/2014/07/07.png" alt=""></p>
+<p>将其下载到本地，然后双击安装到 Keychain中。</p>
+<hr>
+<p><a name="Create_the_provisioning_profile"></a></p>
+<h2 id="创建配置文件-provisioning-profile"><a href="#创建配置文件-provisioning-profile" class="headerlink" title="创建配置文件 (provisioning profile)"></a>创建配置文件 (provisioning profile)</h2><p>要创建用于发布的配置文件，定位到 <a href="https://developer.apple.com/account/ios/profile/profileList.action?type=production" target="_blank" rel="external">Provisioning Profiles 的 Distribution 小节</a>。然后点击右上角的 ➕ 按钮。现在看到如下图所示界面：</p>
+<p><img src="/images/2014/07/08.png" alt=""></p>
+<p>选中 <code>In House</code>，然后单击 <code>Continue</code>。选择为程序创建的 App ID：</p>
+<p><img src="/images/2014/07/09.png" alt=""></p>
+<p>然后单击 <code>Continue</code>。现在选择正确的发布证书：</p>
+<p><img src="/images/2014/07/10.png" alt=""></p>
+<p>单击 <code>Continue</code>。最后，命名配置文件，然后单击 <code>Generate</code>。</p>
+<hr>
+<p>下载生成的配置文件，双击安装它：</p>
+<p><img src="/images/2014/07/11.png" alt=""></p>
+<hr>
+<p><a name="Create_the_IPA_file_and_the_manifest"></a></p>
+<h2 id="创建-IPA-和-manifest"><a href="#创建-IPA-和-manifest" class="headerlink" title="创建 IPA 和 manifest"></a>创建 IPA 和 manifest</h2><p>打开 Xcode，开始创建 IPA 文件。单击左上角中的项目名称。在中间区域，选择 <code>targets</code> 中的项目名称。选择顶部的 <code>General</code>。在 <code>Team</code> 中，选择 iOS Developer Enterprise Program 团队的名称。(为了本文，我选择了私人账号中的团队，记得用企业团队替代！)：</p>
+<p><img src="/images/2014/07/12.png" alt=""></p>
+<p>在中间区域，选择 <code>Project</code> 中的工程名。单击顶部的 <code>Build Settings</code>。在 <code>Code Signing</code> 中选择发布证书：</p>
+<p><img src="/images/2014/07/13.png" alt=""></p>
+<p>回到 中间区域的 target 中。单击项目名称。单击顶部的 <code>Build Settings</code>。在 Debug, Any iOS SDK, Release 和 Any iOS SDK 中选择发布证书。在 provisioning，选择之前创建的配置文件：</p>
+<p><img src="/images/2014/07/14.png" alt=""></p>
+<hr>
+<p>记住，上面这样的配置无法从 Xcode 将 应用程序运行至设备中。这些配置仅用于发布。(你可以点击 ▶ ，Xcode 将编译整个工程，并尝试将程序运行到设备或者模拟器中。但是之后会看到一个错误信息)。现在，点击菜单中的 <code>Product</code> -&gt; <code>Archive</code>。如果 <code>Archive</code> 不可用，那么需要在 run scheme 中选择一个真实的 iOS 设备。Run scheme 的意思是：</p>
+<p><img src="/images/2014/07/15.png" alt=""></p>
+<p>选择 <code>Archive</code> 将为程序创建一个 archive。位了创建一个 archive，需要按照上面介绍的，安装一个合适的配置文件。archiving 完成之后，Xcode 将在 Organizer 中显示 archive：</p>
+<p><img src="/images/2014/07/16.png" alt=""></p>
+<hr>
+<p>点击 <code>Distribute...</code>，选择 <code>Save for Enterprise or Ad Hoc Deployment</code>：</p>
+<p><img src="/images/2014/07/17.png" alt=""></p>
+<p>接着在下拉列表中选择之前创建的配置文件：</p>
+<p><img src="/images/2014/07/18.png" alt=""></p>
+<p>接下来的界面中，勾选上 <code>Save for Enterprise Distribution</code>。将会呈现出一些文本框，此处允许你输入一些信息，这些信息将被填入程序的 manifest 文件中。这个 manifest 文件是一个 plist 文件，我们可以用文本编辑器对其编辑。所以，这里填错了没关系，稍后可以对其修改。我填入的信息如下所示：</p>
+<p><img src="/images/2014/07/19.png" alt=""></p>
+<p>上面的 URL 就是 IPA 文件在互联网中可被访问的路径。注意：虽然后面的处理过程都是基于 HTTPS 的，不过 IPA URL 必须是 HTTP。（注释：译者尝试过 IPA 的路径可以是 http 或 https，当然不排除以后苹果会严格限制）。</p>
+<hr>
+<p>现在，你应该获得了两个文件，IPA 文件和 一个 manifest 文件。将它们上传到服务器上 (一般通过 FTP)，路径就是在 manifest 文件中指定的相关路径 (本示例的路径是 <code>mydomain.com/apps</code>)。现在创建一个 html 文件，文件中包括如下 html 标记：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;itms-services://?action=download-manifest&amp;url=https://mydomain.com/apps/MyInHouseApp.plist&quot; id=&quot;text&quot;&gt;Install the In-House App&lt;/a&gt;</div></pre></td></tr></table></figure>
+<p>manifest 文件的路径必须是 <code>HTTPS</code>！将 html 文件跟 IPA 和 manifest 文件一起放置到服务器上。</p>
+<p>现在我们来了解一下 HTTPS/SSL：为了能够通过互联网安装 IPA 文件，自从 iOS 7.1 以来，苹果就强制要求，manifest 文件必须通过 HTTPS 方式加载。</p>
+<p>为了允许 IPA 文件安装成功，HTTPS 连接需要用 SSL 证书来认证，这个证书是从证书签发中心那里针对域名注册得到的。这样的证书非常的昂贵。不过你都已经为 iOS Enterprise Developer Program 支付了299$，那证书的价格就不算什么了。</p>
+<p>为了安装 IPA，我们在 iOS 设备的 Safari 中输入 html 文件的 URL 地址(以 HTTPS 开头)，然后点击链接，并确认安装提示。</p>
+<p>如果安装过程中又错误提示框，大多数时候这个错误提示框无法定位具体原因。为了找到错误原因，将 iOS 设备连接到电脑，在 Xcode 中的 Organizer 里面选择对应设备中的 Console，就可以看到并分析相关的日志信息：</p>
+<p><img src="/images/2014/07/20.jpg" alt=""></p>
+<p>在上面示例中，我试图使用自签名的证书，通过 HTTPS 来安装程序。但是点击连接之后，我遇到了一个错误提示信息：<code>Cannot connect to johannesluderschmidt.de</code>。通过 Xcode 中的 Console，我看到这些信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NSErrorFailingURLStringKey=https://johannesluderschmidt.de/app/appName.plist, NSUnderlyingError=0x165c7f30 “The certificate for this server is invalid. You might be connecting to a server that is pretending to be “johannesluderschmidt.de” which could put your confidential information at risk.”</div></pre></td></tr></table></figure>
+<p>看吧，Safari 给的提示信息很少，但是在 console 中提供的信息就非常有用。</p>
+<p>就是这样啦。非常容易，不是吗？我大约用了一天时间，并查阅了 stackoverflow 中的许多文章就搞定在企业内部分发 iOS 应用程序的技术原理了。</p>
+<p>希望你也能很快掌握！</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/08/28/2014-08-27-How-To-Make-a-Custom-Control-in-Swift/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          如何用 Swift 语言构建一个自定控件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/03/26/2014-03-26-cookbook-moving-table-view-cells-with-a-long-press-gesture/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利用长按手势移动 Table View Cells</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2014-07-30-provision-ios-ipa-app-for-in-house-enterprise-distribution" data-title="在企业内部分发 iOS 应用程序" data-url="http://beyondvincent.com/2014/07/30/2014-07-30-provision-ios-ipa-app-for-in-house-enterprise-distribution/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>

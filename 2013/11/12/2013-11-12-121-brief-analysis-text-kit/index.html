@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iOS 7 教程：浅析Text Kit | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="iOS 7 教程：浅析Text Kit">
+<meta property="og:url" content="http://beyondvincent.com/2013/11/12/2013-11-12-121-brief-analysis-text-kit/index.html">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/22.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/23.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/24.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/25.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/26.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/27.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/28.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/29.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/30.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/31.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/32.jpg">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/33.gif">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/34.jpg">
+<meta property="og:updated_time" content="2014-12-31T19:05:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS 7 教程：浅析Text Kit">
+<meta name="twitter:image" content="http://beyondvincent.com/images/2013/11/22.png">
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2013-11-12-121-brief-analysis-text-kit" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/11/12/2013-11-12-121-brief-analysis-text-kit/" class="article-date">
+  	<time datetime="2013-11-12T04:55:00.000Z" itemprop="datePublished">11月 12 2013</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS7/">iOS7</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS 7 教程：浅析Text Kit
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/2013/11/22.png" alt=""></p>
+<a id="more"></a>
+<p>注：本文由破船原创，并投稿至<a href="http://tiny4cocoa.com/thread/show/57/" target="_blank" rel="external">Tiny4Cocoa iOS开发杂志</a>。</p>
+<p>Text Kit是iOS 7中引入的一个新功能，非常值得开发者使用，下面先看看本文的目录结构：</p>
+<ol>
+<li><a href="#1">什么是Text Kit</a></li>
+<li><a href="#2">Text Kit架构</a></li>
+<li><a href="#3">Text Kit特点</a></li>
+<li><a href="#4">Text Kit功能概述</a></li>
+<li><a href="#5">Text Kit中重要的一些对象</a></li>
+<li><a href="#6">Text Kit示例</a></li>
+<li><a href="#7">小结</a></li>
+<li><a href="#8">推荐Text Kit学习资源</a></li>
+</ol>
+<p>###<a id="1"></a>什么是Text Kit</p>
+<p>在iOS7中，苹果引入了<code>Text Kit</code>——Text Kit是一个快速而又现代化的文字排版和渲染引擎。Text Kit在UIKit framework中的定义了一些类和相关协议，它最主要的作用就是为程序提供文字排版和渲染的功能。在程序中，通过Text Kit可以对文字进行存储(store)、布局(lay out)，以及用最精细的排版方式(例如文字间距、换行和对齐等)来显示文本内容。<br>苹果引入Text Kit的目的并非要取代已有的Core Text，Core Text的主要作用也是用于文字的排版和渲染中，它是一种先进而又处于底层技术，如果我们需要将文本内容直接渲染到图形上下文(Graphics context)时，从性能和易用性来考虑，最佳方案就是使用Core Text。而如果我们直接利用苹果提供的一些控件(例如UITextView、UILabel和UITextField等)对文字进行排版，无疑就是借助于UIkit framework中Text Kit提供的API。</p>
+<p>###<a id="2"></a>Text Kit架构</p>
+<p>下面，我们通过图1(此图来自WWDC2013 Session 210)来了解一下Text Kit的架构。图1是基于iOS 7绘制的，从图中，我们可以看到Text Kit是基于Core Text构建的，它通过Core Text与Core Graphics进行交互。而UI控件(UILabel、UITextField和UITextView)则构建于Text Kit之上，可见这些文本控件可以利用Text Kit提供的API来对文字进行排版和渲染处理。<br>从图中我们也可以看到SDK提供的UIWebView是基于WebKit的，它不能使用Text Kit提供的功能。</p>
+<p><img src="/images/2013/11/23.jpg" alt="图1 Text Kit在iOS 7 SDK中的位置"></p>
+<p>我们再来看看图1中的相关组件在iOS6里面是如何对应的，如图2所示，可以看出在iOS 6中是没有Text Kit，并且UILabel、UIText和UITextView是基于String Drawing和WebKit构建的。其中String Drawing是与Core Graphics直接通讯。</p>
+<p><img src="/images/2013/11/24.jpg" alt="图2 在iOS 6中并没有Text Kit"></p>
+<p>###<a id="3"></a>Text Kit特点</p>
+<p>从上面的介绍中，我们可以了解到Text Kit在UIKit中的作用非常重要。Text Kit在实际开发中具有如下特点：</p>
+<ul>
+<li>在UI控件中Text Kit完全掌控着文字的排版和渲染</li>
+<li>UITextView、UITextField和UILabel是构建于Text Kit之上的</li>
+<li>能够与动画、UICollectionView和UITableView做到无缝集成</li>
+<li>Text Kit具有这样一些能力：Subclassing、Delegation和Notifcation。</li>
+</ul>
+<p>###<a id="4"></a>Text Kit功能概述</p>
+<p>下面我们看看通过Text Kit，都能实现那些功能(这里列出了是一些常用和重要功能)：</p>
+<ul>
+<li>对文字进行分页或多列排版</li>
+<li>支持文字的换行、折叠和着色等处理</li>
+<li>可以调整字与字之间的距离、行间距、文字大小、指定特定的字体</li>
+<li>支持富文本编辑，可以自定义文字截断</li>
+<li>支持凸版印刷效果(letterpress)</li>
+<li>支持数据类型的检测(例如链接、附件等)</li>
+</ul>
+<p>如图3，是利用Text Kit对文字做的分页排版</p>
+<p><img src="/images/2013/11/25.jpg" alt="图3 利用Text Kit做的分页排版效果"></p>
+<p>再看图4，是利用Text Kit做的换行处理，其中对某个路径范围做了排除。</p>
+<p><img src="/images/2013/11/26.jpg" alt="图4 利用Text Kit做的换行处理效果"></p>
+<p>再来看看利用Text Kit做的凸版印刷效果，如图5所示</p>
+<p><img src="/images/2013/11/27.jpg" alt="图5 利用Text Kit做的凸版印刷效果"></p>
+<p>###<a id="5"></a>Text Kit中重要的一些对象</p>
+<p>下面我们来看看Text Kit中重要的几个对象。</p>
+<p><img src="/images/2013/11/28.jpg" alt="图6 Text Kit中重要的几个对象"></p>
+<p>如图6所示，Text Kit中主要有4个重要的对象。</p>
+<ul>
+<li>Text View是用来显示文本内容的控件，主要包括UILabel、UITextView和UITextField。</li>
+<li>Text containers对应着NSTextContainer类。NSTextContainer定义了文本可以排版的区域。一般来说，都是矩形区域，当然，也可以根据需求，通过子类化NSTextContainer来创建别的一些形状，例如圆形、不规则的形状等。NSTextContainer不仅可以创建文本可以填充的区域，它还维护着一个数组——该数组定义了一个区域，排版的时候文字不会填充该区域，因此，我们可以在排版文字的时候，填充非文本元素(例如图片，如图4所示)。</li>
+<li>Layout manager对应着NSLayoutManager类。该类负责对文字进行编辑排版处理——通过将存储在NSTextStorage中的数据转换为可以在视图控件中显示的文本内容，并把统一的字符编码映射到对应的字形(glyphs)上，然后将字形排版到NSTextContainer定义的区域中。</li>
+<li>Text storage对应着NSTextStorage类。该类定义了Text Kit扩展文本处理系统中的基本存储机制。NSTextStorage继承自NSmutableAttributedString，主要用来存储文本的字符和相关属性。另外，当NSTextStorage中的字符或属性发生了改变，会通知NSLayoutManager，进而做到文本内容的显示更新。</li>
+</ul>
+<p>通常情况下，NSTextStorage、NSLayoutManager和NSTextContainer是一一对应的。如图7所示关系：</p>
+<p><img src="/images/2013/11/29.jpg" alt="图7 普通排版"></p>
+<p>当然，如果需要将文字显示为多列，或多页，可以按照如图8所示关系——使用多个NSTextContainer。</p>
+<p><img src="/images/2013/11/30.jpg" alt="图8 多页或者多列排版"></p>
+<p>如果针对不同的排版方式，则可以使用多个NSLayoutManager，如图9所示</p>
+<p><img src="/images/2013/11/31.jpg" alt="图9 不同的排版方式"></p>
+<p>如图10所示，通过形象的方式，对UITextView的组成做了分解。通常，我们在设备上只能看到最右边的文本显示界面，而内部的NSTextStorage、NSLayoutManager和NSTextContainer是看不出来的。通常由NSLayoutManager从NSTextStorage中读取出文本数据，然后根据一定的排版方式，将文本排版到NSTextContainer中，再由NSTextContainer结合UITextView将最终效果显示出来。</p>
+<p><img src="/images/2013/11/32.jpg" alt="图10 UITextView的分解"></p>
+<p>###<a id="6"></a>Text Kit示例</p>
+<p>前面对Text Kit做了一些介绍，下面我们配合一个例子(图文排版)，来进一步加深对Text Kit的认识。具体实现步骤如下</p>
+<ol>
+<li>打开Xcode 5，新建一个Single View Application模板的程序，将工程命名为ExclusionPath。</li>
+<li>打开Main.storyboard文件，然后再默认View Controller的View里面分别添加一个UITextView和UIImageView。并将这两个控件连接到ViewController.h中(名称分别为textView何imageView)。然后给textView设置一些字符串，imageView设置一个图片。</li>
+<li>打开ViewController.m文件，找到viewDidLoad方法，用如下代码替换该方法：</li>
+</ol>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)viewDidLoad</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">super</span> viewDidLoad];</div><div class="line">    </div><div class="line">    <span class="comment">//创建一个平移手势对象，该对象可以调用imagePanned：方法</span></div><div class="line">    <span class="built_in">UIPanGestureRecognizer</span> *panGes = [[<span class="built_in">UIPanGestureRecognizer</span> alloc] initWithTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(imagePanned:)];</div><div class="line">    [<span class="keyword">self</span>.imageView addGestureRecognizer:panGes];</div><div class="line">    </div><div class="line">    <span class="keyword">self</span>.textView.textContainer.exclusionPaths = @[[<span class="keyword">self</span> translatedBezierPath]];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在上面的代码中，给imageView添加了一个平移手势。另外通过调用translatedBezierPath方法，给textView的textContainer设置exclusionPaths属性值。表示需要排除的区域（也就是图片在排版中显示的位置）。</p>
+<ol>
+<li>下面来看一下translatedBezierPath方法的实现，如下代码所示</li>
+</ol>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">UIBezierPath</span> *)translatedBezierPath</div><div class="line">&#123;</div><div class="line">    <span class="built_in">CGRect</span> butterflyImageRect = [<span class="keyword">self</span>.textView convertRect:<span class="keyword">self</span>.imageView.frame fromView:<span class="keyword">self</span>.view];</div><div class="line">    <span class="built_in">UIBezierPath</span> *newButterflyPath = [<span class="built_in">UIBezierPath</span> bezierPathWithRect:butterflyImageRect];</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> newButterflyPath;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在上面的代码中，利用imageView的frame属性创建了一个UIBezierPath，然后将该值返回。</p>
+<ol>
+<li>还记得第3步中创建的平移手势吗。里面有一个action需要实现imagePanned:，下面来看看这个方法的实现：</li>
+</ol>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)imagePanned:(<span class="keyword">id</span>)sender</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> ([sender isKindOfClass:[<span class="built_in">UIPanGestureRecognizer</span> <span class="keyword">class</span>]]) &#123;</div><div class="line">        <span class="built_in">UIPanGestureRecognizer</span> *localSender = sender;</div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (localSender.state == <span class="built_in">UIGestureRecognizerStateBegan</span>) &#123;</div><div class="line">            <span class="keyword">self</span>.gestureStartingPoint = [localSender translationInView:<span class="keyword">self</span>.textView];</div><div class="line">            <span class="keyword">self</span>.gestureStartingCenter = <span class="keyword">self</span>.imageView.center;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (localSender.state == <span class="built_in">UIGestureRecognizerStateChanged</span>) &#123;</div><div class="line">            <span class="built_in">CGPoint</span> currentPoint = [localSender translationInView:<span class="keyword">self</span>.textView];</div><div class="line">            </div><div class="line">            <span class="built_in">CGFloat</span> distanceX = currentPoint.x - <span class="keyword">self</span>.gestureStartingPoint.x;</div><div class="line">            <span class="built_in">CGFloat</span> distanceY = currentPoint.y - <span class="keyword">self</span>.gestureStartingPoint.y;</div><div class="line">            </div><div class="line">            <span class="built_in">CGPoint</span> newCenter = <span class="keyword">self</span>.gestureStartingCenter;</div><div class="line">            </div><div class="line">            newCenter.x += distanceX;</div><div class="line">            newCenter.y += distanceY;</div><div class="line">            </div><div class="line">            <span class="keyword">self</span>.imageView.center = newCenter;</div><div class="line">            </div><div class="line">            <span class="keyword">self</span>.textView.textContainer.exclusionPaths = @[[<span class="keyword">self</span> translatedBezierPath]];</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (localSender.state == <span class="built_in">UIGestureRecognizerStateEnded</span>) &#123;</div><div class="line">            <span class="keyword">self</span>.gestureStartingPoint = <span class="built_in">CGPointZero</span>;</div><div class="line">            <span class="keyword">self</span>.gestureStartingCenter = <span class="built_in">CGPointZero</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在上面的代码中首先根据平移的距离来设置imageView的位置，然后利用translatedBezierPath方法重新计算了一下排除区域。</p>
+<ol>
+<li>至此代码编写完毕，下面来运行程序，看看实际效果。如图11所示：</li>
+</ol>
+<p><img src="/images/2013/11/33.gif" alt="图11 运行效果"></p>
+<ol>
+<li>点击下图，下载代码</li>
+</ol>
+<p><a href="https://github.com/BeyondVincent/iOS7-new-feature/tree/master/code/TextKit/ExclusionPath" target="_blank" rel="external"><img src="/images/2013/11/34.jpg" alt=""></a></p>
+<p>###<a id="7"></a>小结</p>
+<p>实际上，上面的示例，只是揭秘了Text Kit功能的冰山一角。从iOS7及以后的版本中，Text Kit在UIKit framework里面占据重要的地位，Text Kit在文字处理方面，具有非常强大的功能，并且开发者可以对Text Kit进行定制和扩展。据悉，苹果利用了2年的时间来开发Text Kit，相信这对许多开发者来说都是福音。</p>
+<p>###<a id="8"></a>推荐Text Kit学习资源</p>
+<p>更多关于Text Kit的学习资料，请参考下面的内容：</p>
+<p>wwdc视频:</p>
+<ul>
+<li>Introducing Text Kit</li>
+<li>Advanced Text Layouts and Effects with Text Kit</li>
+<li>Using Fonts with Text Kit</li>
+</ul>
+<p>苹果官方参考文档：</p>
+<ul>
+<li>Text Programming Guide for iOS.pdf</li>
+<li>NSLayoutManager Class Reference for iOS.pdf</li>
+<li>NSLayoutManagerDelegate Protocol Reference for iOS.pdf</li>
+<li>NSTextContainer Class Reference for iOS.pdf</li>
+<li>NSTextStorage Class Reference for iOS.pdf</li>
+<li>NSTextStorageDelegate Protocol Reference for iOS.pdf</li>
+</ul>
+<p>苹果官方示例：</p>
+<ul>
+<li>IntroToTextKit</li>
+</ul>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/11/19/2013-11-19-122-working-with-ios-6-and-7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          iOS 7 教程：让程序同时支持iOS 6和iOS 7
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/11/03/2013-11-03-120-customize-navigation-status-bar-ios-7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS 7 教程：定制iOS 7中的导航栏和状态栏</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2013-11-12-121-brief-analysis-text-kit" data-title="iOS 7 教程：浅析Text Kit" data-url="http://beyondvincent.com/2013/11/12/2013-11-12-121-brief-analysis-text-kit/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>

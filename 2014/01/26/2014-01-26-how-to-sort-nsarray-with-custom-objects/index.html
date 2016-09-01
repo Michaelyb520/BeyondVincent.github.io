@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>对NSArray中自定义的对象进行排序 | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="对NSArray中自定义的对象进行排序">
+<meta property="og:url" content="http://beyondvincent.com/2014/01/26/2014-01-26-how-to-sort-nsarray-with-custom-objects/index.html">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/01/20.png">
+<meta property="og:updated_time" content="2014-12-31T19:05:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="对NSArray中自定义的对象进行排序">
+<meta name="twitter:image" content="http://beyondvincent.com/images/2014/01/20.png">
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2014-01-26-how-to-sort-nsarray-with-custom-objects" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/01/26/2014-01-26-how-to-sort-nsarray-with-custom-objects/" class="article-date">
+  	<time datetime="2014-01-26T08:00:00.000Z" itemprop="datePublished">1月 26 2014</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS探索/">iOS探索</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      对NSArray中自定义的对象进行排序
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/2014/01/20.png" alt=""></p>
+<a id="more"></a>
+<p>本文译自<a href="http://ios-blog.co.uk/tutorials/how-to-sort-nsarray-with-custom-objects/" target="_blank" rel="external">How to sort NSArray with custom objects</a>。</p>
+<p>我们开发的每个程序都会使用到一些数据，而这些数据一般被封装在一个自定义的类中。例如一个音乐程序可能会有一个Song类，聊天程序则又一个Friend类，点菜程序会有一个Recipe类等。有时候我们希望在程序中显示的列表数据是按照一定顺序进行排列的，本文我们就来看看在iOS中有哪些方法可以对NSArray中的对象进行排序。下面是目录：</p>
+<ul>
+<li>小引</li>
+<li>使用NSComparator进行排序</li>
+<li>使用NSDescriptor进行排序</li>
+<li>使用selector进行排序</li>
+</ul>
+<p>###小引###</p>
+<p>我们将要排序的对象是一个Persion类，如下定义：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Person</span> : <span class="title">NSObject</span></span></div><div class="line"> </div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *name;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *surname;</div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) <span class="built_in">NSDate</span> *dateOfBirth;</div><div class="line"> </div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<p>而数组中包含如下内容：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Smith John <span class="number">03</span>/<span class="number">01</span>/<span class="number">1984</span></div><div class="line">Andersen Jane <span class="number">16</span>/<span class="number">03</span>/<span class="number">1979</span></div><div class="line">Clark Anne <span class="number">13</span>/<span class="number">09</span>/<span class="number">1995</span></div><div class="line">Smith David <span class="number">19</span>/<span class="number">07</span>/<span class="number">1981</span></div><div class="line">Johnson Rose <span class="number">22</span>/<span class="number">02</span>/<span class="number">1989</span></div></pre></td></tr></table></figure>
+<p>###使用NSComparator进行排序###</p>
+<p>comparator实际上是用一个block对象作比较操作。它的定义如下所示：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NSComparisonResult</span> (^<span class="built_in">NSComparator</span>)(<span class="keyword">id</span> obj1, <span class="keyword">id</span> obj2);</div></pre></td></tr></table></figure>
+<p>上面的参数(obj1、obj2)就是我们将要做比较的对象。block返回的结果为NSComparisonResult类型来表示两个对象的顺序。</p>
+<p>要对整个数组做排序，则需要使用NSArray的<code>sortArrayUsingComparator:</code>方法，如下代码所示：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSArray</span> *sortedArray = [<span class="keyword">self</span>.persons sortedArrayUsingComparator:^<span class="built_in">NSComparisonResult</span>(Person *p1, Person *p2)&#123;</div><div class="line"> </div><div class="line">    <span class="keyword">return</span> [p1.surname compare:p2.surname];</div><div class="line"> </div><div class="line">&#125;];</div></pre></td></tr></table></figure>
+<p>最终排序的结果如下所示：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Andersen Jane</div><div class="line">Clark Anne</div><div class="line">Johnson Rose</div><div class="line">Smith John</div><div class="line">Smith David</div></pre></td></tr></table></figure>
+<p>###使用NSDescriptor进行排序###</p>
+<p>Sort descriptor不仅可以用来对数组进行排序，还能指定element在table view中的排序，以及Core Data中对fetch request返回的数据做排序处理。通过sort descriptor可以很方便的对数组进行多个key的排序。下面来看看如何对我们的数组做surname排序，然后在进行name排序：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSSortDescriptor</span> *firstDescriptor = [[<span class="built_in">NSSortDescriptor</span> alloc] initWithKey:<span class="string">@"surname"</span> ascending:<span class="literal">YES</span>];</div><div class="line"><span class="built_in">NSSortDescriptor</span> *secondDescriptor = [[<span class="built_in">NSSortDescriptor</span> alloc] initWithKey:<span class="string">@"name"</span> ascending:<span class="literal">YES</span>];</div><div class="line"> </div><div class="line"><span class="built_in">NSArray</span> *sortDescriptors = [<span class="built_in">NSArray</span> arrayWithObjects:firstDescriptor, secondDescriptor, <span class="literal">nil</span>];</div><div class="line"> </div><div class="line"><span class="built_in">NSArray</span> *sortedArray = [<span class="keyword">self</span>.persons sortedArrayUsingDescriptors:sortDescriptors];</div></pre></td></tr></table></figure>
+<p>上面代码的排序结果如下所示：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Andersen Jane</div><div class="line">Clark Anne</div><div class="line">Johnson Rose</div><div class="line">Smith David</div><div class="line">Smith John</div></pre></td></tr></table></figure>
+<p>###使用selector进行排序###</p>
+<p>当面，我们也可以定义自己的方法进行两个对象做比较，并将该方法用于数组排序。comparator消息会被发送到数值中的每个对象中，并携带数组中另外的一个对象当做参数。自定义的的方法的返回结果是这样的：如果本身对象小于参数中的对象，就返回<code>NSOrederedAscending</code>，相反，则返回<code>NSOrderedDescending</code>，如果相等，那么返回<code>NSOrderedSame</code>。如下代码所示：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">NSComparisonResult</span>)compare:(Person *)otherPerson &#123;</div><div class="line"> </div><div class="line">    <span class="keyword">return</span> [<span class="keyword">self</span>.dateOfBirth compare:otherPerson.dateOfBirth];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这个方法定义在Person类中，用来对person的生日进行排序。</p>
+<p>上面所介绍的这些方法都是为了完成相同的事情：对数组做排序处理，你可能在想改选择使用哪个呢？当需要通过多个key进行排序，那么最简单的方法就是使用sort descriptor。如果比较方法很复杂的话，建议在使用外面自己的selector。Block是再iOS 4之后引入的一个强大功能，用block作比较，可以不必使用任何的变量就能完成一个简单的比较方法，当然，你也可以定义一个复杂的block，来替换selector。</p>
+<p>最后，其实这里并没有标准答案，你可以跟着自己的感觉走:]</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/01/29/2014-01-29-ios-7-blur-effects-gpuimage/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          iOS 7中实现模糊效果
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/01/23/2014-01-23-guided-tour-through-objective-c-literals/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Objective-C中的Literals</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2014-01-26-how-to-sort-nsarray-with-custom-objects" data-title="对NSArray中自定义的对象进行排序" data-url="http://beyondvincent.com/2014/01/26/2014-01-26-how-to-sort-nsarray-with-custom-objects/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>

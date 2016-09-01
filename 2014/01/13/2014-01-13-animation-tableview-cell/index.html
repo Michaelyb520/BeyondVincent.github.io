@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>给tableview cell添加动画 | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="给tableview cell添加动画">
+<meta property="og:url" content="http://beyondvincent.com/2014/01/13/2014-01-13-animation-tableview-cell/index.html">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/01/5.png">
+<meta property="og:updated_time" content="2014-12-31T19:05:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="给tableview cell添加动画">
+<meta name="twitter:image" content="http://beyondvincent.com/images/2014/01/5.png">
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2014-01-13-animation-tableview-cell" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/01/13/2014-01-13-animation-tableview-cell/" class="article-date">
+  	<time datetime="2014-01-13T09:30:00.000Z" itemprop="datePublished">1月 13 2014</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS探索/">iOS探索</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      给tableview cell添加动画
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/2014/01/5.png" alt=""></p>
+<a id="more"></a>
+<p>###小引###</p>
+<p>本文介绍如何利用给tableview cell添加动画。其实只需要很少的代码量就可以。本文参考<a href="http://www.thinkandbuild.it/animating-uitableview-cells/" target="_blank" rel="external">Animating UITableView cells</a></p>
+<p>下面先来看看最终的效果：</p>
+<iframe height="498" width="510" src="http://player.youku.com/embed/XNjYxMTgxOTQw" frameborder="0" allowfullscreen></iframe>
+
+<p>从上面的视频中，可以看出，当cell显示出来的时候，是在Y和Z轴上进行3D旋转。</p>
+<p>下面来看看是如何实现的：</p>
+<p>首先假设你已经能够熟练使用UITableView了。那么我们只需要实现UITableViewDelegate中的tableView:WillDisplayCell:ForRowAtIndexPath:即可。当cell显示之前，会先调用该方法，因此给cell添加动画，在这个方法里面即可。</p>
+<p>如下代码所示：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)tableView:(<span class="built_in">UITableView</span> *)tableView willDisplayCell:(<span class="built_in">UITableViewCell</span> *)cell forRowAtIndexPath:(<span class="built_in">NSIndexPath</span> *)indexPath&#123;</div><div class="line">    <span class="comment">// 1. 配置CATransform3D的内容</span></div><div class="line">    <span class="built_in">CATransform3D</span> transform;</div><div class="line">    transform = <span class="built_in">CATransform3DMakeRotation</span>( (<span class="number">90.0</span>*M_PI)/<span class="number">180</span>, <span class="number">0.0</span>, <span class="number">0.7</span>, <span class="number">0.4</span>);</div><div class="line">    transform.m34 = <span class="number">1.0</span>/ <span class="number">-600</span>;</div><div class="line">    </div><div class="line">    <span class="comment">// 2. 定义cell的初始状态</span></div><div class="line">    cell.layer.shadowColor = [[<span class="built_in">UIColor</span> blackColor]<span class="built_in">CGColor</span>];</div><div class="line">    cell.layer.shadowOffset = <span class="built_in">CGSizeMake</span>(<span class="number">10</span>, <span class="number">10</span>);</div><div class="line">    cell.alpha = <span class="number">0</span>;</div><div class="line">    </div><div class="line">    cell.layer.transform = transform;</div><div class="line">    cell.layer.anchorPoint = <span class="built_in">CGPointMake</span>(<span class="number">0</span>, <span class="number">0.5</span>);</div><div class="line">    </div><div class="line">    <span class="comment">// 3. 定义cell的最终状态，并提交动画</span></div><div class="line">    [<span class="built_in">UIView</span> beginAnimations:<span class="string">@"transform"</span> context:<span class="literal">NULL</span>];</div><div class="line">    [<span class="built_in">UIView</span> setAnimationDuration:<span class="number">0.5</span>];</div><div class="line">    cell.layer.transform = <span class="built_in">CATransform3DIdentity</span>;</div><div class="line">    cell.alpha = <span class="number">1</span>;</div><div class="line">    cell.layer.shadowOffset = <span class="built_in">CGSizeMake</span>(<span class="number">0</span>, <span class="number">0</span>);</div><div class="line">    cell.frame = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);</div><div class="line">    [<span class="built_in">UIView</span> commitAnimations];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>第一步：使用CATransform3D在Y和Z轴上做旋转设置。</p>
+<p>第二步：定义cell的初始状态，添加了一些阴影，并将第一步中的transform设置给cell中layer的transform matrix。然后将anchor设置为0.0, 0.5，也就是说让cell围绕着左边进行旋转。</p>
+<p>第三步：通过动画，将cell设置为原始状态。此处利用了UIView的beginAnimations:context方法来更新cell中layer的值。当然还有别的方法来执行动画，不过这种方法比较简单，我们可以设置持续时间。代码里面将transform设置为CATransform3DIdentity。</p>
+<p>这样通过第二步和第三步的状态就能够引导动画，以此完成最终效果。</p>
+<p>完整代码工程下载地址：<br><a href="https://github.com/BeyondVincent/BVTableViewAnimation" target="_blank" rel="external">BVTableViewAnimation</a></p>
+<p>下面是网上看到的两个内容，可以参考：</p>
+<p><a href="http://www.raywenderlich.com/49311/advanced-table-view-animations-tutorial-drop-in-cards" target="_blank" rel="external">From RW：Table View Animations Tutorial: Drop-In Cards</a><a href="http://weibo.com/522056706" target="_blank" rel="external"><code>@bluesea哈哈哈</code></a>推荐本链接</p>
+<p><a href="http://maniacdev.com/2013/05/library-allowing-you-to-create-table-views-with-wacky-highly-detailed-ripple-cell-animations" target="_blank" rel="external">Library Allowing You To Create Table Views With Wacky Highly Detailed Ripple Cell Animations
+</a></p>
+<p><a href="http://maniacdev.com/2012/05/drop-in-open-source-library-for-creating-wacky-animated-uitableviews" target="_blank" rel="external">Drop-In Open Source Library For Creating Wacky Animated UITableViews</a></p>
+<p>希望上面介绍对你有帮助，如果有问题，可以在下面的回复我。</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/01/15/2013-12-17-127-my-book-windows-8-developer/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          迟到的Windows 8
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/01/11/2014-01-11-129-my-iOS-growth-path-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的iOS成长之路-3-iOS开发个人提升</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2014-01-13-animation-tableview-cell" data-title="给tableview cell添加动画" data-url="http://beyondvincent.com/2014/01/13/2014-01-13-animation-tableview-cell/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>

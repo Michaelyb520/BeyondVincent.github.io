@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Core Bluetooth介绍：构建一个心率监测器 | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Core Bluetooth介绍：构建一个心率监测器">
+<meta property="og:url" content="http://beyondvincent.com/2014/02/20/2014-02-20-introduction-core-bluetooth-building-heart-rate-monitor/">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:description">
+<meta property="og:image" content="/images/2014/02/1.png">
+<meta property="og:image" content="/images/2014/02/3.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Core Bluetooth介绍：构建一个心率监测器">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2014-02-20-introduction-core-bluetooth-building-heart-rate-monitor" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/02/20/2014-02-20-introduction-core-bluetooth-building-heart-rate-monitor/" class="article-date">
+  	<time datetime="2014-02-20T12:20:00.000Z" itemprop="datePublished">2月 20 2014</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS探索/">iOS探索</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Core Bluetooth介绍：构建一个心率监测器
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/2014/02/1.png" alt=""></p>
+<a id="more"></a>
+
+<p>本文译自：<a href="http://www.raywenderlich.com/52080/introduction-core-bluetooth-building-heart-rate-monitor" target="_blank" rel="external">Introduction to Core Bluetooth: Building a Heart Rate Monitor</a></p>
+<ul>
+<li>蓝牙中的中心和外设</li>
+<li>中心如何与外设通讯</li>
+<li>外设数据的结构</li>
+<li>CBPeripheral CBService 和 CBCharacteristic</li>
+<li>开始</li>
+<li>相关Delegate</li>
+<li>用户界面的构建</li>
+<li>利用Bluetooth框架</li>
+<li>实现Delegate方法<ul>
+<li>添加centralManagerDidUpdateState:central</li>
+<li>添加didDiscoverPeripheral:peripheral:</li>
+<li>添加centralManager:central:peripheral:</li>
+<li>添加peripheral:didDiscoverServices:</li>
+<li>添加peripheral:didDiscoverCharacteristicsForService:</li>
+<li>添加peripheral:didUpdateValueForCharacteristic:</li>
+<li>添加getHeartRateBPM:(CBCharacteristic <em>)characteristic error:(NSError </em>)error</li>
+<li>添加getManufacturerName:(CBCharacteristic *)characteristic</li>
+<li>添加getBodyLocation:(CBCharacteristic *)characteristic</li>
+</ul>
+</li>
+<li>让心跳再快一点</li>
+<li>何去何从？</li>
+</ul>
+<p>在iOS和Mac程序开发中，通过Core Bluetooth可以与低功耗的蓝牙设备(BLE)通信。BLE包括心率监测器、数字温度计等。</p>
+<p>Core framework 根据<a href="https://www.bluetooth.org/en-us/specification/adopted-specifications" target="_blank" rel="external">蓝牙4.0的规范</a>做了封装，并定义了一套易于使用的protocol——用于与BLE设备通讯。</p>
+<p>通过本文，可以学习关于Core Bluetooth框架的关键内容，以及如何利用框架搜索和连接至BLE设备，并获取到相关数据。本文我将构建一个心率监测程序，让其与蓝牙心率监测器通讯。</p>
+<p>本文使用的心率监测器是<a href="http://amzn.to/1h6RjLY" target="_blank" rel="external">Polar H7 Bluetooth Smart Heart Rate Sensor</a>。如果你没有这种蓝牙设备的话，也可以继续学习本文，只不过在自己使用的时候，有些代码需要微调一下。</p>
+<h1 id="蓝牙中的中心和外设">蓝牙中的中心和外设</h1>
+<p>在所有的Bluetooth Le通讯中又两个主要的角色：中心和外设：</p>
+<ul>
+<li><code>中心</code>可以理解为boss。他希望从一帮工人手里获取到一些信息，已完成特定的任务。</li>
+<li><code>外设</code>可以理解为worker。它负责收集和发布数据。</li>
+</ul>
+<p>下面这个图可以看到它们之间的关系：</p>
+<p><img src="/images/2014/02/3.png" alt=""></p>
+<p>在上面的场景中，一台iOS设备(中心)与心率监测器(外设)通讯，以获取到相关数据，并显示到程序界面上。</p>
+<h1 id="中心如何与外设通讯">中心如何与外设通讯</h1>
+<h1 id="外设数据的结构">外设数据的结构</h1>
+<h1 id="CBPeripheral_CBService_和_CBCharacteristic">CBPeripheral CBService 和 CBCharacteristic</h1>
+<h1 id="开始">开始</h1>
+<h1 id="相关Delegate">相关Delegate</h1>
+<h1 id="用户界面的构建">用户界面的构建</h1>
+<h1 id="利用Bluetooth框架">利用Bluetooth框架</h1>
+<h1 id="实现Delegate方法">实现Delegate方法</h1>
+<h2 id="添加centralManagerDidUpdateState:central">添加centralManagerDidUpdateState:central</h2>
+<h2 id="添加didDiscoverPeripheral:peripheral:">添加didDiscoverPeripheral:peripheral:</h2>
+<h2 id="添加centralManager:central:peripheral:">添加centralManager:central:peripheral:</h2>
+<h2 id="添加peripheral:didDiscoverServices:">添加peripheral:didDiscoverServices:</h2>
+<h2 id="添加peripheral:didDiscoverCharacteristicsForService:">添加peripheral:didDiscoverCharacteristicsForService:</h2>
+<h2 id="添加peripheral:didUpdateValueForCharacteristic:">添加peripheral:didUpdateValueForCharacteristic:</h2>
+<h2 id="添加getHeartRateBPM:(CBCharacteristic_)characteristic_error:(NSError_)error">添加getHeartRateBPM:(CBCharacteristic <em>)characteristic error:(NSError </em>)error</h2>
+<h2 id="添加getManufacturerName:(CBCharacteristic_*)characteristic">添加getManufacturerName:(CBCharacteristic *)characteristic</h2>
+<h2 id="添加getBodyLocation:(CBCharacteristic_*)characteristic">添加getBodyLocation:(CBCharacteristic *)characteristic</h2>
+<h1 id="让心跳再快一点">让心跳再快一点</h1>
+<h1 id="何去何从？">何去何从？</h1>
+<p>至此，你已经学习了Core Bluetooth LE相关内容，以及如何使用其来连接到低功耗蓝牙外设，并获取到相关数据。</p>
+<p>关于Core Bluetooth设备的另外一个示例是iBeacons。如果你感兴趣的话，可以看看<a href="http://www.raywenderlich.com/store/ios-7-by-tutorials" target="_blank" rel="external">iOS 7 by Tutorials</a>中的<code>What&#39;s New in Core Location</code>章节。</p>
+<p>可以来这里下载本文涉及到的<a href="http://cdn4.raywenderlich.com/wp-content/uploads/2013/12/HeartMonitor-Final.zip" target="_blank" rel="external">完整示例工程</a>。</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/03/17/2014-03-17-five-tips-for-using-self-signed-ssl-certificates-with-ios/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          在iOS上使用自签名的SSL证书
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/02/13/2014-02-13-about-mactalk/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">推荐一本好书：MacTalk 人生元编程</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2014-02-20-introduction-core-bluetooth-building-heart-rate-monitor" data-title="Core Bluetooth介绍：构建一个心率监测器" data-url="http://beyondvincent.com/2014/02/20/2014-02-20-introduction-core-bluetooth-building-heart-rate-monitor/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

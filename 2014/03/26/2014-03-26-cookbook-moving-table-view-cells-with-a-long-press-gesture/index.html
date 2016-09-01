@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>利用长按手势移动 Table View Cells | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="利用长按手势移动 Table View Cells">
+<meta property="og:url" content="http://beyondvincent.com/2014/03/26/2014-03-26-cookbook-moving-table-view-cells-with-a-long-press-gesture/index.html">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/03/24.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/03/23.gif">
+<meta property="og:updated_time" content="2014-12-31T19:05:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="利用长按手势移动 Table View Cells">
+<meta name="twitter:image" content="http://beyondvincent.com/images/2014/03/24.png">
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2014-03-26-cookbook-moving-table-view-cells-with-a-long-press-gesture" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/03/26/2014-03-26-cookbook-moving-table-view-cells-with-a-long-press-gesture/" class="article-date">
+  	<time datetime="2014-03-25T18:30:00.000Z" itemprop="datePublished">3月 26 2014</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS探索/">iOS探索</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      利用长按手势移动 Table View Cells
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/2014/03/24.png" alt=""></p>
+<a id="more"></a>
+<p><img src="/images/2014/03/23.gif" alt=""></p>
+<p>本文译自：<a href="http://www.raywenderlich.com/63089/cookbook-moving-table-view-cells-with-a-long-press-gesture" target="_blank" rel="external">Cookbook: Moving Table View Cells with a Long Press Gesture</a></p>
+<p>目录：</p>
+<ul>
+<li>你需要什么？</li>
+<li>如何做？</li>
+<li>如何将其利用至UICollectionView上？</li>
+<li>何去何从？</li>
+</ul>
+<p>本次的 cookbook-style 教程中介绍如何通过长按手势来移动 table view中的cell，这种操作方式就像苹果自家的天气 App 一样。</p>
+<p>你可以直接把本文中的到吗添加到你的工程中，或者将其添加到我为你创建好的 <a href="https://github.com/moayes/UDo/tree/UDo.Starter" target="_blank" rel="external">starter project</a> 中，也可以下载本文的<a href="https://github.com/moayes/UDo/tree/master" target="_blank" rel="external">完整示例工程</a>。</p>
+<h2 id="你需要什么？"><a href="#你需要什么？" class="headerlink" title="你需要什么？"></a>你需要什么？</h2><ul>
+<li>UILongGestureRecognizer</li>
+<li>UITableView (可以用 UICollectionView 替代之)</li>
+<li>UITableViewController (可以用 UIViewController 或 UICollectionViewController 替代之)</li>
+<li>5 分钟。</li>
+</ul>
+<h2 id="如何做？"><a href="#如何做？" class="headerlink" title="如何做？"></a>如何做？</h2><p>首先给 table view 添加一个 <code>UILongGestureRecognizer</code>。可以在 table view controller 的 <code>viewDidLoad</code> 方法中添加。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">UILongPressGestureRecognizer</span> *longPress = [[<span class="built_in">UILongPressGestureRecognizer</span> alloc] </div><div class="line">  initWithTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(longPressGestureRecognized:)];</div><div class="line">[<span class="keyword">self</span>.tableView addGestureRecognizer:longPress];</div></pre></td></tr></table></figure>
+<p>记者为 gesture recognizer 添加 action 方法。该方法首先应该获取到在 table view 中长按的位置，然后找出这个位置对应的 cell 的 index。记住：这里获取到的 index path 有可能为 nil(例如，如果用户长按在 table view的section header上)。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">IBAction</span>)longPressGestureRecognized:(<span class="keyword">id</span>)sender &#123;</div><div class="line"> </div><div class="line">  <span class="built_in">UILongPressGestureRecognizer</span> *longPress = (<span class="built_in">UILongPressGestureRecognizer</span> *)sender;</div><div class="line">  <span class="built_in">UIGestureRecognizerState</span> state = longPress.state;</div><div class="line"> </div><div class="line">  <span class="built_in">CGPoint</span> location = [longPress locationInView:<span class="keyword">self</span>.tableView];</div><div class="line">  <span class="built_in">NSIndexPath</span> *indexPath = [<span class="keyword">self</span>.tableView indexPathForRowAtPoint:location];</div><div class="line"> </div><div class="line">  <span class="comment">// More coming soon...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>接着你需要处理<code>UIGestureRecognizerStateBegan</code>分支。如果获取到一个有效的 index path(non-nil)，就去获取对应的 <code>UITableViewCell</code>，并利用一个 helper 方法获取这个 table view cell 的 snapshot  view。然后将这个 snapshot  view 添加到 table view 中，并将其 center 到对应的 cell上。</p>
+<p>为了更好的用户体验，以及更自然的效果，在这里我把原始 cell 的背景设置为黑色，并给 snapshot  view 增加淡入效果，让 snapshot view 比 原始 cell 稍微大一点，将它的Y坐标偏移量与手势的位置的Y轴对齐。这样处理之后，cell 就像从 table view 中跳出，然后浮在上面，并捕捉到用户的手指。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="built_in">UIView</span>       *snapshot = <span class="literal">nil</span>;        <span class="comment">///&lt; A snapshot of the row user is moving.</span></div><div class="line"><span class="keyword">static</span> <span class="built_in">NSIndexPath</span>  *sourceIndexPath = <span class="literal">nil</span>; <span class="comment">///&lt; Initial index path, where gesture begins.</span></div><div class="line"> </div><div class="line"><span class="keyword">switch</span> (state) &#123;</div><div class="line">  <span class="keyword">case</span> <span class="built_in">UIGestureRecognizerStateBegan</span>: &#123;</div><div class="line">    <span class="keyword">if</span> (indexPath) &#123;</div><div class="line">      sourceIndexPath = indexPath;</div><div class="line"> </div><div class="line">      <span class="built_in">UITableViewCell</span> *cell = [<span class="keyword">self</span>.tableView cellForRowAtIndexPath:indexPath];</div><div class="line"> </div><div class="line">      <span class="comment">// Take a snapshot of the selected row using helper method.</span></div><div class="line">      snapshot = [<span class="keyword">self</span> customSnapshotFromView:cell];</div><div class="line"> </div><div class="line">      <span class="comment">// Add the snapshot as subview, centered at cell's center...</span></div><div class="line">      __block <span class="built_in">CGPoint</span> center = cell.center;</div><div class="line">      snapshot.center = center;</div><div class="line">      snapshot.alpha = <span class="number">0.0</span>;</div><div class="line">      [<span class="keyword">self</span>.tableView addSubview:snapshot];</div><div class="line">      [<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.25</span> animations:^&#123;</div><div class="line"> </div><div class="line">        <span class="comment">// Offset for gesture location.</span></div><div class="line">        center.y = location.y;</div><div class="line">        snapshot.center = center;</div><div class="line">        snapshot.transform = <span class="built_in">CGAffineTransformMakeScale</span>(<span class="number">1.05</span>, <span class="number">1.05</span>);</div><div class="line">        snapshot.alpha = <span class="number">0.98</span>;</div><div class="line"> </div><div class="line">        <span class="comment">// Black out.</span></div><div class="line">        cell.backgroundColor = [<span class="built_in">UIColor</span> blackColor];</div><div class="line">      &#125; completion:<span class="literal">nil</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">break</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// More coming soon...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>将下面的方法添加到 .m 文件的尾部。该方法会根据传入的 view，返回一个对应的 snapshot view。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">UIView</span> *)customSnapshotFromView:(<span class="built_in">UIView</span> *)inputView &#123;</div><div class="line"> </div><div class="line">  <span class="built_in">UIView</span> *snapshot = [inputView snapshotViewAfterScreenUpdates:<span class="literal">YES</span>];</div><div class="line">  snapshot.layer.masksToBounds = <span class="literal">NO</span>;</div><div class="line">  snapshot.layer.cornerRadius = <span class="number">0.0</span>;</div><div class="line">  snapshot.layer.shadowOffset = <span class="built_in">CGSizeMake</span>(<span class="number">-5.0</span>, <span class="number">0.0</span>);</div><div class="line">  snapshot.layer.shadowRadius = <span class="number">5.0</span>;</div><div class="line">  snapshot.layer.shadowOpacity = <span class="number">0.4</span>;</div><div class="line"> </div><div class="line">  <span class="keyword">return</span> snapshot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当手势移动的时候，也就是<code>UIGestureRecognizerStateChanged</code>分支，此时需要移动 snapshot view(只需要设置它的 Y 轴偏移量即可)。如果手势移动的距离对应到另外一个 index path，就需要告诉 table view，让其移动 rows。同时，你需要对 data source 进行更新：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">case</span> <span class="built_in">UIGestureRecognizerStateChanged</span>: &#123;</div><div class="line">  <span class="built_in">CGPoint</span> center = snapshot.center;</div><div class="line">  center.y = location.y;</div><div class="line">  snapshot.center = center;</div><div class="line"> </div><div class="line">  <span class="comment">// Is destination valid and is it different from source?</span></div><div class="line">  <span class="keyword">if</span> (indexPath &amp;&amp; ![indexPath isEqual:sourceIndexPath]) &#123;</div><div class="line"> </div><div class="line">    <span class="comment">// ... update data source.</span></div><div class="line">    [<span class="keyword">self</span>.objects exchangeObjectAtIndex:indexPath.row withObjectAtIndex:sourceIndexPath.row];</div><div class="line"> </div><div class="line">    <span class="comment">// ... move the rows.</span></div><div class="line">    [<span class="keyword">self</span>.tableView moveRowAtIndexPath:sourceIndexPath toIndexPath:indexPath];</div><div class="line"> </div><div class="line">    <span class="comment">// ... and update source so it is in sync with UI changes.</span></div><div class="line">    sourceIndexPath = indexPath;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">break</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">// More coming soon...</span></div></pre></td></tr></table></figure>
+<p>最后，当手势结束或者取消时，table view 和 data source 都是最新的。你所需要做的事情就是将 snapshot view 从 table view 中移除，并把 cell 的背景色还原为白色。</p>
+<p>为了提升用户体验，我们将 snapshot view 淡出，并让其尺寸变小至与 cell 一样。这样看起来就像把 cell 放回原处一样。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">default</span>: &#123;</div><div class="line">  <span class="comment">// Clean up.</span></div><div class="line">  <span class="built_in">UITableViewCell</span> *cell = [<span class="keyword">self</span>.tableView cellForRowAtIndexPath:sourceIndexPath];</div><div class="line">  [<span class="built_in">UIView</span> animateWithDuration:<span class="number">0.25</span> animations:^&#123;</div><div class="line"> </div><div class="line">    snapshot.center = cell.center;</div><div class="line">    snapshot.transform = <span class="built_in">CGAffineTransformIdentity</span>;</div><div class="line">    snapshot.alpha = <span class="number">0.0</span>;</div><div class="line"> </div><div class="line">    <span class="comment">// Undo the black-out effect we did.</span></div><div class="line">    cell.backgroundColor = [<span class="built_in">UIColor</span> whiteColor];</div><div class="line"> </div><div class="line">  &#125; completion:^(<span class="built_in">BOOL</span> finished) &#123;</div><div class="line"> </div><div class="line">    [snapshot removeFromSuperview];</div><div class="line">    snapshot = <span class="literal">nil</span>;</div><div class="line"> </div><div class="line">  &#125;];</div><div class="line">  sourceIndexPath = <span class="literal">nil</span>;</div><div class="line">  <span class="keyword">break</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>就这样，搞定了！编译并运行程序，现在可以通过长按手势对 tableview cells重新排序！</p>
+<p>你可以在 GitHub 上下载到<a href="https://github.com/moayes/UDo/tree/master" target="_blank" rel="external">完整的示例工程</a>。</p>
+<h2 id="如何将其利用至UICollectionView上？"><a href="#如何将其利用至UICollectionView上？" class="headerlink" title="如何将其利用至UICollectionView上？"></a>如何将其利用至UICollectionView上？</h2><p>假设你已经有一个示例工程使用了 <code>UICollectionView</code>，那么你可以很简单的就使用上本文之前介绍的代码。所需要做的事情就是用 <code>self.collectionView</code>替换掉 <code>self.tableView</code>，并更新一下获取和移动 <code>UICollectionViewCell</code> 的调用方法。</p>
+<p>这里有个练习，从 GitHub上 checkout 出 <a href="https://github.com/moayes/UDo/tree/UDo.UICollectionView.Starter" target="_blank" rel="external">UICollectionView 的starter project</a>，然后将 tap-和-hold 手势添加进去以对 cells 进行重排。这里可以下载到已经实现好了<a href="https://github.com/moayes/UDo/tree/UDo.UICollectionView" target="_blank" rel="external">工程</a>。</p>
+<h2 id="何去何从？"><a href="#何去何从？" class="headerlink" title="何去何从？"></a>何去何从？</h2><p>我们深深的希望你喜欢这篇文章！如果以后你想要看到类似更多 cookbook-style 的文章，可以告诉我们。</p>
+<p>另外，如果你愿意观看本文的视频版，可以来<a href="http://www.raywenderlich.com/68102/video-tutorial-table-views-moving-rows" target="_blank" rel="external">这里</a>看。</p>
+<p>另外，我很乐意听到你的意见和问题！</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/07/30/2014-07-30-provision-ios-ipa-app-for-in-house-enterprise-distribution/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          在企业内部分发 iOS 应用程序
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/03/24/2014-03-20-reducing-the-size-of-my-app/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">减小iOS应用程序的大小</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2014-03-26-cookbook-moving-table-view-cells-with-a-long-press-gesture" data-title="利用长按手势移动 Table View Cells" data-url="http://beyondvincent.com/2014/03/26/2014-03-26-cookbook-moving-table-view-cells-with-a-long-press-gesture/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>

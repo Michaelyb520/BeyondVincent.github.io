@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>如何用 Swift 语言构建一个自定控件 | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="如何用 Swift 语言构建一个自定控件">
+<meta property="og:url" content="http://beyondvincent.com/2014/08/28/2014-08-27-How-To-Make-a-Custom-Control-in-Swift/index.html">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/08/01.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/08/02.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/08/03.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/08/04.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/08/05.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/08/06.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/08/07.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/08/08.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/08/09.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2014/08/10.png">
+<meta property="og:updated_time" content="2014-12-31T19:05:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何用 Swift 语言构建一个自定控件">
+<meta name="twitter:image" content="http://beyondvincent.com/images/2014/08/01.png">
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2014-08-27-How-To-Make-a-Custom-Control-in-Swift" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/08/28/2014-08-27-How-To-Make-a-Custom-Control-in-Swift/" class="article-date">
+  	<time datetime="2014-08-28T04:15:00.000Z" itemprop="datePublished">8月 28 2014</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS探索/">iOS探索</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      如何用 Swift 语言构建一个自定控件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/2014/08/01.png" alt=""></p>
+<a id="more"></a>
+<p>本文译自：<a href="http://www.raywenderlich.com/76433/how-to-make-a-custom-control-swift" target="_blank" rel="external">How To Make a Custom Control in Swift</a></p>
+<p>用户界面控件是所有应用程序重要的组成部分之一。它们以图形组件的方式呈现给用户，用户可以通过它们与应用程序进行交互。苹果提供了一套控件，例如 <code>UITextField</code>，<code>UIButton</code>，<code>UISwitch</code>。通过工具箱中的这些已有控件，我们可以创建各式各样的用户界面。</p>
+<p>然而，有时候你希望界面做得稍微的与众不同，那么此时苹果提供的这些控件就无法满足你的需求。</p>
+<p>自定义控件，除了是自己构建二外，与苹果提供的，没什么差别。也就是说，自定义控件不存在于 UIKit 框架。自定义控件跟苹果提供的标准控件一样，应该是通用，并且多功能的。你也会发现，互联网上有一些积极的开发者乐意分享他们自定义的控件。</p>
+<p>本文中，你将实现一个自己的 RangeSlider 自定义控件。这个控件是一个两端都可以滑动的，也就是说，你可以通过该控件获得最小值和最大值。你将会接触到这样一些概念：对现有控件的扩展，设计和实现自定义控件的 API，甚至还能学到如何分享你的自定义控件到开发社区中。</p>
+<p>注意：本文截稿时，我们还不会贴出关于 iOS 8 beta 版本的截图。所有文中涉及到的截图都是在iOS 8之前的版本中得到的，不过结果非常类似。</p>
+<p>目录：</p>
+<ul>
+<li><a href="#Getting_Started">开始</a></li>
+<li><a href="#Images_vs._CoreGraphics">Images vs. CoreGraphics</a></li>
+<li><a href="#Adding_Default_Control_Properties">添加默认的控件属性</a></li>
+<li><a href="#Adding_Interactive_Logic">添加交互逻辑</a></li>
+<li><a href="#Adding_Touch_Handlers">添加触摸处理</a></li>
+<li><a href="#Change_Notifications">值改变的通知</a></li>
+<li><a href="#Modifying_Your_Control_With_Core_Graphics">结合 Core Graphics 对控件进行修改</a></li>
+<li><a href="#Handling_Changes_to_Control_Properties">处理控件属性的改变</a></li>
+<li><a href="#Where_To_Go_From_Here">何去何从？</a></li>
+</ul>
+<hr>
+<p><a name="Getting_Started"></a></p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>假设你在开发一个应用程序，该程序提供搜索商品价格列表。通过这个假象的应用程序允许用户对搜索结果进行过滤，以获得一定价格范围的商品。你可能会提供这样一个用户界面：两个 <code>UISlider</code> 控件，一个用于设置最低价格，另外一个设置最高价格。然而，这样的设计，不能够让用户很好的感知价格的范围。要是能够提供一个 slider，两端可以分别设置用于搜索的最高和最低的价格范围，就更好了。</p>
+<p>你可以通过创建一个 <code>UIView</code> 的子类，然后为可视的价格范围定做一个 view。这对于应用程序内部来说，是 ok的，但是要想移植到别的程序中，就需要花更多的精力了。</p>
+<p>最好的办法是将构建一个新的尽可能通用的 UI 控件，这样就能在任意的合适场合中重用。这也是自定义控件的本质。</p>
+<p>启动 Xcode，<code>File/New/Project</code>，选中 <code>iOS/Application/Single View Application</code> 模板，然后点击 <code>Next</code>。在接下来的界面中，输入 <code>CustomSliderExample</code> 当做工程名，然后是 <code>Organization Name</code> 和 <code>Organization Identifier</code>，然后，一定要确保选中 <code>Swift</code> 语言，<code>iPhone</code> 选中，<code>Use Core Data</code> 不要选。</p>
+<p>最后，选择一个保存工程的地方并单击 <code>Create</code>。</p>
+<p>首先，我们需要做出决定的就是创建自定义控件需要继承自哪个类，或者对哪个类进行扩展。</p>
+<p>位了使自定义控件能够在应用程序中使用，你的类必须是 <code>UIView</code> 的一个子类。</p>
+<p>如果你注意观察苹果的 <code>UIKit</code> 参考，会发现框架中的许多控件，例如 <code>UILabel</code> 和 <code>UIWebView</code> 都是直接继承自 <code>UIView</code> 的。然而，也有极少数，例如 <code>UIButton</code> 和 <code>UISwitch</code> 是继承自 <code>UIControl</code> 的，如下继承图所示：</p>
+<p><img src="/images/2014/08/02.png" alt=""></p>
+<p>注意：iOS 中 UI 组件的完整类继承图，请看 <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIKit_Framework/Introduction/Introduction.html" target="_blank" rel="external">UIKit Framework 参考</a>。</p>
+<p><code>UIControl</code> 实现了 <code>target-action 模式</code>，这是一种将变化通知订阅者的机制。<code>UIControl</code> 同样还有一些与控件状态相关的属性。在本文中的自定义空间中，将使用到 target-action 模式，所以从 <code>UIControl</code> 开始继承使用将是一个非常好的切入点。</p>
+<p>在 Project Navigator 中右键单击 <code>CustomSliderExample</code>，选择 <code>New File…</code>，然后选择 <code>iOS/Source/Cocoa Touch Class</code> 模板，并单击 <code>Next</code>。将类命名位 <code>RangeSlider</code>，在 <code>Subclass of</code> 字段中输入 <code>UIControl</code>，并确保语言是 <code>Swift</code>。然后单击 <code>Next</code>，并在默认存储位置中 <code>Create</code> 出新的类。</p>
+<p>虽然编码非常让人愉悦，不过你可能也希望尽快看到自定义控件在屏幕中熏染出来的模样！在写自定义控件相关的任何代码之前，你应该先把这个控件添加到 view controller中，这样就可以实时观察控件的演进程度。</p>
+<p>打开 <code>ViewController.swift</code>，用下面的内容替换之：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> UIKit</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ViewController</span>: <span class="title">UIViewController</span> </span>&#123;</div><div class="line">    <span class="keyword">let</span> rangeSlider = <span class="type">RangeSlider</span>(frame: <span class="type">CGRectZero</span>)</div><div class="line"> </div><div class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="keyword">super</span>.viewDidLoad()</div><div class="line"> </div><div class="line">        rangeSlider.backgroundColor = <span class="type">UIColor</span>.redColor()</div><div class="line">        view.addSubview(rangeSlider)</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLayoutSubviews</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="keyword">let</span> margin: <span class="type">CGFloat</span> = <span class="number">20.0</span></div><div class="line">        <span class="keyword">let</span> width = view.bounds.width - <span class="number">2.0</span> * margin</div><div class="line">        rangeSlider.frame = <span class="type">CGRect</span>(x: margin, y: margin + topLayoutGuide.length,</div><div class="line">            width: width, height: <span class="number">31.0</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的代码根据指定的 frame 实例化了一个全新的控件，然后将其添加到 view 中。为了在应用程序背景中凸显出控件，我们将控件的背景色被设置位了红色。如果不把控件的背景色设置为红色，那么控件中什么都没有，可能会想，控件去哪里了！:]</p>
+<p>编译并运行程序，将看到如下类似界面：</p>
+<p><img src="/images/2014/08/03.png" alt=""></p>
+<p>在开始给控件添加可视元素之前，应该先定义几个属性，用以在控件中记录下各种信息。这也是开始应用程序编程接口 (API) 的开始。</p>
+<p>注意：控件中定义的方法和属性是你决定用来暴露给别的开发者使用的。稍后你将看到 API 设计相关的内容，现在只需要紧跟就行！</p>
+<p><a name="Adding_Default_Control_Properties"></a></p>
+<h2 id="添加默认的控件属性"><a href="#添加默认的控件属性" class="headerlink" title="添加默认的控件属性"></a>添加默认的控件属性</h2><p>打开 <code>RangeSlider.swift</code>，用下面的代码替换之：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> UIKit</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">RangeSlider</span>: <span class="title">UIControl</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> minimumValue = <span class="number">0.0</span></div><div class="line">    <span class="keyword">var</span> maximumValue = <span class="number">1.0</span></div><div class="line">    <span class="keyword">var</span> lowerValue = <span class="number">0.2</span></div><div class="line">    <span class="keyword">var</span> upperValue = <span class="number">0.8</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面定义的四个属性用来描述控件的状态，提供最大值和最小值，以及有用户设置的 upper 和 lower 两个值。</p>
+<p>好的控件设计，应该提供一些默认的属性值，否则将你的控件绘制到屏幕中时，看起来会有点奇怪。</p>
+<p>现在是时候开始做控件的交互元素了，我们分别用两个 thumbs 表示高和低两个值，并且让这两个 thumbs 能够滑动。</p>
+<p><a name="Images_vs._CoreGraphics"></a></p>
+<h2 id="Images-vs-CoreGraphics"><a href="#Images-vs-CoreGraphics" class="headerlink" title="Images vs. CoreGraphics"></a>Images vs. CoreGraphics</h2><p>在屏幕中渲染控件有两种方法：</p>
+<p>1、<code>Images</code> - 为控件构建不同的图片，这些图片代表控件的各种元素。<br>2、<code>Core Graphics</code> - 利用 layers 和 Core Graphics 组合起来熏染控件。</p>
+<p>这两种方法都有利有弊，下面来看看：</p>
+<p><code>Images</code> - 利用图片来构建控件是最简单的一种方法 - 只要你知道如何绘制图片！:] 如果你想要让开发者能够修改控件的外观，那么你应该将这些图片以 UIImage 属性的方式暴露出去。</p>
+<p>通过图片的方式来构建的控件，给使用控件的人提供了非常大的灵活度。开发者可以改变每一个像素，以及控件的详细外观，不过这需要非常熟练的图形设计技能 - 并且通过代码非常难以对控件做出修改。</p>
+<p><code>Core Graphics</code> - 利用 Core Graphics 构建控件意味着你必须自己编写渲染控件的代码，这就需要付出更多的代价。不过，这种方法可以创建更加灵活的 API。</p>
+<p>使用 Core Graphics，可以把控件的所有特征都参数化，例如颜色、边框厚度和弧度 - 几乎每一个可视元素都通过绘制完成！这种方法运行开发者对控件做出任意调整，以适配相应的需求。</p>
+<p>本文中，你将学到第二种技术 - 利用 Core Graphics 来熏染控件。</p>
+<p>主要：有趣的时，苹果建议在他们提供的控件中使用图片。这可能是苹果知道每个控件的大小，他们不希望程序中出现太多的定制。也就是说，他们希望所有的应用程序，都具有相似的外观和体验。</p>
+<p>打开 <code>RangeSlider.swift</code> 将下面的 import 添加到文件的顶部，也就是 <code>import UIKit</code> 下面：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> QuartzCore</div></pre></td></tr></table></figure>
+<p>将下面的属性添加到 <code>RangeSlider</code> 中，也就是我们刚刚定义的那行代码下面：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> trackLayer = <span class="type">CALayer</span>()</div><div class="line"><span class="keyword">let</span> lowerThumbLayer = <span class="type">CALayer</span>()</div><div class="line"><span class="keyword">let</span> upperThumbLayer = <span class="type">CALayer</span>()</div><div class="line"> </div><div class="line"><span class="keyword">var</span> thumbWidth: <span class="type">CGFloat</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="type">CGFloat</span>(bounds.height)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里有 3 个 layer - <code>trackLayer</code>, <code>lowerThumbLayer</code>, 和 <code>upperThumbLayer</code> - 用来熏染滑块控件的不同组件。<code>thumbWidth</code> 用来布局使用。</p>
+<p>接下来就是控件默认的一些图形属性。</p>
+<p>在 <code>RangeSlider</code> 类中，添加一个 初始化方法，以及一个 helper 方法：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">override</span> <span class="keyword">init</span>(frame: <span class="type">CGRect</span>) &#123;</div><div class="line">    <span class="keyword">super</span>.<span class="keyword">init</span>(frame: frame)</div><div class="line"> </div><div class="line">    trackLayer.backgroundColor = <span class="type">UIColor</span>.blueColor().<span class="type">CGColor</span></div><div class="line">    layer.addSublayer(trackLayer)</div><div class="line"> </div><div class="line">    lowerThumbLayer.backgroundColor = <span class="type">UIColor</span>.greenColor().<span class="type">CGColor</span></div><div class="line">    layer.addSublayer(lowerThumbLayer)</div><div class="line"> </div><div class="line">    upperThumbLayer.backgroundColor = <span class="type">UIColor</span>.greenColor().<span class="type">CGColor</span></div><div class="line">    layer.addSublayer(upperThumbLayer)</div><div class="line"> </div><div class="line">    updateLayerFrames()</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">required</span> <span class="keyword">init</span>(coder: <span class="type">NSCoder</span>) &#123;</div><div class="line">    <span class="keyword">super</span>.<span class="keyword">init</span>(coder: coder)</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">updateLayerFrames</span><span class="params">()</span></span> &#123;</div><div class="line">    trackLayer.frame = bounds.rectByInsetting(dx: <span class="number">0.0</span>, dy: bounds.height / <span class="number">3</span>)</div><div class="line">    trackLayer.setNeedsDisplay()</div><div class="line"> </div><div class="line">    <span class="keyword">let</span> lowerThumbCenter = <span class="type">CGFloat</span>(positionForValue(lowerValue))</div><div class="line"> </div><div class="line">    lowerThumbLayer.frame = <span class="type">CGRect</span>(x: lowerThumbCenter - thumbWidth / <span class="number">2.0</span>, y: <span class="number">0.0</span>,</div><div class="line">      width: thumbWidth, height: thumbWidth)</div><div class="line">    lowerThumbLayer.setNeedsDisplay()</div><div class="line"> </div><div class="line">    <span class="keyword">let</span> upperThumbCenter = <span class="type">CGFloat</span>(positionForValue(upperValue))</div><div class="line">    upperThumbLayer.frame = <span class="type">CGRect</span>(x: upperThumbCenter - thumbWidth / <span class="number">2.0</span>, y: <span class="number">0.0</span>,</div><div class="line">        width: thumbWidth, height: thumbWidth)</div><div class="line">    upperThumbLayer.setNeedsDisplay()</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">positionForValue</span><span class="params">(value: Double)</span></span> -&gt; <span class="type">Double</span> &#123;</div><div class="line">    <span class="keyword">let</span> widthDouble = <span class="type">Double</span>(thumbWidth)</div><div class="line">    <span class="keyword">return</span> <span class="type">Double</span>(bounds.width - thumbWidth) * (value - minimumValue) /</div><div class="line">        (maximumValue - minimumValue) + <span class="type">Double</span>(thumbWidth / <span class="number">2.0</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>初始化方法简单的创建了 3 个 layer，并将它们以 children 的身份添加到控件的 root layer 中，然后通过 <code>updateLayerFrames</code> 对这些 layer 的位置进行更新定位! :]</p>
+<p>最后，<code>positionForValue</code> 方法利用一个简单的比例，对控件的最小和最大值的范围做了一个缩放，将值映射到屏幕中确定的一个位置。</p>
+<p>接下来，override一下 <code>frame</code>，通过将下面的代码添加到 <code>RangeSlider.swift</code> 中，实现对属性的观察：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">override</span> <span class="keyword">var</span> frame: <span class="type">CGRect</span> &#123;</div><div class="line">    <span class="keyword">didSet</span> &#123;</div><div class="line">        updateLayerFrames()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当 frame 发生变化时，属性观察者会更新 layer frame。这一步是必须的，因为当控件初始化时，传入的 frame 并不是最终的 frame，就像 <code>ViewController.swift</code> 中的。</p>
+<p>编译并运行程序，可以看到滑块初具形状！看起来，如下图所示：</p>
+<p><img src="/images/2014/08/04.png" alt=""></p>
+<p>还记得吗，红色是整个控件的背景色。蓝色是滑块的轨迹，绿色 thumb 是两个代表两端的值。</p>
+<p>现在控件看起来有形状了，不过几乎所有的控件都提供了相关方法，让用户与之交互。</p>
+<p>针对本文中的控件，用户必须能够通过拖拽 2 个 thumb 来设置控件的范围。你将处理这些交互，并通过控件更新 UI 和暴露的属性。</p>
+<p><a name="Adding_Interactive_Logic"></a></p>
+<h2 id="添加交互逻辑"><a href="#添加交互逻辑" class="headerlink" title="添加交互逻辑"></a>添加交互逻辑</h2><p>本文的交互逻辑需要存储那个 thumb 被拖拽了，并将效果反应到 UI 中。控件的 layer 是放置该逻辑的最佳位置。</p>
+<p>跟之前一样，在 Xcode 中创建一个新的 <code>Cocoa Touch Class</code>，命名为 <code>RangeSliderThumbLayer</code>，继承自 <code>CALayer</code>。</p>
+<p>用下面的代码替换掉 <code>RangeSliderThumbLayer.swift</code> 文件中的内容：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> UIKit</div><div class="line"><span class="keyword">import</span> QuartzCore</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">RangeSliderThumbLayer</span>: <span class="title">CALayer</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> highlighted = <span class="literal">false</span></div><div class="line">    <span class="keyword">weak</span> <span class="keyword">var</span> rangeSlider: <span class="type">RangeSlider</span>?</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的代码中简单的添加了两个属性：一个表示这个 thumb 是否 高亮 (highlighted)，另外一个引用回父 range slider。由于 RangeSlider 有两个 thumb layer，所以将这里的引用设置位 weak，避免循环引用。</p>
+<p>打开 <code>RangeSlider.swift</code>，修改一下 <code>lowerThumbLayer</code> 和 <code>upperThumbLayer</code> 两个属性的类型，用下面的代码替换掉它们的定义：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> lowerThumbLayer = <span class="type">RangeSliderThumbLayer</span>()</div><div class="line"><span class="keyword">let</span> upperThumbLayer = <span class="type">RangeSliderThumbLayer</span>()</div></pre></td></tr></table></figure>
+<p>还是在 <code>RangeSlider.swift</code> 中，找到 <code>init</code>，将下面的代码添加进去：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">lowerThumbLayer.rangeSlider = <span class="keyword">self</span></div><div class="line">upperThumbLayer.rangeSlider = <span class="keyword">self</span></div></pre></td></tr></table></figure>
+<p>上面的代码简单的将 layer 的 <code>rangeSlider</code> 属性设置为 <code>self</code>。</p>
+<p>编译并运行程序，界面看起来没有什么变化。</p>
+<p>现在你已经有了 slider 的thumb layer - RangeSliderThumbLayer，然后需要给控件添加拖拽 thumb 的功能。</p>
+<p><a name="Adding_Touch_Handlers"></a></p>
+<h2 id="添加触摸处理"><a href="#添加触摸处理" class="headerlink" title="添加触摸处理"></a>添加触摸处理</h2><p>打开 <code>RangeSlider.swift</code>，将下面这个属性添加进去：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> previousLocation = <span class="type">CGPoint</span>()</div></pre></td></tr></table></figure>
+<p>这个属性用来跟踪记录用户的触摸位置。</p>
+<p>那么你该如何来跟踪控件的各种触摸和 release 时间呢？</p>
+<p><code>UIControl</code> 提供了一些方法来跟踪触摸。<code>UIControl</code> 的子类可以 override 这些方法，以实现自己的交互逻辑。</p>
+<p>在自定义控件中，我们将 override 3 个 <code>UIControl</code> 关键的方法：<code>beginTrackingWithTouch</code>, <code>continueTrackingWithTouch</code> 和 <code>endTrackingWithTouch</code>。</p>
+<p>将下面的方法添加到 <code>RangeSlider.swift</code> 中：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">beginTrackingWithTouch</span><span class="params">(touch: UITouch!, withEvent event: UIEvent!)</span></span> -&gt; <span class="type">Bool</span> &#123;</div><div class="line">    previousLocation = touch.locationInView(<span class="keyword">self</span>)</div><div class="line"> </div><div class="line">    <span class="comment">// Hit test the thumb layers</span></div><div class="line">    <span class="keyword">if</span> lowerThumbLayer.frame.<span class="built_in">contains</span>(previousLocation) &#123;</div><div class="line">        lowerThumbLayer.highlighted = <span class="literal">true</span></div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> upperThumbLayer.frame.<span class="built_in">contains</span>(previousLocation) &#123;</div><div class="line">        upperThumbLayer.highlighted = <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">return</span> lowerThumbLayer.highlighted || upperThumbLayer.highlighted</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当首次触摸控件时，会调用上面的方法。</p>
+<p>代码中，首先将触摸事件的坐标转换到控件的坐标空间。然后检查每个 thumb，是否触摸位置在其上面。方法中返回的值将决定 UIControl 是否继续跟踪触摸事件。</p>
+<p>如果任意一个 thumb 被 highlighted 了，就继续跟踪触摸事件。</p>
+<p>现在，有了初始的触摸事件，我们需要处理用户在屏幕上移动的事件了。</p>
+<p>将下面的方法添加到 <code>RangeSlider.swift</code> 中：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">boundValue</span><span class="params">(value: Double, toLowerValue lowerValue: Double, upperValue: Double)</span></span> -&gt; <span class="type">Double</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">min</span>(<span class="built_in">max</span>(value, lowerValue), upperValue)</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">continueTrackingWithTouch</span><span class="params">(touch: UITouch!, withEvent event: UIEvent!)</span></span> -&gt; <span class="type">Bool</span> &#123;</div><div class="line">    <span class="keyword">let</span> location = touch.locationInView(<span class="keyword">self</span>)</div><div class="line"> </div><div class="line">    <span class="comment">// 1. Determine by how much the user has dragged</span></div><div class="line">    <span class="keyword">let</span> deltaLocation = <span class="type">Double</span>(location.x - previousLocation.x)</div><div class="line">	<span class="keyword">let</span> deltaValue = (maximumValue - minimumValue) * deltaLocation / <span class="type">Double</span>(bounds.width - bounds.height)</div><div class="line"> </div><div class="line">    previousLocation = location</div><div class="line"> </div><div class="line">    <span class="comment">// 2. Update the values</span></div><div class="line">    <span class="keyword">if</span> lowerThumbLayer.highlighted &#123;</div><div class="line">        lowerValue += deltaValue</div><div class="line">        lowerValue = boundValue(lowerValue, toLowerValue: minimumValue, upperValue: upperValue)</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> upperThumbLayer.highlighted &#123;</div><div class="line">        upperValue += deltaValue</div><div class="line">        upperValue = boundValue(upperValue, toLowerValue: lowerValue, upperValue: maximumValue)</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="comment">// 3. Update the UI</span></div><div class="line">    <span class="type">CATransaction</span>.begin()</div><div class="line">    <span class="type">CATransaction</span>.setDisableActions(<span class="literal">true</span>)</div><div class="line"> </div><div class="line">    updateLayerFrames()</div><div class="line"> </div><div class="line">    <span class="type">CATransaction</span>.commit()</div><div class="line"> </div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>boundValue</code> 会将传入的值控制在某个确定的范围。通过这个方法比嵌套调用 <code>min/max</code> 更容易理解。</p>
+<p>下面我们根据注释，来分析一下 <code>continueTrackingWithTouch</code> 方法都做了些什么：</p>
+<ol>
+<li>首先计算出位置增量，这个值决定着用户手指移动的数值。然后根据控件的最大值和最小值，对这个增量做转换。</li>
+<li>根据用户滑动滑块的距离，修正一下 upper 或 lower 值。</li>
+<li>设置 <code>CATransaction</code> 中的 <code>disabledActions</code>。这样可以确保每个 layer 的frame 立即得到更新，并且不会有动画效果。最后，调用 <code>updateLayerFrames</code> 方法将 thumb 移动到正确的位置。</li>
+</ol>
+<p>至此，已经编写了移动滑块的代码 - 不过我们还要处理触摸和拖拽事件的结束。</p>
+<p>将下面方法添加到 <code>RangeSlider.swift</code> 中：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">endTrackingWithTouch</span><span class="params">(touch: UITouch!, withEvent event: UIEvent!)</span></span> &#123;</div><div class="line">    lowerThumbLayer.highlighted = <span class="literal">false</span></div><div class="line">    upperThumbLayer.highlighted = <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的代码简单的将两个 thumb 还原位 non-highlighted 状态。</p>
+<p>编译并运行程序，尝试移动滑块！现在你应该可以移动 thumb 了。</p>
+<p><img src="/images/2014/08/05.png" alt=""></p>
+<p>你可能注意到当在移动滑块时，可以在控件之外的范围对其拖拽，然后手指回到控件内，也不会丢失跟踪。其实这在小屏幕的设备上，是非常重要的一个功能。</p>
+<p><a name="Change_Notifications"></a></p>
+<h2 id="值改变的通知"><a href="#值改变的通知" class="headerlink" title="值改变的通知"></a>值改变的通知</h2><p>现在你已经有一个可以交互的控件了 - 用户可以对其进行操作，以设置范围的大小值。但是如何才能把这些值的改变通知调用者：控件有新的值了呢？</p>
+<p>这里有多种模式可以实现值改变的通知： <code>NSNotification</code>，<code>Key-Value-Observing</code> (KVO)， <code>delegate</code> 模式，<code>target-action</code> 模式等。有许多选择！</p>
+<p>面对这么多的通知方式，那么我们该怎么选择呢？</p>
+<p>如果你研究过 <code>UIKit</code> 控件，会发现它们并没有使用 <code>NSNotification</code>，也不鼓励使用 KVO。所以为了保持与 UIKit 的一致性，我们可以先排除这两种方法。另外的两种模式：delegate 和 target-action 被广泛用于 UIKit 中。</p>
+<p><code>Delegate 模式</code> - delegate 模式需要提供一个 protocol，里面有一些用于通知的方法。控件中有一个属性，一般命名位 delegate，它可以是任意实现该协议的类。经典的一个示例就是 <code>UITableView</code> 提供了 <code>UITableViewDelegate</code> protocol。注意，控件只接受单个 delegate 实例。一个 delegate 方法可以使用任意的参数，所以可以给这样的方法传递尽可能多的信息。</p>
+<p><code>Target-action 模式</code> - <code>UIControl</code> 基类已经提供了 target-action 模式。当控件状态发生了改变，target 会获得相应 action 的通知，该 action 是在 <code>UIControlEvents</code> 枚举值做定义的。我们可以给控件的 action 提供多个 target，另外还可以创建自定义事件 (查阅 <code>UIControlEventApplicationReserved</code>)，自定义事件的数量不得超过 4 个。控件 action 针对某个事件，无法传送任意的信息，所以当事件触发时，不能用它来传递额外的信息。</p>
+<p>这两种模式关键不同点如下：</p>
+<ul>
+<li>多播 (Multicast) - target-action 模式可以对改变事件进行多播通知，而 delegate 模式只能绑定到单个 delegate 实例上。</li>
+<li>灵活 (Flexibility) - 在 delegate 模式中，你可以定义自己的 protocol，这就意味着你可以控制信息的传递量。而 target-action 是无法传递额外信息的，客户端只能在收到事件后，自行查询信息。</li>
+</ul>
+<p>我们的 slider 控件不会有大量的状态变化，也不需要提供大量的通知。唯一真正改变的就是控件的 upper 和 lower 值。</p>
+<p>基于这样的情况，使用 target-action 模式是最好的。这也是为什么在本文开头的时候告诉你为什么这个控件要继承自 <code>UIControl</code>。</p>
+<p>slider 的值是在 <code>continueTrackingWithTouch:withEvent:</code> 方法中进行更新的，所以这个方法也是添加通知代码的地方。</p>
+<p>打开 <code>RangeSlider.swift</code>，定位到 <code>continueTrackingWithTouch</code> 方法，然后将下面的代码添加到 <code>return true</code> 语句前面：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sendActionsForControlEvents(.<span class="type">ValueChanged</span>)</div></pre></td></tr></table></figure>
+<p>上面的这行代码就能将值改变事件通知给任意的订阅者 target。</p>
+<p>现在我们应该对这个事件进行订阅，并当事件来了以后，作出相应的处理。</p>
+<p>打开 <code>ViewController.swift</code>，将下面这行代码添加到 <code>viewDidLoad</code> 尾部：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rangeSlider.addTarget(<span class="keyword">self</span>, action: <span class="string">"rangeSliderValueChanged:"</span>, forControlEvents: .<span class="type">ValueChanged</span>)</div></pre></td></tr></table></figure>
+<p>通过上面的代码，每次 slider 发送 <code>UIControlEventValueChanged</code> action 时，都会调用 <code>rangeSliderValueChanged</code> 方法。</p>
+<p>将下面的代码添加到 <code>ViewController.swift</code> 中：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">rangeSliderValueChanged</span><span class="params">(rangeSlider: RangeSlider)</span></span> &#123;</div><div class="line">    <span class="built_in">println</span>(<span class="string">"Range slider value changed: (\(rangeSlider.lowerValue) \(rangeSlider.upperValue))"</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当 slider 值发生变化是，上面这个方法简单的将 slider 的值打印出来。</p>
+<p>编译并运行程序，并移动一下 slider，可以在控制台中看到控件的值，如下所示：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="type">Range</span> slider value changed: (<span class="number">0.117670682730924</span> <span class="number">0.390361445783134</span>)</div><div class="line"><span class="type">Range</span> slider value changed: (<span class="number">0.117670682730924</span> <span class="number">0.38835341365462</span>)</div><div class="line"><span class="type">Range</span> slider value changed: (<span class="number">0.117670682730924</span> <span class="number">0.382329317269078</span>)</div><div class="line"><span class="type">Range</span> slider value changed: (<span class="number">0.117670682730924</span> <span class="number">0.380321285140564</span>)</div><div class="line"><span class="type">Range</span> slider value changed: (<span class="number">0.119678714859438</span> <span class="number">0.380321285140564</span>)</div><div class="line"><span class="type">Range</span> slider value changed: (<span class="number">0.121686746987952</span> <span class="number">0.380321285140564</span>)</div></pre></td></tr></table></figure>
+<p>看到 控件五颜六色的，你可能不高心，它开起来就像水果沙拉一样！</p>
+<p>现在是时候给控件换换面目了！</p>
+<p><a name="Modifying_Your_Control_With_Core_Graphics"></a></p>
+<h2 id="结合-Core-Graphics-对控件进行修改"><a href="#结合-Core-Graphics-对控件进行修改" class="headerlink" title="结合 Core Graphics 对控件进行修改"></a>结合 Core Graphics 对控件进行修改</h2><p>首先，首选更新一下slider thumb 移动的轨迹图形。</p>
+<p>跟之前一样，给工程添加另外一个继承自 <code>CALayer</code> 的子类，命名为 <code>RangeSliderTrackLayer</code>。</p>
+<p>打开刚刚添加的文件 <code>RangeSliderTrackLayer.swift</code>，然后用下面的内容替换之：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> UIKit</div><div class="line"><span class="keyword">import</span> QuartzCore</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">RangeSliderTrackLayer</span>: <span class="title">CALayer</span> </span>&#123;</div><div class="line">    <span class="keyword">weak</span> <span class="keyword">var</span> rangeSlider: <span class="type">RangeSlider</span>?</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的代码添加了一个到 slider 控件的引用，跟之前 thumb layer 做的一样。</p>
+<p>打开 <code>RangeSlider.swift</code> 文件，找到 <code>trackLayer</code> 属性，用刚刚创建的这个类对其实例化，如下所示：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> trackLayer = <span class="type">RangeSliderTrackLayer</span>()</div></pre></td></tr></table></figure>
+<p>接下来，找到 <code>init</code> 并用下面的代码替换之：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">init</span>(frame: <span class="type">CGRect</span>) &#123;</div><div class="line">    <span class="keyword">super</span>.<span class="keyword">init</span>(frame: frame)</div><div class="line"> </div><div class="line">    trackLayer.rangeSlider = <span class="keyword">self</span></div><div class="line">    trackLayer.contentsScale = <span class="type">UIScreen</span>.mainScreen().scale</div><div class="line">    layer.addSublayer(trackLayer)</div><div class="line"> </div><div class="line">    lowerThumbLayer.rangeSlider = <span class="keyword">self</span></div><div class="line">    lowerThumbLayer.contentsScale = <span class="type">UIScreen</span>.mainScreen().scale</div><div class="line">    layer.addSublayer(lowerThumbLayer)</div><div class="line"> </div><div class="line">    upperThumbLayer.rangeSlider = <span class="keyword">self</span></div><div class="line">    upperThumbLayer.contentsScale = <span class="type">UIScreen</span>.mainScreen().scale</div><div class="line">    layer.addSublayer(upperThumbLayer)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的代码确保新的 track layer 引用到 range slider - 并没有再用那可怕的颜色了！然后将 <code>contentsScale</code> 因子设置位与设备的屏幕一样，这样可以确保所有的内容在 retina 显示屏中没有问题。</p>
+<p>下面还有一个事情需要做，就是将 <code>viewDidLoad</code> 中的如下代码移除掉：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rangeSlider.backgroundColor = <span class="type">UIColor</span>.redColor()</div></pre></td></tr></table></figure>
+<p>编译并运行程序，看到什么了呢？</p>
+<p><img src="/images/2014/08/06.png" alt=""></p>
+<p>什么东西都没有？这是正确的！</p>
+<p>不要烦恼 - 我们只不过移除掉了在 layer 中花哨的测试颜色。控件依旧存在 - 只不过现在是白色的！</p>
+<p>由于许多开发者希望能够通过编码对控件做各种配置，以使其外观能够效仿一些流行的程序，所以我们给 slider 添加一些属性，运行开发者对其外观做出一些定制。</p>
+<p>打开 <code>RangeSlider.swift</code>，将下面的属性添加到已有属性下面：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> trackTintColor = <span class="type">UIColor</span>(white: <span class="number">0.9</span>, alpha: <span class="number">1.0</span>)</div><div class="line"><span class="keyword">var</span> trackHighlightTintColor = <span class="type">UIColor</span>(red: <span class="number">0.0</span>, green: <span class="number">0.45</span>, blue: <span class="number">0.94</span>, alpha: <span class="number">1.0</span>)</div><div class="line"><span class="keyword">var</span> thumbTintColor = <span class="type">UIColor</span>.whiteColor()</div><div class="line"> </div><div class="line"><span class="keyword">var</span> curvaceousness : <span class="type">CGFloat</span> = <span class="number">1.0</span></div></pre></td></tr></table></figure>
+<p>这些颜色属性的目的非常容易理解，但是 <code>curvaceousness</code>？这个属性在这里有点趣味 - 稍后你将发现其用途！</p>
+<p>接下来，打来 <code>RangeSliderTrackLayer.swift</code>。</p>
+<p>这个 layer 用来渲染两个 thumb 滑动的轨迹。目前它继承自 <code>CALayer</code>，仅仅是绘制一个单一颜色。</p>
+<p>为了绘制轨迹，需要实现方法 <code>drawInContext:</code>，并利用 Core Pgraphics APIs 来进行渲染。</p>
+<p>注意：要想深入学习 Core Graphics，建议阅读 <a href="http://www.raywenderlich.com/2033/core-graphics-tutorial-for-ios-lines-rectangles-and-gradients" target="_blank" rel="external">Core Graphics 101 教程</a>。</p>
+<p>将下面这个方法添加到 <code>RangeSliderTrackLayer</code> 中：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">drawInContext</span><span class="params">(ctx: CGContext!)</span></span> &#123;</div><div class="line">    <span class="keyword">if</span> <span class="keyword">let</span> slider = rangeSlider &#123;</div><div class="line">        <span class="comment">// Clip</span></div><div class="line">        <span class="keyword">let</span> cornerRadius = bounds.height * slider.curvaceousness / <span class="number">2.0</span></div><div class="line">        <span class="keyword">let</span> path = <span class="type">UIBezierPath</span>(roundedRect: bounds, cornerRadius: cornerRadius)</div><div class="line">        <span class="type">CGContextAddPath</span>(ctx, path.<span class="type">CGPath</span>)</div><div class="line"> </div><div class="line">        <span class="comment">// Fill the track</span></div><div class="line">        <span class="type">CGContextSetFillColorWithColor</span>(ctx, slider.trackTintColor.<span class="type">CGColor</span>)</div><div class="line">        <span class="type">CGContextAddPath</span>(ctx, path.<span class="type">CGPath</span>)</div><div class="line">        <span class="type">CGContextFillPath</span>(ctx)</div><div class="line"> </div><div class="line">        <span class="comment">// Fill the highlighted range</span></div><div class="line">        <span class="type">CGContextSetFillColorWithColor</span>(ctx, slider.trackHighlightTintColor.<span class="type">CGColor</span>)</div><div class="line">        <span class="keyword">let</span> lowerValuePosition = <span class="type">CGFloat</span>(slider.positionForValue(slider.lowerValue))</div><div class="line">        <span class="keyword">let</span> upperValuePosition = <span class="type">CGFloat</span>(slider.positionForValue(slider.upperValue))</div><div class="line">        <span class="keyword">let</span> rect = <span class="type">CGRect</span>(x: lowerValuePosition, y: <span class="number">0.0</span>, width: upperValuePosition - lowerValuePosition, height: bounds.height)</div><div class="line">        <span class="type">CGContextFillRect</span>(ctx, rect)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>一旦 track 形状确定，控件的背景色就会被填充，另外高亮范围也会被填充。</p>
+<p>编译并运行程序，会看到新的 track layer 被完美的渲染出来！如下图所示：</p>
+<p><img src="/images/2014/08/07.png" alt=""></p>
+<p>给暴露出来的属性设置不同的值，观察一下它们是如何反应到控件渲染中的。</p>
+<p>如果你对 <code>curvaceousness</code> 做什么的还存在疑惑，那么试着修改一下它看看！</p>
+<p>接下来我们使用相同的方法来绘制 thumb layer。</p>
+<p>打开 <code>RangeSliderThumbLayer.swift</code>，然后将下面的方法添加到属性声明的下方：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">drawInContext</span><span class="params">(ctx: CGContext!)</span></span> &#123;</div><div class="line">    <span class="keyword">if</span> <span class="keyword">let</span> slider = rangeSlider &#123;</div><div class="line">        <span class="keyword">let</span> thumbFrame = bounds.rectByInsetting(dx: <span class="number">2.0</span>, dy: <span class="number">2.0</span>)</div><div class="line">        <span class="keyword">let</span> cornerRadius = thumbFrame.height * slider.curvaceousness / <span class="number">2.0</span></div><div class="line">        <span class="keyword">let</span> thumbPath = <span class="type">UIBezierPath</span>(roundedRect: thumbFrame, cornerRadius: cornerRadius)</div><div class="line"> </div><div class="line">        <span class="comment">// Fill - with a subtle shadow</span></div><div class="line">        <span class="keyword">let</span> shadowColor = <span class="type">UIColor</span>.grayColor()</div><div class="line">        <span class="type">CGContextSetShadowWithColor</span>(ctx, <span class="type">CGSize</span>(width: <span class="number">0.0</span>, height: <span class="number">1.0</span>), <span class="number">1.0</span>, shadowColor.<span class="type">CGColor</span>)</div><div class="line">        <span class="type">CGContextSetFillColorWithColor</span>(ctx, slider.thumbTintColor.<span class="type">CGColor</span>)</div><div class="line">        <span class="type">CGContextAddPath</span>(ctx, thumbPath.<span class="type">CGPath</span>)</div><div class="line">        <span class="type">CGContextFillPath</span>(ctx)</div><div class="line"> </div><div class="line">        <span class="comment">// Outline</span></div><div class="line">        <span class="type">CGContextSetStrokeColorWithColor</span>(ctx, shadowColor.<span class="type">CGColor</span>)</div><div class="line">        <span class="type">CGContextSetLineWidth</span>(ctx, <span class="number">0.5</span>)</div><div class="line">        <span class="type">CGContextAddPath</span>(ctx, thumbPath.<span class="type">CGPath</span>)</div><div class="line">        <span class="type">CGContextStrokePath</span>(ctx)</div><div class="line"> </div><div class="line">        <span class="keyword">if</span> highlighted &#123;</div><div class="line">            <span class="type">CGContextSetFillColorWithColor</span>(ctx, <span class="type">UIColor</span>(white: <span class="number">0.0</span>, alpha: <span class="number">0.1</span>).<span class="type">CGColor</span>)</div><div class="line">            <span class="type">CGContextAddPath</span>(ctx, thumbPath.<span class="type">CGPath</span>)</div><div class="line">            <span class="type">CGContextFillPath</span>(ctx)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>一旦定义好了 thumb 的形状路径，就会将其形状填充好。注意绘制微弱的阴影看起来的效果就是 thumb 上方的轨迹。接下来是绘制边框。最后，如果 thumb 是高亮的 - 也就是被移动状态 - 那么就绘制微弱的灰色阴影效果。</p>
+<p>在运行之前，还有最后一件事情要做。按照下面的代码对 <code>highlighted</code> 属性的定义做出修改：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> highlighted: <span class="type">Bool</span> = <span class="literal">false</span> &#123;</div><div class="line">    <span class="keyword">didSet</span> &#123;</div><div class="line">        setNeedsDisplay()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里，定义了一个属性观察者，这样当每次 highlighted 属性修改时，相应的 layer 都会得到重绘。这会使得触摸事件发生时，填充色发生轻微的变动。</p>
+<p>再次编译并运行程序，这下看起来会非常的有形状，如下图所示：</p>
+<p><img src="/images/2014/08/08.png" alt=""></p>
+<p>不难发现，用 Core Graphics 来绘制控件是非常值得做的。使用 Core Graphics 可以做出比通过图片渲染方法更通用的控件。</p>
+<p><a name="Handling_Changes_to_Control_Properties"></a></p>
+<h2 id="处理控件属性的改变"><a href="#处理控件属性的改变" class="headerlink" title="处理控件属性的改变"></a>处理控件属性的改变</h2><p>那么到现在，还有什么事情要做呢？控件现在看起来已经非常的华丽了，它的外观是通用的，并且也支持 target-action 通知。</p>
+<p>貌似已经做完了？</p>
+<p>思考一下，如果当控件熏染之后，如果通过代码对 slider 的属性做了修改，会发生什么？例如，你希望修改一下 slider 的默认值，或者修改一下 track highlight，表示出一个有效范围。</p>
+<p>目前，还没有任何代码来观察属性的设置情况。我们需要将其添加到控件中。我们需要实现属性观察者，来更新控件的 frame 或者重绘控件。打开 <code>RangeSlider.swift</code>，按照下面的代码对属性的声明作出修改：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> minimumValue: <span class="type">Double</span> = <span class="number">0.0</span> &#123;</div><div class="line">    <span class="keyword">didSet</span> &#123;</div><div class="line">        updateLayerFrames()</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">var</span> maximumValue: <span class="type">Double</span> = <span class="number">1.0</span> &#123;</div><div class="line">    <span class="keyword">didSet</span> &#123;</div><div class="line">        updateLayerFrames()</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">var</span> lowerValue: <span class="type">Double</span> = <span class="number">0.2</span> &#123;</div><div class="line">    <span class="keyword">didSet</span> &#123;</div><div class="line">        updateLayerFrames()</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">var</span> upperValue: <span class="type">Double</span> = <span class="number">0.8</span> &#123;</div><div class="line">    <span class="keyword">didSet</span> &#123;</div><div class="line">        updateLayerFrames()</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">var</span> trackTintColor: <span class="type">UIColor</span> = <span class="type">UIColor</span>(white: <span class="number">0.9</span>, alpha: <span class="number">1.0</span>) &#123;</div><div class="line">    <span class="keyword">didSet</span> &#123;</div><div class="line">        trackLayer.setNeedsDisplay()</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">var</span> trackHighlightTintColor: <span class="type">UIColor</span> = <span class="type">UIColor</span>(red: <span class="number">0.0</span>, green: <span class="number">0.45</span>, blue: <span class="number">0.94</span>, alpha: <span class="number">1.0</span>) &#123;</div><div class="line">    <span class="keyword">didSet</span> &#123;</div><div class="line">        trackLayer.setNeedsDisplay()</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">var</span> thumbTintColor: <span class="type">UIColor</span> = <span class="type">UIColor</span>.whiteColor() &#123;</div><div class="line">    <span class="keyword">didSet</span> &#123;</div><div class="line">        lowerThumbLayer.setNeedsDisplay()</div><div class="line">        upperThumbLayer.setNeedsDisplay()</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="keyword">var</span> curvaceousness: <span class="type">CGFloat</span> = <span class="number">1.0</span> &#123;</div><div class="line">    <span class="keyword">didSet</span> &#123;</div><div class="line">        trackLayer.setNeedsDisplay()</div><div class="line">        lowerThumbLayer.setNeedsDisplay()</div><div class="line">        upperThumbLayer.setNeedsDisplay()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>一般情况，我们需要根据依赖的属性，调用 <code>setNeedsDisplay</code> 方法将对于的 layer 进行重新处理。<code>setLayerFrames</code> 方法会对控件的布局作出调整。</p>
+<p>现在，找到 <code>updateLayerFrames</code>，然后将下面的代码添加到该方法的顶部：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="type">CATransaction</span>.begin()</div><div class="line"><span class="type">CATransaction</span>.setDisableActions(<span class="literal">true</span>)</div></pre></td></tr></table></figure>
+<p>并将下面的代码添加到方法的尾部：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="type">CATransaction</span>.commit()</div></pre></td></tr></table></figure>
+<p>上面的代码将整个 frame 的更新封装到一个事物处理中，这样可以让界面重绘变得流畅。同样还明确的把 layer 中的动画禁用掉，跟之前一样，这样 layer frame 的更新会变得即时。</p>
+<p>由于现在每当 upper 和 lower 值发生变动时， frame 会自动更新了，所以，找到 <code>continueTrackingWithTouch</code> 方法，并将下面的代码删除掉：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 3. Update the UI</span></div><div class="line"><span class="type">CATransaction</span>.begin()</div><div class="line"><span class="type">CATransaction</span>.setDisableActions(<span class="literal">true</span>)</div><div class="line"> </div><div class="line">updateLayerFrames()</div><div class="line"> </div><div class="line"><span class="type">CATransaction</span>.commit()</div></pre></td></tr></table></figure>
+<p>上面的这些代码就能够确保属性变化时，能够反应到 slider 控件中。</p>
+<p>为了确保代码无误，我们需要写点测试 case 进行测试。</p>
+<p>打开 <code>ViewController.swift</code>，并将下面代码添加到 <code>viewDidLoad:</code> 尾部：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> time = dispatch_time(<span class="type">DISPATCH_TIME_NOW</span>, <span class="type">Int64</span>(<span class="type">NSEC_PER_SEC</span>))</div><div class="line">dispatch_after(time, dispatch_get_main_queue()) &#123;</div><div class="line">    <span class="keyword">self</span>.rangeSlider.trackHighlightTintColor = <span class="type">UIColor</span>.redColor()</div><div class="line">    <span class="keyword">self</span>.rangeSlider.curvaceousness = <span class="number">0.0</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的代码会在暂停 1 秒钟之后，对控件的一些属性做出更新。其中将 track highlight 的颜色修改为红色，并修改了 slider 和 thumb 的形状。</p>
+<p>编译并运行程序，一秒钟之后，你看到 slider 由：</p>
+<p><img src="/images/2014/08/09.png" alt=""></p>
+<p>变为：</p>
+<p><img src="/images/2014/08/10.png" alt=""></p>
+<p>很容易不是吗？</p>
+<p>上面刚刚添加到 view controller 中的代码，演示了一个非常有趣，而又经常被忽略的内容 - 对开发的自定义控件做充分的测试。当你在开发一个自定义控件时，你需要负责对所有的属性和外观做出验证。这里有一个好的方法就是创建不同的按钮和滑块 (它们连接到控件的不同属性) 对控件做出测试。这样，你就可以实时修改控件的属性，并实时观察到它们的结果。</p>
+<p><a name="Where_To_Go_From_Here"></a></p>
+<h2 id="何去何从？"><a href="#何去何从？" class="headerlink" title="何去何从？"></a>何去何从？</h2><p>现在我们的 range slider 控件已经完成开发，并可以在程序中使用了！你可以在<a href="http://cdn4.raywenderlich.com/wp-content/uploads/2014/08/CustomSliderExample-Swift.zip" target="_blank" rel="external">这里</a>下载到完整的工程。</p>
+<p>不过，创建通用性自定义控件的一个关键好处就是你可以将其用于不同的工程 - 并且分享给别的开发者使用。</p>
+<p>准备好了吗？</p>
+<p>实际上还没有。在分享自定义控件之前，还有一些事情需要考虑：</p>
+<p><code>文档</code> - 你可能认为代码写得非常的完美，具有自我陈述的能力，不在需要额外的文档了，不过别的开发者是不同意的。最佳实践就是提供 public API 的相关文档，至少要提供所有分享的 public 代码，也就是说对所有的public 类和属性进行文档化。</p>
+<p>例如，文档中需要说明 <code>RangeSlider</code> 是什么的 - slider 是这样的一个东西：定义了 4 个属性，包括minimumValue, maximumValue, lowerValue, 和 upperValue - 它是做什么的 - 允许用户通过在界面中定义数值的范围。</p>
+<p><code>鲁棒性</code> - 如果将 <code>upperValue</code> 设置为比 <code>maximumValue</code> 还要大，会发生什么？当然，你是肯定不会这样做的 - 这是愚蠢的一件事情，不是吗？但是你无法保证所有的人都不这么做！你需要确保控件的状态总是有效 - 尽管一些愚蠢的码农会尝试这样做。</p>
+<p><code>API 设计</code> - 前面说的鲁棒性涉及到一个更广泛的主题 - API 设计。创建一个具有灵活性、直观性和鲁棒性的 API 有利于控件被广泛的使用和流行。</p>
+<p>API 设计是很深的一个主题，超出了本文的介绍范围，如果你感兴趣，建议阅读 <a href="http://mattgemmell.com/2012/05/24/api-design/" target="_blank" rel="external">Matt Gemmel 关于 API 设计的 25 条规则</a>。</p>
+<p>网络中有许多地方可以分享你的控件。下面是建议的一些地方：</p>
+<ul>
+<li><a href="https://github.com/" target="_blank" rel="external">GitHub</a> - GitHub 已经是分享开源项目首选的一个地方。在 GitHub 上有大量关于 iOS 的自定义控件。GitHub 的伟大之处在于它允许人们很容易的就能访问到你共享的代码，也能够很容易的通过 forking 你的共享的代码，与别的控件进行协作开发，另外还能很方便的对控件 faise issues。</li>
+<li><a href="http://cocoapods.org/" target="_blank" rel="external">CocoaPods</a> - CocoaPods 是一个 iOS 和 OSX 工程的第三方库依赖管理工具， 允许开发者很容易的将你的控件添加到他们的工程中，所以你可以通过 CocoaPods 分享你的控件。</li>
+<li><a href="http://www.cocoacontrols.com/" target="_blank" rel="external">Cocoa Controls</a> - 这个网站位商业和开源的控件提供一个目录。许多开源控件都会提供到 Cocoa Control 上面，然后 host 在 GitHub 中，这是促进你进行创作的伟大方式。</li>
+</ul>
+<p>希望通过本文的学习，你已经能愉悦的创建 slider 控件了，可能你还希望构建自己的自定义控件。如果你做了，可以在本文的评论中分享一下 - 我们非常想看到你的创作！</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/02/2014-09-02-uikit-dynamics-tutorial-tossing-views/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          UIKit Dynamics 教程：抛掷 Views
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/07/30/2014-07-30-provision-ios-ipa-app-for-in-house-enterprise-distribution/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在企业内部分发 iOS 应用程序</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2014-08-27-How-To-Make-a-Custom-Control-in-Swift" data-title="如何用 Swift 语言构建一个自定控件" data-url="http://beyondvincent.com/2014/08/28/2014-08-27-How-To-Make-a-Custom-Control-in-Swift/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>

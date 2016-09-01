@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iOS 7 教程：让程序同时支持iOS 6和iOS 7 | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="iOS 7 教程：让程序同时支持iOS 6和iOS 7">
+<meta property="og:url" content="http://beyondvincent.com/2013/11/19/2013-11-19-122-working-with-ios-6-and-7/index.html">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/35.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/36.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/37.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/38.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/39.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/11/40.png">
+<meta property="og:updated_time" content="2014-12-31T19:05:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS 7 教程：让程序同时支持iOS 6和iOS 7">
+<meta name="twitter:image" content="http://beyondvincent.com/images/2013/11/35.png">
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2013-11-19-122-working-with-ios-6-and-7" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/11/19/2013-11-19-122-working-with-ios-6-and-7/" class="article-date">
+  	<time datetime="2013-11-19T14:18:00.000Z" itemprop="datePublished">11月 19 2013</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS7/">iOS7</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS 7 教程：让程序同时支持iOS 6和iOS 7
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/images/2013/11/35.png" alt=""></p>
+<a id="more"></a>
+<p>注：本文由破船译自<a href="http://blog.ittybittyapps.com/blog/2013/11/08/working-with-ios-6-and-7/" target="_blank" rel="external">Itty Bitty Labs</a>。</p>
+<ol>
+<li><a href="#1">iOS 7中的布局问题</a></li>
+<li><a href="#2">iOS 6运行异常</a></li>
+<li><a href="#3">Xcode 4编译错误</a></li>
+<li><a href="#4">UILabel不一致的background</a></li>
+<li><a href="#5">全屏时隐藏状态栏</a></li>
+<li><a href="#6">UIToolbar barStyle</a></li>
+<li><a href="#7">更多</a></li>
+</ol>
+<p>由于各种原因，我们的程序需要同时支持iOS 7以及之前的版本(例如iOS 6)，也就是说开发者不得不同时在iOS 7和iOS 6之间进行开发。实际上开发者对此是比较讨厌的。</p>
+<p>###<a id="1"></a>iOS 7中的布局问题</p>
+<p>下面是非常简单的一个程序，运行在iOS 6中的界面：</p>
+<p><img src="/images/2013/11/36.png" alt=""></p>
+<p>而要是运行在iOS 7的模拟器中，会看不到label了：</p>
+<p><img src="/images/2013/11/37.png" alt=""></p>
+<p>这是为什么呢？我们对其reveal一下看看吧：</p>
+<p><img src="/images/2013/11/38.png" alt=""></p>
+<p>从上图可以看出，实际上label躲在NavigationBar后面了。在iOS 7中，苹果引入了一个新的属性，叫做<code>[UIViewController setEdgesForExtendedLayout:]</code>，它的默认值为<code>UIRectEdgeAll</code>。当你的容器是navigation controller时，默认的布局将从navigation bar的顶部开始。这就是为什么所有的UI元素都往上漂移了44pt。</p>
+<p>修复这个问题的快速方法就是在方法<code>- (void)viewDidLoad</code>中添加如下一行代码：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.edgesForExtendedLayout = <span class="built_in">UIRectEdgeNone</span>;</div></pre></td></tr></table></figure>
+<p>这样问题就修复了。</p>
+<p><img src="/images/2013/11/39.png" alt=""></p>
+<p>###<a id="2"></a>iOS 6运行异常</p>
+<p>现在如果在iOS 6中运行程序，会遇到下面这样的运行时异常错误：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[LAViewController setEdgesForExtendedLayout:]: unrecognized selector sent to instance <span class="number">0x778a210</span></div></pre></td></tr></table></figure>
+<p>所有只能在iOS 7中运行的API需要重新封装一下，如下代码所示：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> ([<span class="keyword">self</span> respondsToSelector:<span class="keyword">@selector</span>(setEdgesForExtendedLayout:)])</div><div class="line">&#123;</div><div class="line">    <span class="keyword">self</span>.edgesForExtendedLayout = <span class="built_in">UIRectEdgeNone</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>###<a id="3"></a>Xcode 4编译错误</p>
+<p>有些机器可能还在使用Xcode 4.6，当用4.6来编译代码时，会遇到下面的编译错误：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Property 'edgesForExtendedLayout' not found on object of type 'LAViewController *'</div><div class="line">Use of undeclared identifier 'UIRectEdgeNone'</div></pre></td></tr></table></figure>
+<p>为了避免这个错误，可以创建下面的这个宏：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#if __IPHONE_OS_VERSION_MAX_ALLOWED &gt;= 70000</span></div><div class="line"><span class="meta">#define IOS7_SDK_AVAILABLE 1</span></div><div class="line"><span class="meta">#endif</span></div></pre></td></tr></table></figure>
+<p>然后在需要的地方将iOS 7的代码包装一下即可：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#ifdef IOS7_SDK_AVAILABLE</span></div><div class="line">...</div><div class="line"><span class="meta">#endif</span></div></pre></td></tr></table></figure>
+<p>###<a id="4"></a>UILabel不一致的background</p>
+<p>对于UILabel，在iOS 7中它的background颜色默认是clearColor，而在iOS 6中默认的是白色。所以，我们最好在代码中对label的background颜色进行明确的设置：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">view.backgroundColor = [<span class="built_in">UIColor</span> clearColor];</div></pre></td></tr></table></figure>
+<p>###<a id="5"></a>全屏时隐藏状态栏</p>
+<p>在iOS 6中，当调用<code>presentViewController</code>时，默认的modal screen将是全屏(<code>UIModalPresentationFullScreen</code>)。为了在iOS 7中也能获得相同的效果，我们可以在modal controller中添加如下代码：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)prefersStatusBarHidden</div><div class="line">&#123;</div><div class="line">  <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>###<a id="6"></a>UIToolbar barStyle</p>
+<p>有时候，我们会将UIToolbar与系统键盘结合起来使用。而在iOS 6中的键盘是黝黑色的，此时toolbar的style一般也是类似的，如下代码所示：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.barStyle = <span class="built_in">UIBarStyleBlack</span>;<span class="comment">// or UIBarStyleBlackTranslucents</span></div></pre></td></tr></table></figure>
+<p>而在iOS 7中，键盘变为了亮色，因此我们需要根据不同的iOS 版本，设置不同的bar style。</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> ([[[<span class="built_in">UIDevice</span> currentDevice] systemVersion] compare:<span class="string">@"7.0"</span> options:<span class="built_in">NSNumericSearch</span>] != <span class="built_in">NSOrderedAscending</span>)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">self</span>.barStyle = <span class="built_in">UIBarStyleDefault</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">self</span>.barStyle = <span class="built_in">UIBarStyleBlack</span>;<span class="comment">//or UIBarStyleBlackTranslucent</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>###<a id="7"></a>更多</p>
+<p>上面这些技巧是我目前在开发中遇到的，肯定还有更多的技巧，大家要是知道的话可以告诉我。</p>
+<p>最后送大家一个图，看看相关差异吧：</p>
+<p><img src="/images/2013/11/40.png" alt=""></p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/11/21/2013-11-23-123-build-process/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          iOS探索：iOS程序的Build过程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/11/12/2013-11-12-121-brief-analysis-text-kit/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS 7 教程：浅析Text Kit</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2013-11-19-122-working-with-ios-6-and-7" data-title="iOS 7 教程：让程序同时支持iOS 6和iOS 7" data-url="http://beyondvincent.com/2013/11/19/2013-11-19-122-working-with-ios-6-and-7/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>

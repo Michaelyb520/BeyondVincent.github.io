@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Sprite Kit教程：动画和纹理图集 2 | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Sprite Kit教程：动画和纹理图集 2">
+<meta property="og:url" content="http://beyondvincent.com/2013/10/16/2013-10-16-116-spritekit-tutorial-animations-and-texture-atlases-2/index.html">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/10/3.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/10/12.png">
+<meta property="og:image" content="http://beyondvincent.com/images/2013/10/13.png">
+<meta property="og:updated_time" content="2014-12-31T19:05:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sprite Kit教程：动画和纹理图集 2">
+<meta name="twitter:image" content="http://beyondvincent.com/images/2013/10/3.png">
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2013-10-16-116-spritekit-tutorial-animations-and-texture-atlases-2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2013/10/16/2013-10-16-116-spritekit-tutorial-animations-and-texture-atlases-2/" class="article-date">
+  	<time datetime="2013-10-16T15:40:00.000Z" itemprop="datePublished">10月 16 2013</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/iOS翻译/">iOS翻译</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Sprite Kit教程：动画和纹理图集 2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <img src="/images/2013/10/3.png">
+<a id="more"></a>
+<p>注：本文译自<a href="http://www.raywenderlich.com/45152/sprite-kit-tutorial-animations-and-texture-atlases" target="_blank" rel="external"><code>Sprite Kit Tutorial: Animations and Texture Atlases</code></a></p>
+<p>###<strong>目录</strong></p>
+<ul>
+<li>创建一个工程</li>
+<li>纹理图集和熊</li>
+<li>一个简单的动画</li>
+<li><a href="#gbfx">改变动画运动的方向</a></li>
+<li><a href="#ydx">在屏幕上让熊移动</a></li>
+<li><a href="#hqhc">何去何从?</a></li>
+</ul>
+<p>###<a id="gbfx"></a>改变动画运动的方向</p>
+<p>看起来不错哦！下面我们就来看看如何通过触摸屏幕上的点来控制熊的运动方向。在<code>MyScene.m</code>文件中做如下改动：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Add these new methods</span></div><div class="line">-(<span class="keyword">void</span>)touchesEnded:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event </div><div class="line">&#123;</div><div class="line"> </div><div class="line">    <span class="built_in">CGPoint</span> location = [[touches anyObject] locationInNode:<span class="keyword">self</span>];</div><div class="line">    <span class="built_in">CGFloat</span> multiplierForDirection;</div><div class="line"> </div><div class="line">    <span class="keyword">if</span> (location.x &lt;= <span class="built_in">CGRectGetMidX</span>(<span class="keyword">self</span>.frame)) &#123;</div><div class="line">        <span class="comment">//walk left</span></div><div class="line">        multiplierForDirection = <span class="number">1</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">//walk right</span></div><div class="line">        multiplierForDirection = <span class="number">-1</span>;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    _bear.xScale = fabs(_bear.xScale) * multiplierForDirection;</div><div class="line">    [<span class="keyword">self</span> walkingBear];</div><div class="line">&#125;</div><div class="line"> </div><div class="line">-(<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event </div><div class="line">&#123;    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的代码会根据tap的位置，让<code>touchesEnded</code>方法判断tap处于屏幕正中间的左边还是右边。通过该方法，决定熊的朝向。熊的方向是通过Sprite Kit来改变的(通过负值乘以xScale就可以让熊朝向左边。)</p>
+<p>编译并运行程序，一切正常的话，当你在屏幕上点击时，会发现熊的朝向发生了改变。</p>
+<p><img src="/images/2013/10/12.png" alt=""></p>
+<p>###<a id="ydx"></a>在屏幕上让熊移动</p>
+<p>下面我们让熊可以移动到屏幕的各个位置。</p>
+<p>在<code>MyScene.m</code>文件中做如下改动：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Comment out the call to start the bear walking</span></div><div class="line"><span class="comment">//[self walkingBear];</span></div><div class="line"> </div><div class="line">-(<span class="keyword">void</span>)touchesEnded:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event </div><div class="line">&#123;</div><div class="line">    <span class="comment">//Stuff from below!</span></div><div class="line">&#125;</div><div class="line"> </div><div class="line">-(<span class="keyword">void</span>)touchesBegan:(<span class="built_in">NSSet</span> *)touches withEvent:(<span class="built_in">UIEvent</span> *)event </div><div class="line">&#123;    </div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="comment">//add this method</span></div><div class="line">-(<span class="keyword">void</span>)bearMoveEnded</div><div class="line">&#123;</div><div class="line">    [_bear removeAllActions];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如上所示，移除了<code>touchesEnded</code>方法中的所有代码。下面我们一步一步的往里面添加代码。</p>
+<p>当想要停止动画的时可以调用方法<code>bearMoveEnded</code>。</p>
+<p>下面就从<code>touchesEnded</code>方法开始吧：</p>
+<p><code>1) 确定触摸的位置并定义一个变量代表熊的朝向</code></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">CGPoint</span> location = [[touches anyObject] locationInNode:<span class="keyword">self</span>];</div><div class="line"><span class="built_in">CGFloat</span> multiplierForDirection;</div></pre></td></tr></table></figure>
+<p>如上代码，利用常见的一个方法将触摸的位置转换为node坐标系中的位置。</p>
+<p><code>2) 设置速度</code></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">CGSize</span> screenSize = <span class="keyword">self</span>.frame.size;</div><div class="line"><span class="keyword">float</span> bearVelocity = screenSize.width / <span class="number">3.0</span>;</div></pre></td></tr></table></figure>
+<p>如上，定义了熊移动的速度。可知熊从移动长度为屏幕宽度这么长时，需要3秒钟。由于不同设备的屏幕宽度可能会不同，所以在这里使用了self.frame.size，所以熊的速度应该是屏幕宽度/3秒。</p>
+<p><code>3) 计算出熊在X和Y轴中移动的量</code></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">CGPoint</span> moveDifference = <span class="built_in">CGPointMake</span>(location.x - _bear.position.x, location.y - _bear.position.y);</div></pre></td></tr></table></figure>
+<p>通过简单的利用触摸位置减去熊的位置，计算出熊在X和Y轴上应该移动的距离。</p>
+<p><code>4) 计算出实际的移动距离</code></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">float</span> distanceToMove = sqrtf(moveDifference.x * moveDifference.x + moveDifference.y * moveDifference.y);</div></pre></td></tr></table></figure>
+<p>上面的代码是计算出熊实际移动的直线距离(一个直角三角形的斜边：熊当前的位置和触摸位置)。关于游戏中涉及到的数学知识可以看看这本书：<a href="http://www.raywenderlich.com/35866/trigonometry-for-game-programming-part-1" target="_blank" rel="external">Trigonometry for Game Programming</a>。</p>
+<p><code>5) 计算出移动实际距离所需要花费的时间</code></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">float</span> moveDuration = distanceToMove / bearVelocity;</div></pre></td></tr></table></figure>
+<p>通过移动的实际距离除以移动速度计算出需要花费的时间。</p>
+<p><code>6) 需要的话对动画做翻转(Flip)处理</code></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (moveDifference.x &lt; <span class="number">0</span>) &#123;</div><div class="line">    multiplierForDirection = <span class="number">1</span>;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    multiplierForDirection = <span class="number">-1</span>;</div><div class="line">&#125;</div><div class="line">_bear.xScale = fabs(_bear.xScale) * multiplierForDirection;</div></pre></td></tr></table></figure>
+<p>上面的代码：确定熊往左还是往右移动。如果小于0，则往左移动，否则往右移动。</p>
+<p>在这里，你的第一直觉可能是利用图片编辑器创建并使用对应另一个方向的图片。不过，之前我们学习过了如果通过乘法来改变sprite的xScale，进而改变sprite的方向。</p>
+<p><code>7) 运行一些action</code></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> ([_bear actionForKey:<span class="string">@"bearMoving"</span>]) &#123;</div><div class="line">    <span class="comment">//stop just the moving to a new location, but leave the walking legs movement running</span></div><div class="line">    [_bear removeActionForKey:<span class="string">@"bearMoving"</span>];</div><div class="line">&#125; <span class="comment">//1</span></div><div class="line"> </div><div class="line"><span class="keyword">if</span> (![_bear actionForKey:<span class="string">@"walkingInPlaceBear"</span>]) &#123;</div><div class="line">    <span class="comment">//if legs are not moving go ahead and start them</span></div><div class="line">    [<span class="keyword">self</span> walkingBear];  <span class="comment">//start the bear walking</span></div><div class="line">&#125; <span class="comment">//2</span></div><div class="line"> </div><div class="line"><span class="built_in">SKAction</span> *moveAction = [<span class="built_in">SKAction</span> moveTo:location duration:moveDuration];  <span class="comment">//3</span></div><div class="line"><span class="built_in">SKAction</span> *doneAction = [<span class="built_in">SKAction</span> runBlock:(dispatch_block_t)^() &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Animation Completed"</span>);</div><div class="line">        [<span class="keyword">self</span> bearMoveEnded];</div><div class="line">&#125;]; <span class="comment">//4</span></div><div class="line"> </div><div class="line"><span class="built_in">SKAction</span> *moveActionWithDone = [<span class="built_in">SKAction</span> sequence:@[moveAction,doneAction]]; <span class="comment">//5</span></div><div class="line"> </div><div class="line">[_bear runAction:moveActionWithDone withKey:<span class="string">@"bearMoving"</span>]; <span class="comment">//6</span></div></pre></td></tr></table></figure>
+<ol>
+<li>停止已有的移动action(因为要准备告诉熊移动到别的地方)。这里使用的key可以开始和停止以此命名的动画的运行。</li>
+<li>如果熊还没有准备移动腿，那么就让熊的腿开始移动，否则它该如何走到新的位置呢。这里使用了我们之前使用过的方法，这个方法可以确保不启动一个已经运行着的动画(以key命名)。</li>
+<li>创建一个移动action，并制定移动到何处，以及需要花费的时间。</li>
+<li>创建一个done action，当熊到达目的地后，该action利用一个block调用一个方法来停止动画。</li>
+<li>将上面的两个action设置为一个顺序action链，就是说让这两个action按照先后顺序运行(第一个运行完之后，再运行第二个)。</li>
+<li>让熊开始运行action，并制定一个key为：”bearMoving”。记住，这里的key用来判断熊是否需要移动到新的位置。</li>
+</ol>
+<p>注意：Sprite Kit支持两种action：<code>sequential</code>和<code>grouped</code>。<code>sequential</code> action表示action按照顺序执行。如果想要action同时运行，那么就使用<code>grouped</code>。</p>
+<p>当然，也可以在sequential action中包含grouped action，反之亦然。更多相关内容请看<a href="https://developer.apple.com/library/prerelease/ios/documentation/GraphicsAnimation/Conceptual/SpriteKit_PG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013043" target="_blank" rel="external">Sprite Kit Programming Guide</a>中的<code>Adding Actions to Nodes</code>章节。</p>
+<p>当动画执行完毕之后，<code>bearMoveEnded</code>会被调用，所有的动画都将被停止，并等待下一个移动方位。</p>
+<p>搞定了！</p>
+<p>现在编译并运行程序，一切正常的话，那么当点击屏幕时，熊会跟着移动。</p>
+<p><img src="/images/2013/10/13.png" alt=""></p>
+<p>###<a id="hqhc"></a>何去何从?</p>
+<p>这里是本文涉及到的<a href="http://cdn5.raywenderlich.com/wp-content/uploads/2013/09/AnimatedBear.zip" target="_blank" rel="external">工程示例</a>。</p>
+<p>下面这些想法可以让动画更加有趣：</p>
+<ul>
+<li>尝试在方法<code>walkingBear</code>中增加或者减慢运动的速度，看看效果</li>
+<li>试着在屏幕上同时显示多个熊。提示：创建多个sprite node，并赋予action。</li>
+</ul>
+<p>至此，你应该已经知道如何使用动画了。</p>
+<p>如果你希望学习更多相关Sprite Kit内容，可以看看这本书：<a href="http://www.raywenderlich.com/store/ios-7-by-tutorials" target="_blank" rel="external">iOS Games by Tutorials</a>。本书会告诉你需要知道的内容——从物理特性，到磁贴地图，以及粒子系统，甚至是制作自己的关卡编辑器。</p>
+<p>……Sprite Kit教程：动画和纹理图集 2 结束……</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/10/20/2013-10-19-117-spritekit-tutorial-how-to-drag-and-drop-sprites/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Sprite Kit教程：如何拖放Sprites
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/10/16/2013-10-16-115-spritekit-tutorial-animations-and-texture-atlases-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Sprite Kit教程：动画和纹理图集 1</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2013-10-16-116-spritekit-tutorial-animations-and-texture-atlases-2" data-title="Sprite Kit教程：动画和纹理图集 2" data-url="http://beyondvincent.com/2013/10/16/2013-10-16-116-spritekit-tutorial-animations-and-texture-atlases-2/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>
