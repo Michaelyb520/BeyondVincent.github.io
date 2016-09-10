@@ -10,7 +10,7 @@
 <meta property="og:url" content="http://beyondvincent.com/2016/09/10/2016-09-10-use-mysql-with-docker/index.html">
 <meta property="og:site_name" content="破船之家">
 <meta property="og:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/docker-mysql.png">
-<meta property="og:updated_time" content="2016-09-10T05:15:22.000Z">
+<meta property="og:updated_time" content="2016-09-10T05:19:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在 Docker 中使用 mysql">
 <meta name="twitter:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/docker-mysql.png">
@@ -231,17 +231,16 @@
 <li><p>安装 Docker 可以参考池建强的文章<a href="http://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&amp;mid=2650712620&amp;idx=1&amp;sn=39b33e0f1dfc335e165051b2983f9192&amp;scene=1&amp;srcid=0908wpvocqwawzRQwEu9N1N7#rd" target="_blank" rel="external">在 Mac 上跳舞的容器 — Docker</a>。也可以到 Docker <a href="https://docs.docker.com/docker-for-mac/" target="_blank" rel="external">官网</a>下载安装(我的系统是 Mac OS)。</p>
 </li>
 <li><p>使用下面的命令，可以下载到 mysql 镜像（首次需要下载，后续就不需要执行这个命令了）</p>
-</li>
-</ol>
 <blockquote>
 <p>docker pull mysql</p>
 </blockquote>
-<ol>
-<li>执行如下命令，可以启动一个 mysql 容器</li>
-</ol>
+</li>
+<li><p>执行如下命令，可以启动一个 mysql 容器</p>
 <blockquote>
 <p>docker run -d -p 127.0.0.1:3306:3306 –name mysql -v /Users/BeyondVincent/docker/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=”111111” mysql:latest</p>
 </blockquote>
+</li>
+</ol>
 <p>上面命令 <code>docker run</code> 的参数解释如下：</p>
 <blockquote>
 <p><code>-d(Detached)</code>表示容器将以后台模式运行，所有I/O数据只能通过网络资源或者共享卷组来进行交互。</p>
