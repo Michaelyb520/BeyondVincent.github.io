@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>在 Docker 中使用 mysql | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="在 Docker 中使用 mysql">
+<meta property="og:url" content="http://beyondvincent.com/2016/09/10/2016-09-10-use-mysql-with-docker/index.html">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/docker-mysql.png">
+<meta property="og:updated_time" content="2016-09-10T05:15:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 Docker 中使用 mysql">
+<meta name="twitter:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/docker-mysql.png">
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://luyutommycool.github.io/">卢宇的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://macshuo.com/">MacTalk</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.devtang.com/">唐巧的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://onevcat.com/">王巍的博客</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2016-09-10-use-mysql-with-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/10/2016-09-10-use-mysql-with-docker/" class="article-date">
+  	<time datetime="2016-09-10T05:38:00.000Z" itemprop="datePublished">9月 10 2016</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Docker/">Docker</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在 Docker 中使用 mysql
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://7u2mu6.com1.z0.glb.clouddn.com/docker-mysql.png" alt=""></p>
+<a id="more"></a>
+<p><code>Docker</code>在当下是一门非常火热的虚拟化技术，关于什么是 Docker，可以参考<a href="https://zh.wikipedia.org/zh-cn/Docker" target="_blank" rel="external">维基百科</a>上面的定义。自 2013 年 3 月 13 日第一个版本发布以来，Docker 已经成为虚拟化技术中一颗闪耀的明星，如果你还不知道什么是 Docker 的话，作为 IT 人，你真的落伍了。</p>
+<p>下面这段话是摘自<a href="(https://yeasy.gitbooks.io/docker_practice/content/">《Docker — 从入门到实践》</a>)：</p>
+<blockquote>
+<p>Docker 彻底释放了虚拟化的威力，极大提高了应用的运行效率，降低了云计算资源供应的成本，同时让应用的部署、测试和分发都变得前所未有的高效和轻松！</p>
+</blockquote>
+<p>关于 Docker 的基础知识可以学习上面提到的这本书，也可以到 Docker <a href="https://www.docker.com/" target="_blank" rel="external">官网</a>查阅相关材料。</p>
+<p>本文主要介绍如何在 Docker 中使用 mysql。</p>
+<ol>
+<li><p>安装 Docker 可以参考池建强的文章<a href="http://mp.weixin.qq.com/s?__biz=MjM5ODQ2MDIyMA==&amp;mid=2650712620&amp;idx=1&amp;sn=39b33e0f1dfc335e165051b2983f9192&amp;scene=1&amp;srcid=0908wpvocqwawzRQwEu9N1N7#rd" target="_blank" rel="external">在 Mac 上跳舞的容器 — Docker</a>。也可以到 Docker <a href="https://docs.docker.com/docker-for-mac/" target="_blank" rel="external">官网</a>下载安装(我的系统是 Mac OS)。</p>
+</li>
+<li><p>使用下面的命令，可以下载到 mysql 镜像（首次需要下载，后续就不需要执行这个命令了）</p>
+</li>
+</ol>
+<blockquote>
+<p>docker pull mysql</p>
+</blockquote>
+<ol>
+<li>执行如下命令，可以启动一个 mysql 容器</li>
+</ol>
+<blockquote>
+<p>docker run -d -p 127.0.0.1:3306:3306 –name mysql -v /Users/BeyondVincent/docker/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=”111111” mysql:latest</p>
+</blockquote>
+<p>上面命令 <code>docker run</code> 的参数解释如下：</p>
+<blockquote>
+<p><code>-d(Detached)</code>表示容器将以后台模式运行，所有I/O数据只能通过网络资源或者共享卷组来进行交互。</p>
+<p><code>-p 127.0.0.1:3306:3306</code>将主机（127.0.0.1）的端口 3306 映射到容器的端口 3306 中。这样访问主机中的 3306 端口就等于访问容器中的 3306 端口。</p>
+<p><code>--name mysql</code>给容器取名为 mysql，这样方便记忆。</p>
+<p><code>-v /Users/BeyondVincent/docker/mysql/data:/var/lib/mysql</code> 将本机的文件目录挂载到容器对应的目录（/var/lib/mysql）中。这样可以通过数据卷实现容器中数据的持久化。</p>
+<p><code>-e MYSQL_ROOT_PASSWORD=&quot;111111&quot;</code>-e 表示设置环境变量，此处设置了 mysql root 用户的初始密码为 111111。</p>
+<p><code>mysql:latest</code>表示使用 mysql  为 latest 启动一个容器。</p>
+</blockquote>
+<p>执行完上面的命令，就完成了 mysql 在 Docker 中的虚拟化。此时我们可以利用 mysql 的客户端工具连接到这个 Docker 中的 mysql上。连接配置信息如下：</p>
+<blockquote>
+<p><code>Hostname</code>127.0.0.1 </p>
+<p><code>Port</code>3306</p>
+<p><code>Username</code>root</p>
+<p><code>Password</code>111111</p>
+</blockquote>
+<p>当我们不需要使用这个 mysql 容器时，只需要停掉该容器即可，对主机不会产生任何配置上的影响，非常方便。</p>
+<p>在上面的介绍中，我们主要做了 3 件事：第一是 mysql 镜像的下载；第二是 mysql 容器的启动；第三是 利用数据卷实现 mysql 的持久化。</p>
+<p>利用 Docker 进行虚拟化，从体验上来说，不用再像以前那样，为了使用 mysql，需要在本机安装 mysql 服务，可能还需要先下载安装好相应的依赖。现在只需要利用镜像，启动一个容器，立马就可以展开业务工作，而不必把大量枯燥乏味的时间浪费在环境的配置上，另外也可以确保使用环境的一致性，避免出现 <code>在我电脑上是正确的</code>这一类的问题。</p>
+<p>对于开发和运维来说，现在已经真正步入了容器时代，我们何不拥抱这个时代的给我们带来的福利呢？</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/07/2016-09-07-How_far_is_excellent/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我们离所谓的优秀有多远</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016-09-10-use-mysql-with-docker" data-title="在 Docker 中使用 mysql" data-url="http://beyondvincent.com/2016/09/10/2016-09-10-use-mysql-with-docker/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>
