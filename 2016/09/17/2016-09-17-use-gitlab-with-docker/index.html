@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>在 Docker 中使用 GitLab | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="在 Docker 中使用 GitLab">
+<meta property="og:url" content="http://beyondvincent.com/2016/09/17/2016-09-17-use-gitlab-with-docker/index.html">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/docker-gitlab.png">
+<meta property="og:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/docker-start-gitlab.png">
+<meta property="og:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/docker-gitlab-started.png">
+<meta property="og:updated_time" content="2016-09-18T20:40:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 Docker 中使用 GitLab">
+<meta name="twitter:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/docker-gitlab.png">
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://luyutommycool.github.io/">卢宇的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://macshuo.com/">MacTalk</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.devtang.com/">唐巧的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://onevcat.com/">王巍的博客</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2016-09-17-use-gitlab-with-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/17/2016-09-17-use-gitlab-with-docker/" class="article-date">
+  	<time datetime="2016-09-17T05:38:00.000Z" itemprop="datePublished">9月 17 2016</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Docker/">Docker</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在 Docker 中使用 GitLab
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://7u2mu6.com1.z0.glb.clouddn.com/docker-gitlab.png" alt=""></p>
+<a id="more"></a>
+<blockquote>
+<p>“LOST TIME IS NEVER FOUND AGAIN.”BENJAMIN FRANKLIN</p>
+<p>“岁月既往，一去不回。”本杰明·富兰克林</p>
+</blockquote>
+<h2 id="小引"><a href="#小引" class="headerlink" title="小引"></a>小引</h2><p>在<a href="http://beyondvincent.com/2016/09/10/2016-09-10-use-mysql-with-docker/">上一篇</a>中，我介绍了如何在 Docker 中使用 MySQL，最近我们的项目版本管理也逐渐从 SVN 迁移到 Git 上，所以本文我将介绍如何利用 Docker 来快速搭建企业内部的 GitLab。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>大家都知道 <a href="https://github.com/" target="_blank" rel="external">GitHub</a> 是利用 Git 做的一个线上代码版本管理工具，该工具免费版的代码库全部都是公开的，如果想要使用私有库，那只有付费才行。而 <a href="http://www.gitlab.com/" target="_blank" rel="external">GitLab</a> 的初衷则是提供给企业或者个人搭建内部的代码版本管理工具，并且具有与 GitHub 相似的功能。虽然我们有多种方法来搭建自己的 Git 库，但是这里我推荐大家借助 GitLab 来搭建。GitLab 有很丰富的功能（Git 版本管理、文件浏览、WIKI、Code Review、Issue 管理、Code Snippets、Web Hooks、CI、CD等）。</p>
+<blockquote>
+<p>下面的内容假设大家已经安装好了 <a href="https://www.docker.com/" target="_blank" rel="external">Docker</a> 和 <a href="https://docs.docker.com/compose/" target="_blank" rel="external">Docker Compose</a>。Docker Compose 是用来定义并运行多个 Docker 容器的 – Docker 集群管理。有了 Docker Compose，我们就不用手动执行多条命令来启动一个一个的容器，并建立容器间的关系，只需要一条命令就完成所有服务的创建和运行。</p>
+</blockquote>
+<p>下面就开始吧！</p>
+<h2 id="1-下载-Compose-文件并修改配置"><a href="#1-下载-Compose-文件并修改配置" class="headerlink" title="1. 下载 Compose 文件并修改配置"></a>1. 下载 Compose 文件并修改配置</h2><p><a href="https://hub.docker.com/" target="_blank" rel="external">Docker hub</a> 中有许多 GitLab 镜像，比如 GitLab 官方提供的 <a href="https://hub.docker.com/r/gitlab/gitlab-ce/" target="_blank" rel="external">gitlab/gitlab-ce</a>，该镜像包含了运行 GitLab 所需的所有内容，只需要这一个镜像就能使用 GitLab。而由 sameersbn 提供的 <a href="https://hub.docker.com/r/sameersbn/gitlab/" target="_blank" rel="external">sameersbn/gitlab</a> 则将 GitLab 分成了三个不同的镜像：数据库、日志、GitLab 服务，这样做的好处便于解耦，以及符合 Docker 的设计原理：轻量级、单一的镜像功能。在此，我们使用 <code>sameersbn/gitlab</code>，并结合提供的 Docker Compose 文件来启动 GitLab。</p>
+<p>首先是将<code>docker-compose.yml</code>文件下载到本机，如下代码所示：</p>
+<blockquote>
+<p>wget <a href="https://raw.githubusercontent.com/sameersbn/docker-gitlab/master/docker-compose.yml" target="_blank" rel="external">https://raw.githubusercontent.com/sameersbn/docker-gitlab/master/docker-compose.yml</a></p>
+</blockquote>
+<p>下载完成之后，在文件中，我们可以看到 GitLab 的很多配置都已经参数化了，包数据卷的配置、服务的端口、备份时机和邮件配置等。</p>
+<p>在这里我利用 vi 将其中的 volumes 做适当的修改，存储至如下路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/Users/BeyondVincent/docker/gitlab/</div></pre></td></tr></table></figure>
+<p>我修改后的完整代码可以来<a href="https://gist.github.com/BeyondVincent/a2d9ef42f69f390104c0ed15f4c9079e" target="_blank" rel="external">这里参考</a>。</p>
+<h2 id="2-启动-GitLab"><a href="#2-启动-GitLab" class="headerlink" title="2. 启动 GitLab"></a>2. 启动 GitLab</h2><p>下一步，修改完 docker-compose.yml，我们就可以利用如下一行命令来启动 GitLab 了。</p>
+<blockquote>
+<p>docker-compose up</p>
+</blockquote>
+<p>上面的这行命令，首先会下载相关的镜像，然后依次创建并启动容器。如下图所示：</p>
+<p><img src="http://7u2mu6.com1.z0.glb.clouddn.com/docker-start-gitlab.png" alt=""></p>
+<p>当启动完成之后，我们就可以在浏览器中输入<code>http://localhost:10080</code>，如果能正确打开，那么说明 GitLab 创建启动成功。如下图所示：</p>
+<p><img src="http://7u2mu6.com1.z0.glb.clouddn.com/docker-gitlab-started.png" alt=""></p>
+<h2 id="3-停止-GitLab"><a href="#3-停止-GitLab" class="headerlink" title="3. 停止 GitLab"></a>3. 停止 GitLab</h2><p>执行下面这条命令就可以将 GitLab 停止。</p>
+<blockquote>
+<p>docker-compose stop</p>
+</blockquote>
+<h2 id="4-备份"><a href="#4-备份" class="headerlink" title="4. 备份"></a>4. 备份</h2><p>数据的备份历来都是很重要，平时如果不注重备份，服务器不出问题还好，要是服务器挂了，后果很严重。sameersbn/gitlab 的备份使用如下命令即可完成：</p>
+<blockquote>
+<p>docker-compose run gitlab app:rake gitlab:backup:create</p>
+</blockquote>
+<p>该命令执行完之后，会在 gitlab 的 backups 目录生成一个以当前时间戳为前缀的压缩文件(例如 1474228372_gitlab_backup.tar)，这个文件就是备份文件（整个库都已经备份在这个文件中）。完成备份文件的创建之后，记得将该文件备份至另外一个地方。</p>
+<h2 id="5-从备份中还原"><a href="#5-从备份中还原" class="headerlink" title="5. 从备份中还原"></a>5. 从备份中还原</h2><blockquote>
+<p>docker-compose run –rm gitlab app:rake gitlab:backup:restore BACKUP=1474228372</p>
+</blockquote>
+<p>在上面的命令中，1474228372 为备份文件的时间戳前缀，该文件位于 gitlab 的 backups 目录中。同样，一条命令就可以完成还原。</p>
+<h2 id="6-加速器"><a href="#6-加速器" class="headerlink" title="6. 加速器"></a>6. 加速器</h2><p>由于网络问题，如果你的镜像下载很慢，超出忍受范围，那么建议使用 DaoCloud 提供的<a href="https://www.daocloud.io/mirror#accelerator-doc" target="_blank" rel="external">加速器</a>。</p>
+<h2 id="7-小结"><a href="#7-小结" class="headerlink" title="7. 小结"></a>7. 小结</h2><p>如果说 GitLab 让我们感受到了世界上有真正免费的午餐，那么 Docker 则让我们的生命得以延续。让我们尽情享受这一切美好的世界吧！</p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/10/2016-09-10-use-mysql-with-docker/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在 Docker 中使用 mysql</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016-09-17-use-gitlab-with-docker" data-title="在 Docker 中使用 GitLab" data-url="http://beyondvincent.com/2016/09/17/2016-09-17-use-gitlab-with-docker/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>
