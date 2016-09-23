@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>在 Docker 搭建 Maven 私有库 | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="在 Docker 搭建 Maven 私有库">
+<meta property="og:url" content="http://beyondvincent.com/2016/09/23/2016-09-23-use-nexus-with-docker/index.html">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/docker_nexus.png">
+<meta property="og:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/nexus_home.png">
+<meta property="og:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/repositories_path.png">
+<meta property="og:updated_time" content="2016-09-23T15:17:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 Docker 搭建 Maven 私有库">
+<meta name="twitter:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/docker_nexus.png">
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://luyutommycool.github.io/">卢宇的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://macshuo.com/">MacTalk</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.devtang.com/">唐巧的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://onevcat.com/">王巍的博客</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2016-09-23-use-nexus-with-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/23/2016-09-23-use-nexus-with-docker/" class="article-date">
+  	<time datetime="2016-09-23T15:41:00.000Z" itemprop="datePublished">9月 23 2016</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Docker/">Docker</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在 Docker 搭建 Maven 私有库
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://7u2mu6.com1.z0.glb.clouddn.com/docker_nexus.png" alt=""></p>
+<a id="more"></a>
+<h2 id="小引"><a href="#小引" class="headerlink" title="小引"></a>小引</h2><blockquote>
+<p>If you are developing software without a repository manager you are likely missing a number of opportunities to reduce some pretty obvious inefficiencies. If everyone on your team has to hit public repositories like the Central Repository to download components, you are missing out on some simple gains in speed and efficiency. If you don’t have a local place to deploy components you are forced to share binary components using half-measures and compromises such as storing binaries in source control. Stop developing in the Dark Ages, read this book, and start using a repository manager. Trust us, once you start using a Nexus Repository Manager, you’ll wonder how you ever functioned without it.<code>此文源自</code><a href="https://books.sonatype.com/nexus-book/reference/index.html" target="_blank" rel="external">Repository Management with Nexus</a></p>
+<p><code>破船译</code>：在软件开发中，如果没有使用仓库管理工具（repository manager），你将与高效率擦肩而过。如果团队中的每个开发人员都去类似 Central Repository 这样公共的仓库中获取组件，那么肯定会在速度和效率上得不偿失。在本地，如果没有提供一个地方来部署组件，那你使用的策略肯定需要作出许多妥协，比如在代码版本库中存储二进制文件（非常不建议这样做）。停止如此原始的开发方式吧，请阅读此书，并开启 repository manager 时代吧。一旦你开始使用 repository manager（Nexus），你肯定会抱怨为什么以前不使用它呢。</p>
+</blockquote>
+<p>作为一个希望让正确的事情持续发生的人来说，对速度和效率的追求是一个永恒的话题。身为开发人员的我们，如今在开发过程中，无论是 Android、iOS 或后端开发，都不可避免会用到第三方库，这也也催生了许多优秀的第三方依赖管理工具，例如 iOS 的 <a href="https://cocoapods.org/" target="_blank" rel="external">CocoaPods</a>，Java 后端开发的 <a href="https://maven.apache.org/" target="_blank" rel="external">Maven</a>，Android 则使用 <a href="https://gradle.org/" target="_blank" rel="external">Gradle</a>。而由于<code>绿色环境</code>的原因，有的人可能在下载第三方依赖时陷入了漫长的等待中，或许可以美名其曰：喝杯咖啡的时间刚刚好。但是当喝完咖啡回来时，发现屏幕上出现的是 <code>TIMEOUT</code>，顿时陷入了沉思。或许对于没有发现因此而催生的特色产业（代理、VPN）人来说，已经开始怀疑人生了。当然，针对这个问题，国内也有许多加速器可以使用，或许别的办法。不过，在这篇文章中，我不会告诉你如何寻找加速器、如何设置源、如何科学上网。本文我将给大家介绍如何搭建 Maven 私有库。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>我们在进行 Java 后端开发时，为了解决工程对第三方库依赖管理，一般都会使用 Maven 工程，大家都知道如果对每一个依赖库都从 <a href="http://search.maven.org/" target="_blank" rel="external">Central Repository</a> 下载，那么速度会很慢，有时候对于只有几 K 的一个库，都会下载不失败（科学上网的可以忽略），这会让人很抓狂，如果多人进行协同开发，那么这样的抓狂会被扩大。那么比较好的解决办法，就是搭建内部自己的 Maven 私有库。我们希望私有库提供这样的功能，在工程下载依赖的时候，如果私有库中存在这个依赖库，则直接从这个私有库中下载，如果私有库中没有所需要的依赖库，私有库先从 Central Repository 中下载并缓存，下次在获取的时候，就直接使用该缓存即可。大家可能会问，有没有这样的工具呢？其实早就有了，<code>Nexus</code> 就是其中之一。下面就进入正文吧。</p>
+<h2 id="下载-Nexus-镜像"><a href="#下载-Nexus-镜像" class="headerlink" title="下载 Nexus 镜像"></a>下载 Nexus 镜像</h2><p>这里推荐的方案是利用 Docker 来搭建 Nexus 环境。这里默认大家已经都有 Docker 环境了。</p>
+<p>首先利用下面的命令下载最新的 nexus 镜像</p>
+<blockquote>
+<p>docker pull sonatype/nexus</p>
+</blockquote>
+<p>下载过程如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">docker pull sonatype/nexus</div><div class="line">Using default tag: latest</div><div class="line">latest: Pulling from sonatype/nexus</div><div class="line"></div><div class="line">8d30e94188e7: Pull complete</div><div class="line">9b5961d40d03: Pull complete</div><div class="line">074855ae6153: Pull complete</div><div class="line">cc0a3a494fba: Pull complete</div><div class="line">8cfd0607bbfb: Pull complete</div><div class="line">Digest: sha256:6bb1966022009da38c4f679b51d2106f4d595aa7b887ac0bf93d14ebe4c0faa2</div><div class="line">Status: Downloaded newer image for sonatype/nexus:latest</div></pre></td></tr></table></figure>
+<h2 id="创建并启动-Nexus"><a href="#创建并启动-Nexus" class="headerlink" title="创建并启动 Nexus"></a>创建并启动 Nexus</h2><p>首先创建一个数据卷容器，如下命令</p>
+<blockquote>
+<p>docker run -d –name nexus-data sonatype/nexus echo “data-only container for Nexus”</p>
+</blockquote>
+<p>然后启动 Nexus</p>
+<blockquote>
+<p>docker run -d -p 10081:8081 –name nexus –volumes-from nexus-data sonatype/nexus</p>
+</blockquote>
+<p>上面的命令中，将本机的 10081 端口映射到容器中的 8081 端口，并加载 数据卷容器 nexus-data。</p>
+<p>创建容器过程需要一段时间时间进行初始化，可以用如下命令查看相关日志：</p>
+<blockquote>
+<p><code>docker logs -f nexus</code></p>
+</blockquote>
+<p>在浏览器输入 <a href="http://localhost:10081/nexus/" target="_blank" rel="external">http://localhost:10081/nexus/</a> 可以看到如下界面，说明 nexus 已经启动好了。</p>
+<p><img src="http://7u2mu6.com1.z0.glb.clouddn.com/nexus_home.png" alt="image"></p>
+<h2 id="使用-Nexus"><a href="#使用-Nexus" class="headerlink" title="使用 Nexus"></a>使用 Nexus</h2><p>在这个私有库中，提供了一些仓库地址给我们使用，如下图所示：</p>
+<p><img src="http://7u2mu6.com1.z0.glb.clouddn.com/repositories_path.png" alt="image"></p>
+<p>关于每个仓库的意义何在，请移步到 Nexus 的官网中学习（文末给出了参考链接），此文不再进行介绍。</p>
+<p>私有仓库的使用有两种方法，一种是对工程的 pom.xml 文件进行修改（这种方法只对 pom.xml 所属工程生效），如下所示：<br>将如下的repositories节点添加到 pom.xml 文件即可，Maven 会到此文件中配置的私有库，下载相应的依赖库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;</div><div class="line">         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</div><div class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</div><div class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line"></div><div class="line">    &lt;groupId&gt;testnexus&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;zzx&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</div><div class="line"></div><div class="line">    &lt;repositories&gt;</div><div class="line">        &lt;repository&gt;</div><div class="line">            &lt;id&gt;nexus&lt;/id&gt;</div><div class="line">            &lt;name&gt;Team Nexus Repository&lt;/name&gt;</div><div class="line">            &lt;url&gt;http://localhost:10081/nexus/content/groups/public/&lt;/url&gt;</div><div class="line">        &lt;/repository&gt;</div><div class="line">    &lt;/repositories&gt;</div><div class="line">    &lt;dependencies&gt;</div><div class="line">    &lt;!-- https://mvnrepository.com/artifact/com.alibaba/fastjson --&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">        &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</div><div class="line">        &lt;artifactId&gt;fastjson&lt;/artifactId&gt;</div><div class="line">        &lt;version&gt;1.1.41&lt;/version&gt;</div><div class="line">    &lt;/dependency&gt;</div><div class="line"></div><div class="line">    &lt;/dependencies&gt;</div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure>
+<p>另外一种方法就是直接修改 maven 的配置文件，这样所有工程默认都会使用私有库。如下所示：</p>
+<p>在 <code>~/.m2/settings.xml</code> 文件中，将 mirror 修改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;settings&gt;</div><div class="line">  &lt;mirrors&gt;</div><div class="line">    &lt;mirror&gt;</div><div class="line">      &lt;!--This sends everything else to /public --&gt;</div><div class="line">      &lt;id&gt;nexus&lt;/id&gt;</div><div class="line">      &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;</div><div class="line">      &lt;url&gt;http://localhost:10081/nexus/content/groups/public&lt;/url&gt;</div><div class="line">    &lt;/mirror&gt;</div><div class="line">  &lt;/mirrors&gt;</div><div class="line">  &lt;profiles&gt;</div><div class="line">    &lt;profile&gt;</div><div class="line">      &lt;id&gt;nexus&lt;/id&gt;</div><div class="line">      &lt;!--Enable snapshots for the built in central repo to direct --&gt;</div><div class="line">      &lt;!--all requests to nexus via the mirror --&gt;</div><div class="line">      &lt;repositories&gt;</div><div class="line">        &lt;repository&gt;</div><div class="line">          &lt;id&gt;central&lt;/id&gt;</div><div class="line">          &lt;url&gt;http://central&lt;/url&gt;</div><div class="line">          &lt;releases&gt;&lt;enabled&gt;true&lt;/enabled&gt;&lt;/releases&gt;</div><div class="line">          &lt;snapshots&gt;&lt;enabled&gt;true&lt;/enabled&gt;&lt;/snapshots&gt;</div><div class="line">        &lt;/repository&gt;</div><div class="line">      &lt;/repositories&gt;</div><div class="line">     &lt;pluginRepositories&gt;</div><div class="line">        &lt;pluginRepository&gt;</div><div class="line">          &lt;id&gt;central&lt;/id&gt;</div><div class="line">          &lt;url&gt;http://central&lt;/url&gt;</div><div class="line">          &lt;releases&gt;&lt;enabled&gt;true&lt;/enabled&gt;&lt;/releases&gt;</div><div class="line">          &lt;snapshots&gt;&lt;enabled&gt;true&lt;/enabled&gt;&lt;/snapshots&gt;</div><div class="line">        &lt;/pluginRepository&gt;</div><div class="line">      &lt;/pluginRepositories&gt;</div><div class="line">    &lt;/profile&gt;</div><div class="line">  &lt;/profiles&gt;</div><div class="line">  &lt;activeProfiles&gt;</div><div class="line">    &lt;!--make the profile active all the time --&gt;</div><div class="line">    &lt;activeProfile&gt;nexus&lt;/activeProfile&gt;</div><div class="line">  &lt;/activeProfiles&gt;</div><div class="line">&lt;/settings&gt;</div></pre></td></tr></table></figure>
+<p>当利用 maven 进行工程打包时，可以看到，已经从私有库中下载依赖了（当在另外一台机器上使用相应的依赖库时，就直接使用私有库中所缓存的依赖了，不用再到互联网中下载，是不是很节约时间！）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">testnesus mvn package</div><div class="line">[INFO] Scanning for projects...</div><div class="line">[INFO]</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">[INFO] Building zzx 1.0-SNAPSHOT</div><div class="line">[INFO] ------------------------------------------------------------------------</div><div class="line">Downloading: http://localhost:10081/nexus/content/groups/public/com/alibaba/fastjson/1.1.41/fastjson-1.1.41.pom</div><div class="line">Downloaded: http://localhost:10081/nexus/content/groups/public/com/alibaba/fastjson/1.1.41/fastjson-1.1.41.pom (9 KB at 2.9 KB/sec)</div><div class="line">Downloading: http://localhost:10081/nexus/content/groups/public/com/alibaba/fastjson/1.1.41/fastjson-1.1.41.jar</div><div class="line">Downloaded: http://localhost:10081/nexus/content/groups/public/com/alibaba/fastjson/1.1.41/fastjson-1.1.41.jar (350 KB at 16.5 KB/sec)</div></pre></td></tr></table></figure>
+<p>关于更多内容，请上 Nexus 的官网学习。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://books.sonatype.com/nexus-book/reference/" target="_blank" rel="external">Repository Management with Nexus</a></li>
+</ul>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/19/2016-09-17-use-gitlab-with-docker/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在 Docker 中使用 GitLab</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016-09-23-use-nexus-with-docker" data-title="在 Docker 搭建 Maven 私有库" data-url="http://beyondvincent.com/2016/09/23/2016-09-23-use-nexus-with-docker/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>
