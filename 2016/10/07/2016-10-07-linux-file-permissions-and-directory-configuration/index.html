@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux 的文件权限与目录配置 | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Linux 的文件权限与目录配置">
+<meta property="og:url" content="http://beyondvincent.com/2016/10/07/2016-10-07-linux-file-permissions-and-directory-configuration/index.html">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/linux%20file%20permissions%20and%20directory%20configuration.png">
+<meta property="og:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/linux-file-arc.png">
+<meta property="og:updated_time" content="2016-10-07T01:50:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux 的文件权限与目录配置">
+<meta name="twitter:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/linux%20file%20permissions%20and%20directory%20configuration.png">
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://luyutommycool.github.io/">卢宇的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://macshuo.com/">MacTalk</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.devtang.com/">唐巧的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://onevcat.com/">王巍的博客</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2016-10-07-linux-file-permissions-and-directory-configuration" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/07/2016-10-07-linux-file-permissions-and-directory-configuration/" class="article-date">
+  	<time datetime="2016-10-07T01:41:00.000Z" itemprop="datePublished">10月 7 2016</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux 的文件权限与目录配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://7u2mu6.com1.z0.glb.clouddn.com/linux%20file%20permissions%20and%20directory%20configuration.png" alt=""></p>
+<a id="more"></a>
+<h2 id="小引"><a href="#小引" class="headerlink" title="小引"></a>小引</h2><blockquote>
+<p>It’s very easy to make the mistake of quickly dismissing a coworker’s idea so that you can present your own, but when you commit this grievous error in judgment, you’ll often find them deaf to your own ideas because you’ve made them feel unimportant. If you want people to accept your ideas and think them valuable, you have to extend the same courtesy first. You can never win a person’s heart if you do not leave their pride intact.<code>此文源自</code>《Soft Skills The software developer’s life manual》</p>
+<blockquote>
+<p><code>破船译</code>：我们经常犯的一个错误就是轻率的否决他人的意见，以便提出自己的想法。但是当你作出这样错误的举措时，会发现别人对你的想法充耳不闻，因为你让他们觉得自己无足轻重，没有受到尊重。如果希望人们接受并认可你的想法，你必须首先尊重别人，如果你做不到的话，那永远得不到别人的认同。</p>
+</blockquote>
+</blockquote>
+<p>最近在学习 Docker，Docker 缘起于 Linux，自然需要一些 Linux 的知识才好，所以学习 Docker 过程中，顺道学习一下 Linux 的基础知识，此文就是我学习《鸟哥的 Linux 私房菜》的<code>读书笔记</code>之一（后续还会有几篇）。</p>
+<h2 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Linux最优秀的地方之一就在于他的多用户多任务环境。而为了让各个使用者具有较保密的文件数据，因此文件的权限管理就变的很重要了。 Linux一般将文件可存取的身份分为三个类别，分别是 owner/group/others，且三种身份各有 read/write/execute 等权限。</p>
+<h3 id="文件权限的查看"><a href="#文件权限的查看" class="headerlink" title="文件权限的查看"></a>文件权限的查看</h3><p>在终端，输入 <code>ls -al</code> 可以就可以看到文件的权限信息</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-rw-r--r--   <span class="number">1</span> BeyondVincent  staff      <span class="number">9</span>  <span class="number">8</span> <span class="number">29</span> <span class="number">11</span>:<span class="number">26</span> README.md</div><div class="line">-rw-r--r--   <span class="number">1</span> BeyondVincent  staff  <span class="number">21723</span>  <span class="number">9</span> <span class="number">26</span> <span class="number">18</span>:<span class="number">51</span> pom.xml</div><div class="line">drwxr-xr-x   <span class="number">3</span> BeyondVincent  staff    <span class="number">102</span>  <span class="number">8</span> <span class="number">31</span> <span class="number">17</span>:<span class="number">34</span> src</div></pre></td></tr></table></figure>
+<p>在上面的第一栏中<code>-rw-r--r--</code>，有十个字符，表示了文件的类型和权限信息。</p>
+<ul>
+<li>第一个字符表示文件的类型<code>d：目录</code> <code>-：文件</code></li>
+<li>接着以 3 字符个为一组，并且都是<code>rwx</code>的组合。其中，[ r ]代表可读 (read)、[ w ]代表可写(write)、[ x ]代表可执行(execute)。 要注意的是，这三个 权限的位置不会改变，如果没有权限，就会出现减号[ - ]。<ul>
+<li>第一组为文件拥有者所具备的权限。README.md 文件为 <code>rw-</code>，表示可读写，不可执行。</li>
+<li>第二组为加入该群组（staff）的账号的权限。</li>
+<li>第三组为没有加入该群组（staff）的其他账号的权限。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>ls 是 list 的意思，选项 “-al” 则表示列出所有的文件详细的权限与属性</p>
+<p>文件的权限字符为:“- rwxrwxrwx”，共 3 种身份（owner/group/others），9 个权限。</p>
+</blockquote>
+<h3 id="文件权限的修改"><a href="#文件权限的修改" class="headerlink" title="文件权限的修改"></a>文件权限的修改</h3><p>文件权限对于系统的安全性非常重要，下面是几个常见的权限修改命令：</p>
+<ul>
+<li>chgrp（change group） : 改变文件所属群组。范例：<code>chgrp groupname filename</code></li>
+<li>chown（change owner） : 改变文件拥有者。范例：<code>chown username filename</code></li>
+<li>chmod : 改变文件的权限, SUID, SGID, SBIT等的特性。可以通过数字或者符号进行权限的改变。<ul>
+<li>数字：九个权限，3 个一组，每组的数值分别累加，即可算出对应的数字。权限分数对照表为（r:4 w:2 x:1）。例如当文件权限为： [-rwxrwx—] 数字是<code>owner = rwx = 4+2+1 = 7</code> <code>group = rwx = 4+2+1 = 7</code> <code>others= --- = 0+0+0 = 0</code>，所以文件权限就为 770。范例：<code>chmod 777 filename</code>。</li>
+<li>符号：借助u(user),g(group),o(others),a(all)，代表身份，rwx代表权限，来对文件权限进行修改。范例：将文件权限设置为“-rwxr-xr-x”的命令<code>chmod  u=rwx,go=rx filename</code>。也可以使用+或者-，例如对文件增加每个人都能写入的权限：<code>chmod  a+w filename</code>。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>chgrp 和 chown 常用于将文件复制给其他人使用时，在复制过程中，会复制执行者的属性和权限，所以需要对文件权限进行修改，他人才能正常使用复制的文件。</p>
+</blockquote>
+<h2 id="目录配置"><a href="#目录配置" class="headerlink" title="目录配置"></a>目录配置</h2><p>Linux 目录配置的依据是 FHS（Filesystem Hierarchy Standard：文件系统层次标准），FHS 的重点在于规范每个目录下应该要放置什么数据。FHS 依据文件系统使用的频繁与否与是否允许使用者随意改动，将目录定义为四种交互作用的形态：可分享的、不可分享的、不变的和可变的。</p>
+<p>FHS针对目录树架构仅定义出三层目录下面应该放置什么数据，分别是下面这三个目录的定义:</p>
+<ul>
+<li>/：(root, 根目录):与开机系统有关;</li>
+</ul>
+<p>FHS 要求在根目录<code>/</code>下面必须存在的目录为：</p>
+<ol>
+<li><code>/bin</code>：该目录放置的是在单人维护模式下还能够被操作的指令。 在 /bin 下面的指令可以被 root 和一般帐号所使用，主要有:cat, chmod, chown, date, mv, mkdir, cp, bash等常 用的指令。</li>
+<li><code>/boot</code>：这个目录主要存储开机时使用到的文件，包括 Linux 核心文件以及开机菜单与开机所需配置文件等。</li>
+<li><code>/dev</code>：在 Linux 系统上，任何设备与周边设备都是以文件的型态存在于这个目录中。</li>
+<li><code>/etc</code>：系统主要的配置文件几乎都放置在这个目录内，例如人员的帐号密码、 各种服务的启动等。FHS 不建议将可执行文件放在这个目录，比较重要的文件有: /etc/modprobe.d/, /etc/passwd, /etc/fstab, /etc/issue 等。另外 FHS 也要求 opt 必须放在该目录下 （/etc/opt）。</li>
+<li><code>/lib</code>：该目录主要存放在开机时会用到的函数库， 以及在 /bin 或 /sbin 下面的指令会调用到的函数库。另外，FHS 还要求该目录下有用于存放驱动程序的目录：/lib/modules/。</li>
+<li><code>/media</code>：这个目录下面放置可移除的设备， 包括软盘、光盘、DVD等等设备都暂时挂载于此。</li>
+<li><code>/mnt</code>：用于暂时挂载某些额外的设备。</li>
+<li><code>/opt</code>：用于存储第三方软件。</li>
+<li><code>/run</code>：系统开机后所产生的各项信息存放在此目录。</li>
+<li><code>/sbin</code>：存放开机过程中所需要的，里面包括了开机、修复、还原系统所需要的指令。</li>
+<li><code>/srv</code>：是一些网络服务启动之后，这些服务所需要 读取的数据目录。</li>
+<li><code>/tmp</code>：一般使用者或者是正在执行的程序暂时放置文件的地方。 这个目录任何人都能够存取。FHS 建议在开机的时候将该目录的数据删除。</li>
+<li><code>/usr</code>：用于存放操作系统的软件资源。</li>
+<li><code>/var</code>：用于存储经常变动的文件。</li>
+</ol>
+<p>FHS 建议在根目录<code>/</code>下可以存在的目录有：</p>
+<ol>
+<li><code>/home</code>：系统默认的使用者主文件夹。</li>
+<li><code>/lib&lt;qual&gt;</code>：用来存放与 /lib 不同的格式的二进制函数库，例如支持 64 位的 /lib64 函数库等。</li>
+<li><code>/root</code>：系统管理员(root)的主文件夹。</li>
+</ol>
+<p>在根目录，除了 FHS 定义的以上目录外，还有一些目录，需要知道：</p>
+<ol>
+<li><code>/lost+found</code>：使用标准的 ext2/ext3/ext4 文件系统格式才会产生的一个目录。目的在于当文件系统发生错误时，将一些遗失的片段放置到这个目录下。</li>
+<li><code>/proc</code>：这个目录是一个虚拟文件系统，它存储的数据位于内存中（不占任何硬盘容量），例如系统核心、行程信息(process)、周边设备的 状态及网络状态等。</li>
+<li><code>/sys</code>：与 /proc 类似，也是一个虚拟文件系统，主要也是记录 核心与系统硬件信息较相关的信息。同样不占硬盘容量。</li>
+</ol>
+<ul>
+<li>/usr：该目录与软件安装/执行有关。/usr 里面放置的数据属于可分享的与不可变动的（shareable, static）。usr 并不是 user 的缩写，而是 Unix Software Resource的缩写，也就是 Unix 操作系统软件资源存放的目录。FHS 建议 所有软件开发者，应该将软件的数据合理的分别放置到这个目录下的次目录，而不要自行创建该软件自己独立的目录。该目录有点类似 Windows系统的 “C:\Windows\ (当中的一部份) + C:\Program files\” 这两个目 录的综合体。</li>
+</ul>
+<p>FHS 要求在目录<code>/usr</code>下面必须存在的目录有：</p>
+<ol>
+<li><code>/usr/bin/</code>：所有一般用户能够使用的指令都放在这里。FHS 要求在此目录下不应该有子目录。</li>
+<li><code>/usr/lib/</code>：该目录基本上，与 /lib 功能相同，/lib 就是链接到此目录中的。</li>
+<li><code>/usr/local/</code>：系统管理员在本机安装自己下载的软件(非distribution默认提供者)时，建议安装到此目录， 这样便于管理。该目录下也是具有 bin、etc、 include 和 lib等次目录。</li>
+<li><code>/usr/sbin/</code>：非系统正常运行所需要的系统指令。最常见的就是某些网络服务器软件的服务指令（daemon）。功能与 /sbin 差不多， 因此目前 /sbin 就是链接到此目录中的。</li>
+<li><code>/usr/share/</code>：主要放置只读架构的数据文件，也包括共享文件。在这个目录下放置的数据几乎都是文字文 件，在此目录下常见的还有这些次目录:/usr/share/man（线上说明文档）， /usr/share/doc（软件杂项的文件说明）， /usr/share/zoneinfo（与时区有关的时区文件）。</li>
+</ol>
+<p>FHS 建议在目录<code>/usr</code>下可以存在的目录有：</p>
+<ol>
+<li><code>/usr/games/</code>：与游戏相关的数据。</li>
+<li><code>/usr/include/</code>：C/C++等程序用到的头文件存放于此。</li>
+<li><code>/usr/libexec/</code>：存放不常用的一些脚本或可执行文件。</li>
+<li><code>/usr/lib&lt;qual&gt;/</code>：与 /lib<qual>/ 功能相同，目前 /lib<qual> 就是链接到此目录中。</qual></qual></li>
+<li><code>/usr/src/</code>：一般源码存放于此。核心源码建议存放在 /usr/src/linux/ 目录。</li>
+</ol>
+<ul>
+<li>/var(variable):与系统运行过程有关。如果 /usr 是安装时会占用较大硬盘容量的目录，那么/var 就是在系统运行后才会渐渐占用硬盘容量的目录。</li>
+</ul>
+<p>FHS 要求在目录<code>/usr</code>下面必须存在的目录有：</p>
+<ol>
+<li><code>/var/cache/</code>：应用程序本身运行过程中会产生的一些临时数据。</li>
+<li><code>/var/lib/</code>：程序本身执行的过程中，需要使用到的数据文件放置的目录。在此目录下各自的软件应该要有各自的目录。</li>
+<li><code>/var/lock/</code>：需要独占的资源或者设备。目前此目录也已经挪到 /run/lock 中。</li>
+<li><code>/var/log/</code>：登录文件存放的位置。</li>
+<li><code>/var/mail/</code>：放置个人电子邮件信箱的目录。这个目录也被放置到 /var/spool/mail/  目录中，通常这两个目录是互为链接文件。</li>
+<li><code>/var/run/</code>：某些程序或者是服务启动后，会将他们的PID放置在这个目录。</li>
+<li><code>/var/spool/</code>：这个目录通常放置一些伫列数据，所谓的“伫列”就是排队等待其他程序使用的数据。</li>
+</ol>
+<p>FHS 仅定义出最上层 <code>/</code> 及次层 <code>/usr</code>， <code>/var</code> 的目录内容应该要放置的文件或目录数据，在其他次目录层级内，就可以随开发者自行来配置。</p>
+<p>在 Linux 中，所有的文件和目录都是从根目录开始的，根目录是所有文件和目录的源头，然后一个一个的分支往下扩散，我们称这种配置方式为：目录树 （directory tree）。这颗目录树的特点：</p>
+<ol>
+<li>目录树的启始点为根目录 （/, root）。</li>
+<li>每一个目录不仅可以使用本地端的 partition 的文件系统，也可以使用网络上的 filesystem。</li>
+<li>每一个文件在此目录树中的文件名(包含完整路径)都是独一无二的。</li>
+</ol>
+<p>目录树架构示意图<br><img src="http://7u2mu6.com1.z0.glb.clouddn.com/linux-file-arc.png" alt="image"></p>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/09/23/2016-09-23-use-nexus-with-docker/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在 Docker 搭建 Maven 私有库</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016-10-07-linux-file-permissions-and-directory-configuration" data-title="Linux 的文件权限与目录配置" data-url="http://beyondvincent.com/2016/10/07/2016-10-07-linux-file-permissions-and-directory-configuration/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>
