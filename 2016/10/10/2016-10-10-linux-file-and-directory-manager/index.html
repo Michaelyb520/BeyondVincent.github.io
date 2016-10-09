@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux 的文件与目录管理 | 破船之家</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Linux 的文件与目录管理">
+<meta property="og:url" content="http://beyondvincent.com/2016/10/10/2016-10-10-linux-file-and-directory-manager/index.html">
+<meta property="og:site_name" content="破船之家">
+<meta property="og:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/linux%20file%20manager.png">
+<meta property="og:updated_time" content="2016-10-09T19:43:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux 的文件与目录管理">
+<meta name="twitter:image" content="http://7u2mu6.com1.z0.glb.clouddn.com/linux%20file%20manager.png">
+  
+    <link rel="alternative" href="/atom.xml" title="破船之家" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">破船之家</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/instagram">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://luyutommycool.github.io/">卢宇的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://macshuo.com/">MacTalk</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://blog.devtang.com/">唐巧的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://onevcat.com/">王巍的博客</a>
+			        
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					我就是我，是颜色不一样的烟火…
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://avatars1.githubusercontent.com/u/3365146?v=3&amp;s=460">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">破船之家</a></h1>
+			</hgroup>
+			
+			<p class="header-subtitle">去留无意，漫随天外云卷云舒</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/BeyondVincent" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/beyondvincent" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="http://beyondvincent.com/atom.xml" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-2016-10-10-linux-file-and-directory-manager" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/10/2016-10-10-linux-file-and-directory-manager/" class="article-date">
+  	<time datetime="2016-10-09T20:00:00.000Z" itemprop="datePublished">10月 10 2016</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux 的文件与目录管理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://7u2mu6.com1.z0.glb.clouddn.com/linux%20file%20manager.png" alt=""></p>
+<a id="more"></a>
+<h2 id="小引"><a href="#小引" class="headerlink" title="小引"></a>小引</h2><blockquote>
+<p>The rule of specialization is that the deeper you specialize, the fewer potential opportunities you’ll have, but the more likely you’ll be to get those opportunities.<code>此文源自</code>《Soft Skills The software developer’s life manual》第七章。</p>
+<blockquote>
+<p><code>破船译</code>：专业化的规则就是：专业程度越深，所拥有潜在的机会就越少，但获得这些机会的可能性越大。</p>
+</blockquote>
+</blockquote>
+<p>最近在学习 Docker，Docker 缘起于 Linux，自然需要一些 Linux 的知识才好，所以学习 Docker 过程中，顺道学习一下 Linux 的基础知识，此文就是我学习《鸟哥的 Linux 私房菜》的<code>读书笔记</code>之二。</p>
+<h2 id="Linux-的文件与目录管理"><a href="#Linux-的文件与目录管理" class="headerlink" title="Linux 的文件与目录管理"></a>Linux 的文件与目录管理</h2><h3 id="目录与路径"><a href="#目录与路径" class="headerlink" title="目录与路径"></a>目录与路径</h3><p>我们在进行目录切换的时候，自然就涉及到了路径，路径分为绝对路径和相对路径。</p>
+<ul>
+<li>绝对路径：路径是从根目录 <code>/</code>开始写起，例如，<code>/usr/share/doc</code> 这就是一个绝对路径。</li>
+<li>相对路径：是相对于当前工作目录的路径，例如，由 /usr/share/doc 要到 /usr/share/man 目录时，可以写成: “cd ../man”。</li>
+</ul>
+<h4 id="目录的相关操作"><a href="#目录的相关操作" class="headerlink" title="目录的相关操作"></a>目录的相关操作</h4><p>首先我们来认识一些特殊的目录：</p>
+<ul>
+<li><code>.</code> 代表当前目录</li>
+<li><code>..</code> 代表上一层目录</li>
+<li><code>-</code> 代表前一个工作目录</li>
+<li><code>~</code> 代表<code>目前使用者身份</code>所在的主文件夹</li>
+<li><code>~account</code> 代表 <code>account</code> 这个账号的主文件夹</li>
+</ul>
+<p>在所有目录中都存在 2 个目录：<code>.</code>和<code>..</code>。</p>
+<blockquote>
+<p>注意：根目录的上层目录<code>..</code>与根目录自己<code>.</code>是同一个目录。使用 <code>ls -al /</code> 可以看到这两个目录的存在。</p>
+</blockquote>
+<p>下面是一些常见的目录操作指令：</p>
+<ul>
+<li><code>cd</code>（change directory） ：变换目录</li>
+<li><code>pwd</code> （Print Working Directory）：显示当前的目录</li>
+<li><code>mkdir</code>：创建一个新的目录</li>
+<li><code>rmdir</code>：删除一个空的目录，如果目录非空，则需要使用命令<code>rm -r</code> 才行，不过这个命令很危险，慎用。</li>
+</ul>
+<blockquote>
+<p><code>mkdir -p /home/bird/testing/test1</code>在这个命令中，如果各级目录不存在，加上 -p 参数，系统会自动创建不存在的目录。</p>
+<p><code>pwd -P</code> 这个命令会取得正确的目录名称（而不是以链接文件的路 径来显示的）。</p>
+</blockquote>
+<h4 id="环境变量-PATH"><a href="#环境变量-PATH" class="headerlink" title="环境变量$PATH"></a>环境变量<code>$PATH</code></h4><p>当我们执行某个指令（ls）时，系统会依照环境变量的设置去每个 PATH 定义的目录下搜寻文件名为 ls 的可执行文件，如果在 PATH 定义的目录中含有多个文件名为 ls 的可执行文件，那么先寻到的同名指令先被执行。</p>
+<p>利用 <code>echo $PATH</code> 可以查看环境变量中有那些目录，每个目录之间用冒号<code>:</code>隔开。将目录（/root）添加到环境变量中只需要使用如下命令即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PATH=&quot;$&#123;PATH&#125;:/root&quot;</div></pre></td></tr></table></figure></p>
+<h3 id="文件与目录管理"><a href="#文件与目录管理" class="headerlink" title="文件与目录管理"></a>文件与目录管理</h3><p>文件与目录的管理主要包括：属性查看、拷贝、删除和移动等。</p>
+<ul>
+<li>文件与目录的查看<code>ls</code>：比较常用的 <code>ls -al ~</code>（列出主目录中所有的文件，包含文件的属性和权限等数据）。由于 ls 使用频率很高，一般安装的 Linux 都将 <code>ll（L 的小写）</code> 设置成为 ls -l，所以在命令行直接输入 ll 就可以很方便的列出文件的相关属性和权限数据。</li>
+<li>文件与目录的复制<code>cp</code>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cp [-adfilprsu] 源文件(<span class="built_in">source</span>) 目标文件(destination)</div><div class="line">cp [options] <span class="built_in">source</span>1 <span class="built_in">source</span>2 <span class="built_in">source</span>3 .... directory</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>不同身份者执行这个指令会有不同的结果产生。</p>
+<ul>
+<li>文件与目录的删除<code>rm</code>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm [-fir] 文件或目录</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面的指令中，<code>-f</code> 就是 force 的意思，忽略不存在的文件，不会出现警告讯息；<code>-i</code> 互动模式，在删除前会询问使用者，<code>-r</code> 递回删除，最常用在目录的删除。</p>
+<ul>
+<li>文件与目录的移动和重命名</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mv [-fiu] <span class="built_in">source</span> destination</div><div class="line">mv [options] <span class="built_in">source</span>1 <span class="built_in">source</span>2 <span class="built_in">source</span>3 .... directory</div></pre></td></tr></table></figure>
+<p>上面指令中，<code>-f</code>force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；<code>-i</code>若目标文件 (destination) 已经存在时，就会询问是否覆盖；<code>-u</code>若目标文件已经存在，且 source 比较新，才会更新。</p>
+<ul>
+<li>获取路径中的文件名和路径名</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">basename /Users/BeyondVincent/Desktop/hehe.txt</div><div class="line">hehe.txt</div><div class="line">dirname /Users/BeyondVincent/Desktop/hehe.txt</div><div class="line">/Users/BeyondVincent/Desktop</div></pre></td></tr></table></figure>
+<h3 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h3><ul>
+<li><code>cat</code> 由第一行开始显示文件内容</li>
+<li><code>tac</code> 从最后一行开始显示，可以看出 tac 是 cat 的倒着写</li>
+<li><code>nl</code> 显示的时候，顺道输出行号</li>
+<li><code>more</code> 一页一页的显示文件内容</li>
+<li><code>less</code> 与 more 类似，但是比 more 更好的是，他可以往前翻页</li>
+<li><code>head</code> 只看头几行</li>
+<li><code>tail</code> 只看尾几行</li>
+<li><code>od</code> 以二进制的方式读取文件内容</li>
+</ul>
+
+      
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/07/2016-10-07-linux-file-permissions-and-directory-configuration/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux 的文件权限与目录配置</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016-10-10-linux-file-and-directory-manager" data-title="Linux 的文件与目录管理" data-url="http://beyondvincent.com/2016/10/10/2016-10-10-linux-file-and-directory-manager/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"beyondvincent"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 破船之家
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+  <script src="/js/main.js"></script>
+
+  </div>
+</body>
+</html>
